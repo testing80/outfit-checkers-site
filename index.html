@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outfit Checkers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+            float: '0 24px 70px rgba(24, 20, 15, 0.12)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f2ea;
+      color: #1f1b16;
+    }
+
+    .noise {
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 22%),
+        radial-gradient(circle at 80% 0%, rgba(255,255,255,0.12), transparent 18%),
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04), transparent 24%);
+    }
+
+    .hero-card {
+      transition: transform 400ms ease, box-shadow 400ms ease, opacity 400ms ease;
+      will-change: transform;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(20, 16, 10, 0.18);
+    }
+
+    .floating-nav.scrolled {
+      backdrop-filter: blur(16px);
+      background: rgba(250, 246, 236, 0.88);
+      box-shadow: 0 10px 35px rgba(24, 20, 15, 0.09);
+      border-color: rgba(31, 27, 22, 0.08);
+    }
+
+    .marquee-track {
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
+  <div class="mx-auto max-w-[1550px] px-4 pb-16 pt-4 md:px-8 lg:px-10">
+    <!-- HEADER -->
+    <header
+      id="siteHeader"
+      class="floating-nav sticky top-4 z-50 mx-auto flex w-full items-center justify-between gap-4 rounded-[28px] border border-transparent px-4 py-3 transition-all duration-300 md:px-5"
+    >
+      <a href="#" class="brand-text text-[28px] font-black tracking-[-0.06em] text-[#29241d] md:text-[34px]">
+        Outfit Checkers
+      </a>
+
+      <nav class="hidden items-center gap-1 rounded-[22px] border border-[#1f1b16]/8 bg-[#f8f4ea] px-2 py-2 lg:flex">
+        <a href="#product" class="nav-product rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Product</a>
+        <a href="#how-it-works" class="nav-how rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">How it works</a>
+        <a href="#community" class="nav-community rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Community</a>
+        <a href="#trust" class="nav-trust rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Trust</a>
+        <a href="#support" class="nav-support rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Support</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="relative hidden md:block">
+          <button
+            id="langToggle"
+            class="flex h-12 items-center gap-2 rounded-[16px] border border-[#1f1b16]/10 bg-[#faf6ee] px-4 text-[14px] font-semibold text-[#2f2820] shadow-sm"
+            type="button"
+          >
+            <span class="text-base">◎</span>
+            <span id="currentLangLabel">EN</span>
+          </button>
+
+          <div
+            id="langMenu"
+            class="absolute right-0 top-[58px] hidden min-w-[180px] rounded-[18px] border border-[#1f1b16]/8 bg-[#fffaf0] p-2 shadow-soft"
+          >
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="en">English</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="tr">Türkçe</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="de">Deutsch</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="ar">العربية</button>
+          </div>
+        </div>
+
+        <button class="open-app-btn rounded-[18px] bg-[#1f1b16] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_12px_30px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]">
+          Open app
+        </button>
+      </div>
+    </header>
+
+    <main class="space-y-7 pt-3">
+      <div class="sr-only" aria-live="polite" id="liveRegion"></div>
+
+      <!-- HERO -->
+      <section class="noise relative overflow-hidden rounded-[44px] bg-[#ffdb5b] px-6 pb-8 pt-6 shadow-float md:px-10 md:pb-12 md:pt-8 lg:px-14">
+        <div class="relative min-h-[860px] overflow-hidden rounded-[34px] bg-[#f9db63]/20">
+          <div class="absolute inset-0 opacity-80">
+            <div class="absolute left-[-120px] top-[160px] h-[420px] w-[420px] rounded-full bg-white/18 blur-3xl"></div>
+            <div class="absolute right-[-120px] top-[80px] h-[320px] w-[320px] rounded-full bg-[#f3c92f]/35 blur-3xl"></div>
+            <div class="absolute bottom-[-120px] left-1/2 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-[#1f1b16]/8 blur-3xl"></div>
+          </div>
+
+          <div class="relative z-20 flex min-h-[860px] flex-col justify-between">
+            <div class="grid gap-8 pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-2">
+              <div class="max-w-[760px] px-2 md:px-4 lg:px-8">
+                <div class="hero-badge mb-6 inline-flex rounded-full border border-[#1f1b16]/10 bg-[#fff7d2] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#75663f]">
+                  Social rating platform
+                </div>
+
+                <h1 class="hero-title max-w-[760px] text-[58px] font-black leading-[0.9] tracking-[-0.07em] text-[#26211b] md:text-[84px] lg:text-[112px]">
+                  Post the fit.<br />
+                  Get the score.<br />
+                  Improve the vibe.
+                </h1>
+
+                <p class="hero-desc mt-7 max-w-[630px] text-[21px] leading-8 text-[#43392f] md:text-[24px] md:leading-9">
+                  Outfit Checkers is not another empty social feed. It is built around outfit ratings,
+                  cleaner feedback, style discovery, and a sharper product loop that actually helps users improve.
+                </p>
+
+                <div class="mt-8 flex flex-wrap gap-4">
+                  <button class="hero-cta-1 rounded-[18px] bg-[#1f1b16] px-8 py-5 text-[17px] font-bold text-white shadow-[0_14px_34px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]">
+                    Join early access
+                  </button>
+                  <button class="hero-cta-2 rounded-[18px] border border-[#1f1b16]/12 bg-[#fff8e1] px-8 py-5 text-[17px] font-bold text-[#251f18] shadow-sm transition hover:bg-white">
+                    See how it works
+                  </button>
+                </div>
+
+                <div class="mt-10 grid max-w-[640px] gap-4 sm:grid-cols-3">
+                  <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
+                    <div class="stat1-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Core</div>
+                    <div class="stat1-title mt-3 text-[28px] font-black tracking-[-0.04em]">1–10 rating</div>
+                    <div class="stat1-desc mt-2 text-[15px] leading-6 text-[#564d42]">Not likes. Real evaluation.</div>
+                  </div>
+                  <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
+                    <div class="stat2-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Social</div>
+                    <div class="stat2-title mt-3 text-[28px] font-black tracking-[-0.04em]">Discovery</div>
+                    <div class="stat2-desc mt-2 text-[15px] leading-6 text-[#564d42]">Find people that match your vibe.</div>
+                  </div>
+                  <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
+                    <div class="stat3-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Loop</div>
+                    <div class="stat3-title mt-3 text-[28px] font-black tracking-[-0.04em]">Improve</div>
+                    <div class="stat3-desc mt-2 text-[15px] leading-6 text-[#564d42]">Turn feedback into better style decisions.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative flex min-h-[620px] items-center justify-center">
+                <div class="relative h-[620px] w-full max-w-[650px]">
+                  <div class="hero-card absolute left-[8%] top-[7%] z-10 h-[440px] w-[250px] rotate-[-11deg] overflow-hidden rounded-[34px] bg-white p-2 shadow-float">
+                    <div class="relative h-full w-full overflow-hidden rounded-[28px]">
+                      <img
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrcs8phq3uj3wYExQiitUXmBuTBmlO7UMe2OtaROVdDKVhEHohogrsR10dBDBXU8HUDso0KJp3e_1YpXjMrS43RntWsaAghJgIe8nZSfkozIoNHfcXwkI8yvXk3nQOYv_Lycq90NNcrOEFVi37JF1WlP1o1Ld41FjkHK6DbHXIYo-1YnYiIFVsI6dFT2RgKVliAlqZC6DdAMGw75uNA7Ucj9EerpspHDAokPYEgOGZrRlgozUtU9nHBe9p6mTgYKpeMJellBej42Tn"
+                        alt="Outfit card 1"
+                        class="h-full w-full object-cover"
+                      />
+                      <div class="absolute bottom-4 left-4 rounded-full bg-black/70 px-3 py-1.5 text-sm font-bold text-white backdrop-blur">Sude, 22</div>
+                    </div>
+                  </div>
+
+                  <div class="hero-card absolute left-[33%] top-[0%] z-30 h-[530px] w-[290px] overflow-hidden rounded-[40px] bg-white p-2 shadow-[0_30px_80px_rgba(17,14,9,0.20)]">
+                    <div class="relative h-full w-full overflow-hidden rounded-[34px]">
+                      <img
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uicwYarVHdOzBRLd2tLUphIZ8Ns1Oqt4U9vWPjJWZuCKC4oJKtCNtvGi0HrE_SumSkOvBN-WLWkS59DdrlA3cy7gZYuJdr5LNWN78j3Rr1g4MVWCX-e2WO-7Yjy3d-zX2zI3tzW0VK33cv90IGBjAPRcB3t8kdpa28W94-eWWYju74N1uml1gaX4yp8IM1a9Ey3Wza53KdazprlT-zPCqNUVghpnNw-oCYdYmrX5oR6iiqb7eBSS719bfMk"
+                        alt="Outfit card 2"
+                        class="h-full w-full object-cover"
+                      />
+
+                      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-5">
+                        <div class="flex items-end justify-between gap-4">
+                          <div>
+                            <div class="text-[24px] font-black tracking-[-0.03em] text-white">Alya, 20</div>
+                            <div class="mt-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/75">Streetwear • Night fit</div>
+                          </div>
+                          <div class="rounded-[16px] bg-[#ffdb5b] px-3 py-2 text-[13px] font-black text-[#231d16]">8.9 / 10</div>
+                        </div>
+                      </div>
+
+                      <div class="absolute right-4 top-5 rounded-[24px] bg-[#ffdb5b] px-4 py-8 text-[22px] font-black leading-none text-[#241e16] [writing-mode:vertical-rl]">
+                        Top rated
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hero-card absolute right-[7%] top-[10%] z-20 h-[390px] w-[220px] rotate-[10deg] overflow-hidden rounded-[32px] bg-white p-2 shadow-float">
+                    <div class="relative h-full w-full overflow-hidden rounded-[26px]">
+                      <img
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ugDwSpP3n6ca_BaQGk7oQxPtyRHcFmvJc0iWfIG04b_PjkOuxGRbzzOBpyp4-x1HG8av3OTg1DgPB6NH6oZ05yJjhkczDn5IAemfUFGNqxAENvrNtImrO0PdE_PIT-x3ogcgHB7FVC4YQwg1Lb2hiM9pDUeq4GzkjGj9JKZb9C1LHprbsLDtDcYYkEpQfLm2LxTDbDi8c3rflEzXLZyEMwGE6KSTn7VsWZ89-wGpbw6RPRj_Y58FHcwoLhJ"
+                        alt="Outfit card 3"
+                        class="h-full w-full object-cover"
+                      />
+                      <div class="absolute right-3 top-3 rounded-[18px] bg-[#fff6cc] px-3 py-5 text-[14px] font-black text-[#30281f] [writing-mode:vertical-rl]">
+                        Clean fit
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="absolute bottom-[4%] left-[10%] z-40 max-w-[260px] rounded-[28px] border border-[#1f1b16]/8 bg-[#fff9e7]/85 p-5 shadow-soft backdrop-blur">
+                    <div class="live-insight-label text-[12px] font-black uppercase tracking-[0.2em] text-[#7e7158]">Live insight</div>
+                    <div class="live-insight-title mt-3 text-[26px] font-black leading-[1.02] tracking-[-0.04em]">This outfit is performing above your profile average.</div>
+                    <div class="live-insight-desc mt-3 text-[15px] leading-6 text-[#564d42]">Cleaner silhouette and better color balance are driving stronger scores.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pb-8 pt-4 md:pb-10">
+              <div class="overflow-hidden rounded-[22px] border border-[#1f1b16]/8 bg-[#fff7d8]/70 py-4 shadow-soft">
+                <div class="marquee-track flex min-w-max items-center gap-4 px-4">
+                  <div class="ticker-1 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Rate outfits</div>
+                  <div class="ticker-2 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Get real comments</div>
+                  <div class="ticker-3 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Discover your vibe</div>
+                  <div class="ticker-4 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Community score</div>
+                  <div class="ticker-5 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Premium feedback loop</div>
+                  <div class="ticker-6 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Safer social design</div>
+                  <div class="ticker-1 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Rate outfits</div>
+                  <div class="ticker-2 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Get real comments</div>
+                  <div class="ticker-3 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Discover your vibe</div>
+                  <div class="ticker-4 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Community score</div>
+                  <div class="ticker-5 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Premium feedback loop</div>
+                  <div class="ticker-6 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Safer social design</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT SECTION -->
+      <section id="product" class="rounded-[42px] bg-[#fbfaf5] px-7 py-10 shadow-soft md:px-10 md:py-14 lg:px-14">
+        <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div>
+            <div class="positioning-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-white px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#8b7e6d]">
+              Positioning
+            </div>
+            <h2 class="positioning-title mt-6 max-w-[680px] text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[74px]">
+              A real product landing page, not a generic app promo.
+            </h2>
+            <p class="positioning-desc mt-7 max-w-[620px] text-[22px] leading-8 text-[#4a4339]">
+              The strength of the app is its rating-first logic. So the landing page should clearly say:
+              post the outfit, get the score, read feedback, improve, discover.
+            </p>
+
+            <div class="mt-9 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[26px] bg-[#ffdb5b] p-6">
+                <div class="why-works-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it works</div>
+                <div class="why-works-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Score instead of likes</div>
+                <p class="why-works-desc mt-3 text-[16px] leading-7 text-[#473f33]">This is the main value proposition. The landing page should put it at the center.</p>
+              </div>
+              <div class="rounded-[26px] bg-[#fff0a8] p-6">
+                <div class="why-premium-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it feels premium</div>
+                <div class="why-premium-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Cleaner card language</div>
+                <p class="why-premium-desc mt-3 text-[16px] leading-7 text-[#473f33]">To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="rounded-[30px] bg-white p-5 shadow-soft">
+              <div class="rounded-[24px] bg-[#f4efe4] p-5">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="feed-card-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Feed card</div>
+                    <div class="feed-card-title mt-1 text-[24px] font-black tracking-[-0.04em]">Avg. score</div>
+                  </div>
+                  <div class="rounded-[16px] bg-[#ffdb5b] px-3 py-2 text-[14px] font-black">9.1</div>
+                </div>
+                <div class="mt-5 h-[220px] overflow-hidden rounded-[22px]">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ui90lG57GTpdsvOqaqKMaFwl8mcmkfArsIsRsfW9RLRVohGSKyC9o4dVB1Fb9HcYTyBIm8ei7ZiF1qTvYjFu_ojm1gu-njOKv9JiTgqvuddRDtolVzvVCGjFgoCwTBTGUrX6v4mozveaJKbHky8ALsogfv8UYuJHU4GNrkYLW9OxWOMmvBM7Ok-h23i08P1qmiPz4IFunqxzSkRHJJscx3mVP7c-3MWR-cMBcGnvy370y1KbFpbxTG4cRBt"
+                    alt="Feed preview"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-[30px] bg-white p-5 shadow-soft">
+              <div class="rounded-[24px] bg-[#f4efe4] p-5">
+                <div class="comment-quality-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Comment quality</div>
+                <div class="comment-quality-title mt-2 text-[24px] font-black tracking-[-0.04em]">Structured feedback</div>
+                <div class="mt-5 space-y-3">
+                  <div class="comment-1 rounded-[18px] bg-white px-4 py-3 text-[15px] font-semibold text-[#3b342b]">“The color transition feels very clean.”</div>
+                  <div class="comment-2 rounded-[18px] bg-white px-4 py-3 text-[15px] font-semibold text-[#3b342b]">“The shoe choice elevates the whole look.”</div>
+                  <div class="comment-3 rounded-[18px] bg-white px-4 py-3 text-[15px] font-semibold text-[#3b342b]">“This hits stronger with streetwear audiences.”</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how-it-works" class="grid gap-6 lg:grid-cols-3">
+        <article class="rounded-[34px] bg-[#ffdb5b] p-6 shadow-soft">
+          <div class="h-[260px] overflow-hidden rounded-[28px]">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrcs8phq3uj3wYExQiitUXmBuTBmlO7UMe2OtaROVdDKVhEHohogrsR10dBDBXU8HUDso0KJp3e_1YpXjMrS43RntWsaAghJgIe8nZSfkozIoNHfcXwkI8yvXk3nQOYv_Lycq90NNcrOEFVi37JF1WlP1o1Ld41FjkHK6DbHXIYo-1YnYiIFVsI6dFT2RgKVliAlqZC6DdAMGw75uNA7Ucj9EerpspHDAokPYEgOGZrRlgozUtU9nHBe9p6mTgYKpeMJellBej42Tn"
+              alt="Upload fit"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#706457]">Step 01</div>
+          <h3 class="how1-title mt-4 text-[42px] font-black leading-[0.95] tracking-[-0.05em]">Post your outfit</h3>
+          <p class="how1-desc mt-4 text-[19px] leading-8 text-[#41392f]">Share your fit and start collecting real scores and comments.</p>
+        </article>
+
+        <article class="rounded-[34px] bg-[#ffe98a] p-6 shadow-soft">
+          <div class="h-[260px] overflow-hidden rounded-[28px]">
+            <img
+              src="https://lh3.googleusercontent.com/aida/ADBb0uicwYarVHdOzBRLd2tLUphIZ8Ns1Oqt4U9vWPjJWZuCKC4oJKtCNtvGi0HrE_SumSkOvBN-WLWkS59DdrlA3cy7gZYuJdr5LNWN78j3Rr1g4MVWCX-e2WO-7Yjy3d-zX2zI3tzW0VK33cv90IGBjAPRcB3t8kdpa28W94-eWWYju74N1uml1gaX4yp8IM1a9Ey3Wza53KdazprlT-zPCqNUVghpnNw-oCYdYmrX5oR6iiqb7eBSS719bfMk"
+              alt="Get rated"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#706457]">Step 02</div>
+          <h3 class="how2-title mt-4 text-[42px] font-black leading-[0.95] tracking-[-0.05em]">See your score</h3>
+          <p class="how2-desc mt-4 text-[19px] leading-8 text-[#41392f]">Quickly understand your average, comments, and overall performance.</p>
+        </article>
+
+        <article class="rounded-[34px] bg-[#fff1b8] p-6 shadow-soft">
+          <div class="h-[260px] overflow-hidden rounded-[28px]">
+            <img
+              src="https://lh3.googleusercontent.com/aida/ADBb0ugDwSpP3n6ca_BaQGk7oQxPtyRHcFmvJc0iWfIG04b_PjkOuxGRbzzOBpyp4-x1HG8av3OTg1DgPB6NH6oZ05yJjhkczDn5IAemfUFGNqxAENvrNtImrO0PdE_PIT-x3ogcgHB7FVC4YQwg1Lb2hiM9pDUeq4GzkjGj9JKZb9C1LHprbsLDtDcYYkEpQfLm2LxTDbDi8c3rflEzXLZyEMwGE6KSTn7VsWZ89-wGpbw6RPRj_Y58FHcwoLhJ"
+              alt="Improve faster"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#706457]">Step 03</div>
+          <h3 class="how3-title mt-4 text-[42px] font-black leading-[0.95] tracking-[-0.05em]">Improve your style</h3>
+          <p class="how3-desc mt-4 text-[19px] leading-8 text-[#41392f]">Learn which looks perform better and improve faster.</p>
+        </article>
+      </section>
+
+      <!-- COMMUNITY -->
+      <section id="community" class="rounded-[42px] border border-[#1f1b16]/6 bg-white p-6 shadow-soft md:p-8 lg:p-10">
+        <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <div class="overflow-hidden rounded-[34px] bg-[#efe7db]">
+            <img
+              src="https://lh3.googleusercontent.com/aida/ADBb0uj-6dNJwUXKQLloJ8zVZxKvEL4mP8bAbqLOtug9QbZ4NYQ2SEULny9_VL6y1sjeFeNpdALdwp9ld-q6Lg3dvCidH18MHKfri50LNpSDw68cLluC3yvEyp1BhxtD4AECI-5h1sfqXl6REvf7zcdIrSs-nE_xVTym7Lp1pyGVGgbSRUnKg8r3Y9D55IkKj685VsdGTv1pr5bdRnfv35WFOx_5pVvnVD-u-VUnp_gPTLU3YpNcrqpljJI7hQ90"
+              alt="Community image"
+              class="h-[520px] w-full object-cover"
+            />
+          </div>
+
+          <div class="px-2 md:px-4 lg:px-6">
+            <div class="community-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-[#fff8da] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7e715b]">
+              Community signal
+            </div>
+            <h2 class="community-title mt-6 text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[76px]">
+              Feedback should feel readable, social, and addictive.
+            </h2>
+            <p class="community-desc-1 mt-7 text-[22px] leading-8 text-[#463f36]">
+              Instead of random social noise, users get readable ratings, cleaner comments, and much stronger product logic.
+            </p>
+            <p class="community-desc-2 mt-5 text-[19px] leading-8 text-[#6b6257]">
+              That is exactly what the landing page should sell: why users come, stay, and post again.
+            </p>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[24px] bg-[#f8f4ea] p-5">
+                <div class="community-card1-title text-[28px] font-black tracking-[-0.04em]">Trend by rating</div>
+                <p class="community-card1-desc mt-2 text-[16px] leading-7 text-[#554d42]">Trending should highlight actually rated posts, not unrated filler content.</p>
+              </div>
+              <div class="rounded-[24px] bg-[#f8f4ea] p-5">
+                <div class="community-card2-title text-[28px] font-black tracking-[-0.04em]">Discovery by vibe</div>
+                <p class="community-card2-desc mt-2 text-[16px] leading-7 text-[#554d42]">Users can discover new profiles by visual taste and style direction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST -->
+      <section id="trust" class="grid gap-8 lg:grid-cols-[0.94fr_1.06fr]">
+        <div class="rounded-[40px] bg-[#faf7f0] p-8 shadow-soft md:p-10">
+          <div class="text-[48px] font-black leading-none text-[#1f1b16]">“</div>
+          <h3 class="trust-quote-title mt-2 max-w-[640px] text-[52px] font-black leading-[0.95] tracking-[-0.06em] text-[#1f1b16] md:text-[76px]">
+            A stronger product feeling comes from trust, clarity, and consistency.
+          </h3>
+          <p class="trust-quote-desc mt-7 max-w-[580px] text-[21px] leading-8 text-[#4c443a]">
+            Privacy, account deletion, moderation, and cleaner social boundaries should be visible parts of the product.
+          </p>
+        </div>
+
+        <div class="rounded-[40px] bg-[#fff8dd] p-6 shadow-soft md:p-8">
+          <div class="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+            <div class="overflow-hidden rounded-[30px] bg-[#e8dfd1]">
+              <img
+                src="https://lh3.googleusercontent.com/aida/ADBb0uicwYarVHdOzBRLd2tLUphIZ8Ns1Oqt4U9vWPjJWZuCKC4oJKtCNtvGi0HrE_SumSkOvBN-WLWkS59DdrlA3cy7gZYuJdr5LNWN78j3Rr1g4MVWCX-e2WO-7Yjy3d-zX2zI3tzW0VK33cv90IGBjAPRcB3t8kdpa28W94-eWWYju74N1uml1gaX4yp8IM1a9Ey3Wza53KdazprlT-zPCqNUVghpnNw-oCYdYmrX5oR6iiqb7eBSS719bfMk"
+                alt="Trust image"
+                class="h-[360px] w-full object-cover"
+              />
+            </div>
+
+            <div class="pr-2">
+              <div class="trust-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-white px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#857764]">
+                Ready to launch
+              </div>
+              <h4 class="trust-title mt-5 text-[42px] font-black leading-[0.96] tracking-[-0.05em] text-[#1f1b16] md:text-[58px]">
+                Make the domain part of the product.
+              </h4>
+              <p class="trust-desc mt-5 text-[20px] leading-8 text-[#4d453b]">
+                Privacy policy, terms, consent, and account deletion should all live in the same clean system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD CTA -->
+      <section class="rounded-[42px] bg-[#ffdb5b] px-8 py-10 shadow-float md:px-12 md:py-14">
+        <div class="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+          <div>
+            <div class="app-access-badge inline-flex rounded-full border border-white/40 bg-white/25 px-4 py-2 text-[12px] font-black uppercase tracking-[0.24em] text-[#4b412f]">
+              App access
+            </div>
+            <h2 class="get-app-title mt-5 text-[58px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[84px]">
+              Get the app
+            </h2>
+            <p class="get-app-desc mt-4 text-[23px] leading-8 text-[#43392f]">
+              Join early and unlock the Outfit Checkers experience.
+            </p>
+
+            <div class="mt-8 flex h-[196px] w-[196px] items-center justify-center rounded-[24px] bg-white shadow-soft">
+              <div class="grid h-[146px] w-[146px] grid-cols-6 grid-rows-6 gap-1.5">
+                <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
+                <div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div>
+                <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
+                <div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div>
+                <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
+                <div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative h-[420px] overflow-hidden rounded-[38px] bg-[#f6edd2] p-6">
+            <div class="absolute left-[10%] top-[14%] h-[280px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
+              <img src="https://lh3.googleusercontent.com/aida/ADBb0ui90lG57GTpdsvOqaqKMaFwl8mcmkfArsIsRsfW9RLRVohGSKyC9o4dVB1Fb9HcYTyBIm8ei7ZiF1qTvYjFu_ojm1gu-njOKv9JiTgqvuddRDtolVzvVCGjFgoCwTBTGUrX6v4mozveaJKbHky8ALsogfv8UYuJHU4GNrkYLW9OxWOMmvBM7Ok-h23i08P1qmiPz4IFunqxzSkRHJJscx3mVP7c-3MWR-cMBcGnvy370y1KbFpbxTG4cRBt" alt="Phone 1" class="h-full w-full object-cover" />
+            </div>
+            <div class="absolute left-[32%] top-[4%] z-20 h-[340px] w-[205px] overflow-hidden rounded-[40px] border-[10px] border-[#1f1b16] bg-white shadow-[0_30px_60px_rgba(0,0,0,0.16)]">
+              <img src="https://lh3.googleusercontent.com/aida/ADBb0uj-6dNJwUXKQLloJ8zVZxKvEL4mP8bAbqLOtug9QbZ4NYQ2SEULny9_VL6y1sjeFeNpdALdwp9ld-q6Lg3dvCidH18MHKfri50LNpSDw68cLluC3yvEyp1BhxtD4AECI-5h1sfqXl6REvf7zcdIrSs-nE_xVTym7Lp1pyGVGgbSRUnKg8r3Y9D55IkKj685VsdGTv1pr5bdRnfv35WFOx_5pVvnVD-u-VUnp_gPTLU3YpNcrqpljJI7hQ90" alt="Phone 2" class="h-full w-full object-cover" />
+            </div>
+            <div class="absolute right-[10%] top-[16%] h-[285px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
+              <img src="https://lh3.googleusercontent.com/aida/ADBb0ugDwSpP3n6ca_BaQGk7oQxPtyRHcFmvJc0iWfIG04b_PjkOuxGRbzzOBpyp4-x1HG8av3OTg1DgPB6NH6oZ05yJjhkczDn5IAemfUFGNqxAENvrNtImrO0PdE_PIT-x3ogcgHB7FVC4YQwg1Lb2hiM9pDUeq4GzkjGj9JKZb9C1LHprbsLDtDcYYkEpQfLm2LxTDbDi8c3rflEzXLZyEMwGE6KSTn7VsWZ89-wGpbw6RPRj_Y58FHcwoLhJ" alt="Phone 3" class="h-full w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="support" class="mt-7 rounded-[38px] bg-[#f5f2ea] px-4 py-12 md:px-8 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <div class="brand-text text-[72px] font-black leading-none tracking-[-0.07em] text-[#1f1b16] md:text-[112px]">
+            Outfit Checkers
+          </div>
+
+          <div class="mt-8 flex items-center gap-6">
+            <div class="rounded-[28px] bg-[#ffdb5b] p-4 shadow-soft">
+              <div class="flex h-[152px] w-[152px] items-center justify-center rounded-[20px] bg-white">
+                <div class="grid h-[114px] w-[114px] grid-cols-6 grid-rows-6 gap-1">
+                  <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
+                  <div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div>
+                  <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
+                  <div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div>
+                  <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
+                  <div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-scan max-w-[260px] text-[28px] font-black leading-9 text-[#231f19]">
+              Scan to get Outfit Checkers
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-3">
+          <div>
+            <div class="footer-product text-[18px] font-semibold text-[#7a6f62]">Product</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="#product" class="footer-overview block">Overview</a>
+              <a href="#how-it-works" class="footer-how block">How it works</a>
+              <a href="#community" class="footer-community block">Community</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-company text-[18px] font-semibold text-[#7a6f62]">Company</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="#trust" class="footer-trust block">Trust</a>
+              <a href="contact.html" class="footer-contact block">Contact us</a>
+              <a href="#support.html" class="footer-support block">Support</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-legal text-[18px] font-semibold text-[#7a6f62]">Legal</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="kvkk.html" class="footer-kvkk block">KVKK Notice</a>
+              <a href="acik-riza.html" class="footer-consent block">Explicit Consent</a>
+              <a href="gizlilik.html" class="footer-privacy block">Privacy policy</a>
+              <a href="t.html" class="footer-terms block">Terms and conditions</a>
+             
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
+        <div class="footer-copyright">© 2026 Outfit Checkers</div>
+        <div class="flex items-center gap-4">
+          <span>Instagram</span>
+          <span>X</span>
+          <span>TikTok</span>
+          <span>LinkedIn</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const langToggle = document.getElementById('langToggle');
+    const langMenu = document.getElementById('langMenu');
+    const currentLangLabel = document.getElementById('currentLangLabel');
+    const liveRegion = document.getElementById('liveRegion');
+
+    function handleScroll() {
+      if (window.scrollY > 18) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    const translations = {
+      en: {
+        langLabel: 'EN',
+        dir: 'ltr',
+        title: 'Outfit Checkers',
+        navProduct: 'Product',
+        navHow: 'How it works',
+        navCommunity: 'Community',
+        navTrust: 'Trust',
+        navSupport: 'Support',
+        openApp: 'Open app',
+        badgeHero: 'Social rating platform',
+        heroTitle: 'Post the fit.<br />Get the score.<br />Improve the vibe.',
+        heroDesc:
+          'Outfit Checkers is not another empty social feed. It is built around outfit ratings, cleaner feedback, style discovery, and a stronger product loop that actually helps users improve.',
+        heroCta1: 'Join early access',
+        heroCta2: 'See how it works',
+        stat1Label: 'Core',
+        stat1Title: '1–5 rating',
+        stat1Desc: 'Not likes. Real evaluation.',
+        stat2Label: 'Social',
+        stat2Title: 'Discovery',
+        stat2Desc: 'Find people that match your vibe.',
+        stat3Label: 'Loop',
+        stat3Title: 'Improve',
+        stat3Desc: 'Turn feedback into better style decisions.',
+        liveInsightLabel: 'Live insight',
+        liveInsightTitle: 'This outfit is performing above your profile average.',
+        liveInsightDesc: 'Cleaner silhouette and better color balance are driving stronger scores.',
+        ticker1: 'Rate outfits',
+        ticker2: 'Get real comments',
+        ticker3: 'Discover your vibe',
+        ticker4: 'Community score',
+        ticker5: 'Premium feedback loop',
+        ticker6: 'Safer social design',
+        positioningBadge: 'Positioning',
+        positioningTitle: 'A real product landing page, not a generic app promo.',
+        positioningDesc:
+          'The strength of the app is its rating-first logic. So the landing page should clearly say: post the outfit, get the score, read feedback, improve, discover.',
+        whyWorksLabel: 'Why it works',
+        whyWorksTitle: 'Score instead of likes',
+        whyWorksDesc:
+          'This is the main value proposition. The landing page should put it at the center.',
+        whyPremiumLabel: 'Why it feels premium',
+        whyPremiumTitle: 'Cleaner card language',
+        whyPremiumDesc:
+          'To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.',
+        feedCardLabel: 'Feed card',
+        feedCardTitle: 'Avg. score',
+        commentQualityLabel: 'Comment quality',
+        commentQualityTitle: 'Structured feedback',
+        comment1: '“The color transition feels very clean.”',
+        comment2: '“The shoe choice elevates the whole look.”',
+        comment3: '“This hits stronger with streetwear audiences.”',
+        how1Title: 'Post your outfit',
+        how1Desc: 'Share your fit and start collecting real scores and comments.',
+        how2Title: 'See your score',
+        how2Desc: 'Quickly understand your average, comments, and overall performance.',
+        how3Title: 'Improve your style',
+        how3Desc: 'Learn which looks perform better and improve faster.',
+        communityBadge: 'Community signal',
+        communityTitle: 'Feedback should feel readable, social, and addictive.',
+        communityDesc1:
+          'Instead of random social noise, users get readable ratings, cleaner comments, and much stronger product logic.',
+        communityDesc2:
+          'That is exactly what the landing page should sell: why users come, stay, and post again.',
+        communityCard1Title: 'Trend by rating',
+        communityCard1Desc:
+          'Trending should highlight actually rated posts, not unrated filler content.',
+        communityCard2Title: 'Discovery by vibe',
+        communityCard2Desc:
+          'Users can discover new profiles by visual taste and style direction.',
+        trustQuoteTitle: 'A stronger product feeling comes from trust, clarity, and consistency.',
+        trustQuoteDesc:
+          'Privacy, account deletion, moderation, and cleaner social boundaries should be visible parts of the product.',
+        trustBadge: 'Ready to launch',
+        trustTitle: 'Make the domain part of the product.',
+        trustDesc:
+          'Privacy policy, terms, consent, and account deletion should all live in the same clean system.',
+        appAccessBadge: 'App access',
+        getAppTitle: 'Get the app',
+        getAppDesc: 'Join early and unlock the Outfit Checkers experience.',
+        footerScan: 'Scan to get Outfit Checkers',
+        footerProduct: 'Product',
+        footerCompany: 'Company',
+        footerLegal: 'Legal',
+        footerOverview: 'Overview',
+        footerHow: 'How it works',
+        footerCommunity: 'Community',
+        footerTrust: 'Trust',
+        footerContact: 'Contact us',
+        footerSupport: 'Support',
+        footerKvkk: 'KVKK Notice',
+        footerConsent: 'Explicit Consent',
+        footerPrivacy: 'Privacy policy',
+        footerTerms: 'Terms and conditions',
+        footerDelete: 'Delete account',
+        footerCopyright: '© 2026 Outfit Checkers',
+        languageChanged: 'Language changed'
+      },
+
+      tr: {
+        langLabel: 'TR',
+        dir: 'ltr',
+        title: 'Outfit Checkers',
+        navProduct: 'Ürün',
+        navHow: 'Nasıl çalışır',
+        navCommunity: 'Topluluk',
+        navTrust: 'Güven',
+        navSupport: 'Destek',
+        openApp: 'Uygulamayı aç',
+        badgeHero: 'Sosyal puanlama platformu',
+        heroTitle: 'Kombini paylaş.<br />Puanını al.<br />Vibe’ını geliştir.',
+        heroDesc:
+          'Outfit Checkers boş bir sosyal akış değil. Outfit puanları, daha temiz geri bildirim, stil keşfi ve kullanıcıyı gerçekten geliştiren daha güçlü bir ürün döngüsü üzerine kurulu.',
+        heroCta1: 'Erken erişime katıl',
+        heroCta2: 'Nasıl çalıştığını gör',
+        stat1Label: 'Çekirdek',
+        stat1Title: '1–5 puanlama',
+        stat1Desc: 'Like değil, gerçek değerlendirme.',
+        stat2Label: 'Sosyal',
+        stat2Title: 'Keşif',
+        stat2Desc: 'Senin vibe’ına uyan insanları keşfet.',
+        stat3Label: 'Döngü',
+        stat3Title: 'Gelişim',
+        stat3Desc: 'Geri bildirimi daha iyi stil kararlarına çevir.',
+        liveInsightLabel: 'Canlı içgörü',
+        liveInsightTitle: 'Bu outfit profil ortalamanın üstünde performans gösteriyor.',
+        liveInsightDesc: 'Daha temiz silüet ve daha iyi renk dengesi daha güçlü puan getiriyor.',
+        ticker1: 'Outfitleri puanla',
+        ticker2: 'Gerçek yorum al',
+        ticker3: 'Vibe’ını keşfet',
+        ticker4: 'Topluluk puanı',
+        ticker5: 'Premium geri bildirim döngüsü',
+        ticker6: 'Daha güvenli sosyal tasarım',
+        positioningBadge: 'Konumlandırma',
+        positioningTitle: 'Jenerik uygulama tanıtımı değil, gerçek ürün landing page’i.',
+        positioningDesc:
+          'Uygulamanın gücü rating-first mantığında. Bu yüzden landing page şunu net söylemeli: kombini paylaş, puanını al, yorumu oku, geliş, keşfet.',
+        whyWorksLabel: 'Neden çalışıyor',
+        whyWorksTitle: 'Like yerine skor',
+        whyWorksDesc: 'Asıl değer önerisi bu. Landing page bunu merkeze koymalı.',
+        whyPremiumLabel: 'Neden premium hissettiriyor',
+        whyPremiumTitle: 'Daha temiz kart dili',
+        whyPremiumDesc:
+          'Bumble benzeri his için daha büyük tipografi, yüzen medya kartları ve daha fazla nefes alanı lazım.',
+        feedCardLabel: 'Feed kartı',
+        feedCardTitle: 'Ort. puan',
+        commentQualityLabel: 'Yorum kalitesi',
+        commentQualityTitle: 'Yapılandırılmış geri bildirim',
+        comment1: '“Renk geçişi çok temiz hissettiriyor.”',
+        comment2: '“Ayakkabı seçimi bütün look’u yükseltmiş.”',
+        comment3: '“Bu streetwear kitlesinde daha güçlü çalışıyor.”',
+        how1Title: 'Outfitini paylaş',
+        how1Desc: 'Kombinini paylaş ve gerçek puanlar ile yorumları toplamaya başla.',
+        how2Title: 'Puanını gör',
+        how2Desc: 'Ortalamanı, yorumlarını ve genel performansını hızlıca anla.',
+        how3Title: 'Tarzını geliştir',
+        how3Desc: 'Hangi lookların daha iyi performans verdiğini öğren ve daha hızlı geliş.',
+        communityBadge: 'Topluluk sinyali',
+        communityTitle: 'Geri bildirim okunabilir, sosyal ve bağımlılık yaratan hissettirmeli.',
+        communityDesc1:
+          'Rastgele sosyal gürültü yerine kullanıcılar okunabilir puanlar, daha temiz yorumlar ve çok daha güçlü ürün mantığı alır.',
+        communityDesc2:
+          'Landing page’in satması gereken şey de tam olarak bu: kullanıcı neden gelir, neden kalır ve neden tekrar post atar.',
+        communityCard1Title: 'Puana göre trend',
+        communityCard1Desc:
+          'Trending kısmı unrated çöp içerik değil, gerçekten puan almış postları öne çıkarmalı.',
+        communityCard2Title: 'Vibe’a göre keşif',
+        communityCard2Desc:
+          'Kullanıcılar görsel zevk ve stil yönüne göre yeni profiller keşfedebilir.',
+        trustQuoteTitle: 'Daha güçlü ürün hissi güven, netlik ve tutarlılıktan gelir.',
+        trustQuoteDesc:
+          'Gizlilik, hesap silme, moderasyon ve daha temiz sosyal sınırlar ürünün görünür parçaları olmalı.',
+        trustBadge: 'Yayına hazır',
+        trustTitle: 'Domain’i ürünün bir parçası yap.',
+        trustDesc:
+          'Gizlilik politikası, şartlar, açık rıza ve hesap silme aynı temiz sistemin içinde yaşamalı.',
+        appAccessBadge: 'Uygulama erişimi',
+        getAppTitle: 'Uygulamayı edin',
+        getAppDesc: 'Erken katıl ve Outfit Checkers deneyimini aç.',
+        footerScan: 'Outfit Checkers için tara',
+        footerProduct: 'Ürün',
+        footerCompany: 'Şirket',
+        footerLegal: 'Yasal',
+        footerOverview: 'Genel bakış',
+        footerHow: 'Nasıl çalışır',
+        footerCommunity: 'Topluluk',
+        footerTrust: 'Güven',
+        footerContact: 'Bize ulaş',
+        footerSupport: 'Destek',
+        footerKvkk: 'KVKK Aydınlatma',
+        footerConsent: 'Açık Rıza',
+        footerPrivacy: 'Gizlilik politikası',
+        footerTerms: 'Şartlar ve koşullar',
+        footerDelete: 'Hesabı sil',
+        footerCopyright: '© 2026 Outfit Checkers',
+        languageChanged: 'Dil değiştirildi'
+      },
+
+      de: {
+        langLabel: 'DE',
+        dir: 'ltr',
+        title: 'Outfit Checkers',
+        navProduct: 'Produkt',
+        navHow: 'So funktioniert es',
+        navCommunity: 'Community',
+        navTrust: 'Vertrauen',
+        navSupport: 'Support',
+        openApp: 'App öffnen',
+        badgeHero: 'Social-Rating-Plattform',
+        heroTitle: 'Outfit posten.<br />Score bekommen.<br />Den Vibe verbessern.',
+        heroDesc:
+          'Outfit Checkers ist kein leerer Social Feed. Die App basiert auf Outfit-Bewertungen, sauberem Feedback, Stil-Discovery und einer stärkeren Produktlogik, die Nutzer wirklich verbessert.',
+        heroCta1: 'Frühzugang sichern',
+        heroCta2: 'So funktioniert es',
+        stat1Label: 'Kern',
+        stat1Title: '1–5 Bewertung',
+        stat1Desc: 'Keine Likes. Echte Bewertung.',
+        stat2Label: 'Social',
+        stat2Title: 'Discovery',
+        stat2Desc: 'Finde Menschen, die zu deinem Vibe passen.',
+        stat3Label: 'Loop',
+        stat3Title: 'Verbessern',
+        stat3Desc: 'Mach aus Feedback bessere Style-Entscheidungen.',
+        liveInsightLabel: 'Live-Insight',
+        liveInsightTitle: 'Dieses Outfit performt über deinem Profil-Durchschnitt.',
+        liveInsightDesc: 'Eine klarere Silhouette und bessere Farbbalance sorgen für stärkere Scores.',
+        ticker1: 'Outfits bewerten',
+        ticker2: 'Echte Kommentare bekommen',
+        ticker3: 'Deinen Vibe entdecken',
+        ticker4: 'Community-Score',
+        ticker5: 'Premium-Feedback-Loop',
+        ticker6: 'Sichereres Social Design',
+        positioningBadge: 'Positionierung',
+        positioningTitle: 'Eine echte Produkt-Landingpage, keine generische App-Werbung.',
+        positioningDesc:
+          'Die Stärke der App ist der Rating-First-Ansatz. Deshalb sollte die Landingpage klar sagen: Outfit posten, Score bekommen, Feedback lesen, verbessern, entdecken.',
+        whyWorksLabel: 'Warum es funktioniert',
+        whyWorksTitle: 'Score statt Likes',
+        whyWorksDesc:
+          'Das ist das zentrale Wertversprechen. Die Landingpage sollte es in den Mittelpunkt stellen.',
+        whyPremiumLabel: 'Warum es premium wirkt',
+        whyPremiumTitle: 'Saubere Kartensprache',
+        whyPremiumDesc:
+          'Für das Bumble-Gefühl brauchst du größere Typografie, schwebende Medienkarten und mehr Luft.',
+        feedCardLabel: 'Feed-Karte',
+        feedCardTitle: 'Ø Score',
+        commentQualityLabel: 'Kommentarqualität',
+        commentQualityTitle: 'Strukturiertes Feedback',
+        comment1: '„Der Farbübergang ist sehr sauber.“',
+        comment2: '„Die Schuhwahl hebt den ganzen Look.“',
+        comment3: '„Bei Streetwear kommt das stärker an.“',
+        how1Title: 'Dein Outfit posten',
+        how1Desc: 'Teile deinen Fit und sammle echte Scores und Kommentare.',
+        how2Title: 'Deinen Score sehen',
+        how2Desc: 'Verstehe schnell deinen Durchschnitt, die Kommentare und die Gesamtperformance.',
+        how3Title: 'Deinen Stil verbessern',
+        how3Desc: 'Lerne, welche Looks besser performen, und verbessere dich schneller.',
+        communityBadge: 'Community-Signal',
+        communityTitle: 'Feedback sollte lesbar, sozial und suchterzeugend wirken.',
+        communityDesc1:
+          'Statt zufälligem Social Noise bekommen Nutzer lesbare Ratings, sauberere Kommentare und eine deutlich stärkere Produktlogik.',
+        communityDesc2:
+          'Genau das sollte die Landingpage verkaufen: warum Nutzer kommen, bleiben und erneut posten.',
+        communityCard1Title: 'Trend nach Bewertung',
+        communityCard1Desc:
+          'Trending sollte wirklich bewertete Posts zeigen, nicht ungeprüften Füllinhalt.',
+        communityCard2Title: 'Discovery nach Vibe',
+        communityCard2Desc:
+          'Nutzer können neue Profile nach visuellem Geschmack und Stilrichtung entdecken.',
+        trustQuoteTitle: 'Ein stärkeres Produktgefühl entsteht durch Vertrauen, Klarheit und Konsistenz.',
+        trustQuoteDesc:
+          'Datenschutz, Kontolöschung, Moderation und klarere soziale Grenzen sollten sichtbare Teile des Produkts sein.',
+        trustBadge: 'Bereit für den Launch',
+        trustTitle: 'Mach die Domain zu einem Teil des Produkts.',
+        trustDesc:
+          'Privacy Policy, Terms, Einwilligung und Kontolöschung sollten im selben sauberen System leben.',
+        appAccessBadge: 'App-Zugang',
+        getAppTitle: 'Hol dir die App',
+        getAppDesc: 'Steig früh ein und entsperre das Outfit Checkers Erlebnis.',
+        footerScan: 'Scanne für Outfit Checkers',
+        footerProduct: 'Produkt',
+        footerCompany: 'Unternehmen',
+        footerLegal: 'Rechtliches',
+        footerOverview: 'Überblick',
+        footerHow: 'So funktioniert es',
+        footerCommunity: 'Community',
+        footerTrust: 'Vertrauen',
+        footerContact: 'Kontakt',
+        footerSupport: 'Support',
+        footerKvkk: 'KVKK-Hinweis',
+        footerConsent: 'Ausdrückliche Einwilligung',
+        footerPrivacy: 'Datenschutzrichtlinie',
+        footerTerms: 'AGB',
+        footerDelete: 'Konto löschen',
+        footerCopyright: '© 2026 Outfit Checkers',
+        languageChanged: 'Sprache geändert'
+      },
+
+      ar: {
+        langLabel: 'AR',
+        dir: 'rtl',
+        title: 'أوتفيت تشيكرز',
+        navProduct: 'المنتج',
+        navHow: 'كيف يعمل',
+        navCommunity: 'المجتمع',
+        navTrust: 'الثقة',
+        navSupport: 'الدعم',
+        openApp: 'افتح التطبيق',
+        badgeHero: 'منصة تقييم اجتماعية',
+        heroTitle: 'انشر الإطلالة.<br />احصل على التقييم.<br />طوّر ذوقك.',
+        heroDesc:
+          'Outfit Checkers ليس مجرد موجز اجتماعي فارغ. التطبيق مبني على تقييم الإطلالات، وتعليقات أوضح، واكتشاف الأسلوب، ومنطق منتج أقوى يساعد المستخدمين فعلاً على التطور.',
+        heroCta1: 'انضم إلى الوصول المبكر',
+        heroCta2: 'شاهد كيف يعمل',
+        stat1Label: 'الأساس',
+        stat1Title: 'تقييم 1–5',
+        stat1Desc: 'ليس إعجابات، بل تقييم حقيقي.',
+        stat2Label: 'اجتماعي',
+        stat2Title: 'الاكتشاف',
+        stat2Desc: 'اكتشف أشخاصًا يناسبون ذوقك.',
+        stat3Label: 'الدورة',
+        stat3Title: 'التطور',
+        stat3Desc: 'حوّل التعليقات إلى قرارات ستايل أفضل.',
+        liveInsightLabel: 'معلومة مباشرة',
+        liveInsightTitle: 'هذه الإطلالة تحقق أداءً أعلى من متوسط ملفك الشخصي.',
+        liveInsightDesc: 'الهيئة الأنظف وتوازن الألوان الأفضل يحققان تقييمات أعلى.',
+        ticker1: 'قيّم الإطلالات',
+        ticker2: 'احصل على تعليقات حقيقية',
+        ticker3: 'اكتشف ذوقك',
+        ticker4: 'تقييم المجتمع',
+        ticker5: 'حلقة تعليقات بريميوم',
+        ticker6: 'تصميم اجتماعي أكثر أمانًا',
+        positioningBadge: 'التموضع',
+        positioningTitle: 'صفحة منتج حقيقية، وليست مجرد صفحة ترويج عامة.',
+        positioningDesc:
+          'قوة التطبيق أنه يعتمد على التقييم أولاً. لذلك يجب أن تقول صفحة الهبوط هذا بوضوح: انشر الإطلالة، احصل على التقييم، اقرأ التعليقات، تطوّر، واكتشف.',
+        whyWorksLabel: 'لماذا ينجح',
+        whyWorksTitle: 'التقييم بدل الإعجابات',
+        whyWorksDesc:
+          'هذه هي القيمة الأساسية. يجب أن تكون في قلب الصفحة.',
+        whyPremiumLabel: 'لماذا يبدو بريميوم',
+        whyPremiumTitle: 'لغة بطاقات أنظف',
+        whyPremiumDesc:
+          'للحصول على إحساس Bumble تحتاج إلى خطوط أكبر، وبطاقات وسائط عائمة، ومساحات تنفس أكثر.',
+        feedCardLabel: 'بطاقة الخلاصة',
+        feedCardTitle: 'متوسط التقييم',
+        commentQualityLabel: 'جودة التعليقات',
+        commentQualityTitle: 'تعليقات منظّمة',
+        comment1: '“انتقال الألوان نظيف جدًا.”',
+        comment2: '“اختيار الحذاء رفع الإطلالة بالكامل.”',
+        comment3: '“هذا أقوى عند جمهور الستريت وير.”',
+        how1Title: 'انشر إطلالتك',
+        how1Desc: 'شارك إطلالتك وابدأ بجمع تقييمات وتعليقات حقيقية.',
+        how2Title: 'شاهد تقييمك',
+        how2Desc: 'افهم بسرعة متوسطك وتعليقاتك وأداءك العام.',
+        how3Title: 'طوّر أسلوبك',
+        how3Desc: 'اعرف أي الإطلالات تؤدي بشكل أفضل وتطوّر أسرع.',
+        communityBadge: 'إشارة المجتمع',
+        communityTitle: 'يجب أن يكون الشعور بالتعليقات واضحًا واجتماعيًا وممتعًا.',
+        communityDesc1:
+          'بدل الضوضاء الاجتماعية العشوائية، يحصل المستخدمون على تقييمات مقروءة، وتعليقات أنظف، ومنطق منتج أقوى بكثير.',
+        communityDesc2:
+          'وهذا بالضبط ما يجب أن تبيعه صفحة الهبوط: لماذا يأتي المستخدم، ولماذا يبقى، ولماذا ينشر مرة أخرى.',
+        communityCard1Title: 'الترند حسب التقييم',
+        communityCard1Desc:
+          'قسم الترند يجب أن يبرز المنشورات التي حصلت فعلًا على تقييم، لا المحتوى الفارغ غير المقيّم.',
+        communityCard2Title: 'الاكتشاف حسب الذوق',
+        communityCard2Desc:
+          'يمكن للمستخدمين اكتشاف ملفات جديدة حسب الذوق البصري واتجاه الأسلوب.',
+        trustQuoteTitle: 'الإحساس الأقوى بالمنتج يأتي من الثقة والوضوح والاتساق.',
+        trustQuoteDesc:
+          'الخصوصية، حذف الحساب، الإشراف، والحدود الاجتماعية الأوضح يجب أن تكون أجزاء ظاهرة من المنتج.',
+        trustBadge: 'جاهز للإطلاق',
+        trustTitle: 'اجعل الدومين جزءًا من المنتج.',
+        trustDesc:
+          'سياسة الخصوصية، الشروط، الموافقة الصريحة، وحذف الحساب يجب أن تعيش كلها داخل نفس النظام الأنيق.',
+        appAccessBadge: 'الوصول إلى التطبيق',
+        getAppTitle: 'احصل على التطبيق',
+        getAppDesc: 'انضم مبكرًا وافتح تجربة Outfit Checkers.',
+        footerScan: 'امسح للحصول على Outfit Checkers',
+        footerProduct: 'المنتج',
+        footerCompany: 'الشركة',
+        footerLegal: 'القانوني',
+        footerOverview: 'نظرة عامة',
+        footerHow: 'كيف يعمل',
+        footerCommunity: 'المجتمع',
+        footerTrust: 'الثقة',
+        footerContact: 'اتصل بنا',
+        footerSupport: 'الدعم',
+        footerKvkk: 'إشعار KVKK',
+        footerConsent: 'موافقة صريحة',
+        footerPrivacy: 'سياسة الخصوصية',
+        footerTerms: 'الشروط والأحكام',
+        footerDelete: 'حذف الحساب',
+        footerCopyright: '© 2026 Outfit Checkers',
+        languageChanged: 'تم تغيير اللغة'
+      }
+    };
+
+    const textMap = {
+      '.brand-text': 'title',
+      '.nav-product': 'navProduct',
+      '.nav-how': 'navHow',
+      '.nav-community': 'navCommunity',
+      '.nav-trust': 'navTrust',
+      '.nav-support': 'navSupport',
+      '.open-app-btn': 'openApp',
+      '.hero-badge': 'badgeHero',
+      '.hero-title': 'heroTitle',
+      '.hero-desc': 'heroDesc',
+      '.hero-cta-1': 'heroCta1',
+      '.hero-cta-2': 'heroCta2',
+      '.stat1-label': 'stat1Label',
+      '.stat1-title': 'stat1Title',
+      '.stat1-desc': 'stat1Desc',
+      '.stat2-label': 'stat2Label',
+      '.stat2-title': 'stat2Title',
+      '.stat2-desc': 'stat2Desc',
+      '.stat3-label': 'stat3Label',
+      '.stat3-title': 'stat3Title',
+      '.stat3-desc': 'stat3Desc',
+      '.live-insight-label': 'liveInsightLabel',
+      '.live-insight-title': 'liveInsightTitle',
+      '.live-insight-desc': 'liveInsightDesc',
+      '.ticker-1': 'ticker1',
+      '.ticker-2': 'ticker2',
+      '.ticker-3': 'ticker3',
+      '.ticker-4': 'ticker4',
+      '.ticker-5': 'ticker5',
+      '.ticker-6': 'ticker6',
+      '.positioning-badge': 'positioningBadge',
+      '.positioning-title': 'positioningTitle',
+      '.positioning-desc': 'positioningDesc',
+      '.why-works-label': 'whyWorksLabel',
+      '.why-works-title': 'whyWorksTitle',
+      '.why-works-desc': 'whyWorksDesc',
+      '.why-premium-label': 'whyPremiumLabel',
+      '.why-premium-title': 'whyPremiumTitle',
+      '.why-premium-desc': 'whyPremiumDesc',
+      '.feed-card-label': 'feedCardLabel',
+      '.feed-card-title': 'feedCardTitle',
+      '.comment-quality-label': 'commentQualityLabel',
+      '.comment-quality-title': 'commentQualityTitle',
+      '.comment-1': 'comment1',
+      '.comment-2': 'comment2',
+      '.comment-3': 'comment3',
+      '.how1-title': 'how1Title',
+      '.how1-desc': 'how1Desc',
+      '.how2-title': 'how2Title',
+      '.how2-desc': 'how2Desc',
+      '.how3-title': 'how3Title',
+      '.how3-desc': 'how3Desc',
+      '.community-badge': 'communityBadge',
+      '.community-title': 'communityTitle',
+      '.community-desc-1': 'communityDesc1',
+      '.community-desc-2': 'communityDesc2',
+      '.community-card1-title': 'communityCard1Title',
+      '.community-card1-desc': 'communityCard1Desc',
+      '.community-card2-title': 'communityCard2Title',
+      '.community-card2-desc': 'communityCard2Desc',
+      '.trust-quote-title': 'trustQuoteTitle',
+      '.trust-quote-desc': 'trustQuoteDesc',
+      '.trust-badge': 'trustBadge',
+      '.trust-title': 'trustTitle',
+      '.trust-desc': 'trustDesc',
+      '.app-access-badge': 'appAccessBadge',
+      '.get-app-title': 'getAppTitle',
+      '.get-app-desc': 'getAppDesc',
+      '.footer-scan': 'footerScan',
+      '.footer-product': 'footerProduct',
+      '.footer-company': 'footerCompany',
+      '.footer-legal': 'footerLegal',
+      '.footer-overview': 'footerOverview',
+      '.footer-how': 'footerHow',
+      '.footer-community': 'footerCommunity',
+      '.footer-trust': 'footerTrust',
+      '.footer-contact': 'footerContact',
+      '.footer-support': 'footerSupport',
+      '.footer-kvkk': 'footerKvkk',
+      '.footer-consent': 'footerConsent',
+      '.footer-privacy': 'footerPrivacy',
+      '.footer-terms': 'footerTerms',
+      '.footer-delete': 'footerDelete',
+      '.footer-copyright': 'footerCopyright'
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+
+      htmlEl.lang = lang;
+      htmlEl.dir = dict.dir || 'ltr';
+      bodyEl.dir = dict.dir || 'ltr';
+      document.title = dict.title || 'Outfit Checkers';
+
+      if (currentLangLabel) {
+        currentLangLabel.textContent = dict.langLabel || lang.toUpperCase();
+      }
+
+      Object.entries(textMap).forEach(([selector, key]) => {
+        document.querySelectorAll(selector).forEach((el) => {
+          if (!dict[key]) return;
+
+          if (key === 'heroTitle') {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
+        });
+      });
+
+      localStorage.setItem('oc_lang', lang);
+
+      if (liveRegion) {
+        liveRegion.textContent = dict.languageChanged || 'Language changed';
+      }
+    }
+
+    if (langToggle && langMenu) {
+      langToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        langMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!langToggle.contains(e.target) && !langMenu.contains(e.target)) {
+          langMenu.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.lang-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const lang = btn.getAttribute('data-lang');
+          applyTranslations(lang);
+          langMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    const savedLang = localStorage.getItem('oc_lang') || 'en';
+    applyTranslations(savedLang);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  </script>
+</body>
+</html>

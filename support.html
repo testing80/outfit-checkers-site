@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Outfit Checkers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f2ea;
+      color: #1f1b16;
+    }
+
+    .floating-nav.scrolled {
+      backdrop-filter: blur(16px);
+      background: rgba(250, 246, 236, 0.88);
+      box-shadow: 0 10px 35px rgba(24, 20, 15, 0.09);
+      border-color: rgba(31, 27, 22, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
+  <div class="mx-auto max-w-[1350px] px-4 pb-16 pt-4 md:px-8 lg:px-10">
+    <header
+      id="siteHeader"
+      class="floating-nav sticky top-4 z-50 mx-auto flex w-full items-center justify-between gap-4 rounded-[28px] border border-transparent px-4 py-3 transition-all duration-300 md:px-5"
+    >
+      <a href="index.html" class="brand-text text-[28px] font-black tracking-[-0.06em] text-[#29241d] md:text-[34px]">
+        Outfit Checkers
+      </a>
+
+      <div class="flex items-center gap-3">
+        <div class="relative hidden md:block">
+          <button
+            id="langToggle"
+            class="flex h-12 items-center gap-2 rounded-[16px] border border-[#1f1b16]/10 bg-[#faf6ee] px-4 text-[14px] font-semibold text-[#2f2820] shadow-sm"
+            type="button"
+          >
+            <span class="text-base">◎</span>
+            <span id="currentLangLabel">EN</span>
+          </button>
+
+          <div
+            id="langMenu"
+            class="absolute right-0 top-[58px] hidden min-w-[180px] rounded-[18px] border border-[#1f1b16]/8 bg-[#fffaf0] p-2 shadow-soft"
+          >
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="en">English</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="tr">Türkçe</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="de">Deutsch</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="ar">العربية</button>
+          </div>
+        </div>
+
+        <a
+          href="index.html"
+          class="back-home rounded-[18px] bg-[#1f1b16] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_12px_30px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]"
+        >
+          Back to home
+        </a>
+      </div>
+    </header>
+
+    <main class="pt-8">
+      <div class="sr-only" aria-live="polite" id="liveRegion"></div>
+
+      <section class="rounded-[42px] bg-white px-7 py-10 shadow-soft md:px-10 md:py-14 lg:px-14">
+        <div class="max-w-[860px]">
+          <div class="contact-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-[#fff8da] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7e715b]">
+            Contact us
+          </div>
+
+          <h1 class="contact-title mt-6 text-[56px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[82px]">
+            Let’s talk.
+          </h1>
+
+          <p class="contact-desc mt-6 max-w-[760px] text-[22px] leading-8 text-[#4a4339]">
+            Have a question, feedback, partnership idea, or support request?
+            Reach out and we’ll get back to you as soon as possible.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <div class="rounded-[28px] bg-[#fff8da] p-6">
+            <div class="contact-email-label text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">
+              Email
+            </div>
+            <a
+              href="mailto:testing@outfitcheckers.com"
+              class="mt-3 block break-all text-[28px] font-black leading-8 tracking-[-0.03em] text-[#1f1b16]"
+            >
+              testing@outfitcheckers.com
+            </a>
+          </div>
+
+          <div class="rounded-[28px] bg-[#f8f4ea] p-6">
+            <div class="support-label text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">
+              Support
+            </div>
+            <p class="support-desc mt-3 text-[18px] leading-7 text-[#4a4339]">
+              For account, technical, or access-related issues, send us an email and we’ll help you out.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] bg-[#f8f4ea] p-6">
+            <div class="partnerships-label text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">
+              Partnerships
+            </div>
+            <p class="partnerships-desc mt-3 text-[18px] leading-7 text-[#4a4339]">
+              Brand collaborations, media, and partnership requests can be sent to the same contact email.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const langToggle = document.getElementById('langToggle');
+    const langMenu = document.getElementById('langMenu');
+    const currentLangLabel = document.getElementById('currentLangLabel');
+    const liveRegion = document.getElementById('liveRegion');
+
+    function handleScroll() {
+      if (window.scrollY > 18) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    const translations = {
+      en: {
+        langLabel: 'EN',
+        dir: 'ltr',
+        pageTitle: 'Contact Us - Outfit Checkers',
+        brand: 'Outfit Checkers',
+        backHome: 'Back to home',
+        badge: 'Contact us',
+        title: 'Let’s talk.',
+        desc: 'Have a question, feedback, partnership idea, or support request? Reach out and we’ll get back to you as soon as possible.',
+        emailLabel: 'Email',
+        supportLabel: 'Support',
+        supportDesc: 'For account, technical, or access-related issues, send us an email and we’ll help you out.',
+        partnershipsLabel: 'Partnerships',
+        partnershipsDesc: 'Brand collaborations, media, and partnership requests can be sent to the same contact email.',
+        languageChanged: 'Language changed'
+      },
+      tr: {
+        langLabel: 'TR',
+        dir: 'ltr',
+        pageTitle: 'Bize Ulaşın - Outfit Checkers',
+        brand: 'Outfit Checkers',
+        backHome: 'Ana sayfaya dön',
+        badge: 'Bize ulaşın',
+        title: 'Konuşalım.',
+        desc: 'Bir sorunuz, geri bildiriminiz, iş birliği fikriniz veya destek talebiniz mi var? Bizimle iletişime geçin, en kısa sürede dönüş yapalım.',
+        emailLabel: 'E-posta',
+        supportLabel: 'Destek',
+        supportDesc: 'Hesap, teknik veya erişimle ilgili sorunlar için bize mail atın, yardımcı olalım.',
+        partnershipsLabel: 'İş birlikleri',
+        partnershipsDesc: 'Marka iş birlikleri, medya ve ortaklık taleplerini aynı e-posta adresine gönderebilirsiniz.',
+        languageChanged: 'Dil değiştirildi'
+      },
+      de: {
+        langLabel: 'DE',
+        dir: 'ltr',
+        pageTitle: 'Kontakt - Outfit Checkers',
+        brand: 'Outfit Checkers',
+        backHome: 'Zur Startseite',
+        badge: 'Kontakt',
+        title: 'Lass uns sprechen.',
+        desc: 'Hast du eine Frage, Feedback, eine Kooperationsidee oder brauchst Support? Schreib uns und wir melden uns so schnell wie möglich bei dir.',
+        emailLabel: 'E-Mail',
+        supportLabel: 'Support',
+        supportDesc: 'Bei Konto-, Technik- oder Zugangsproblemen kannst du uns per E-Mail kontaktieren.',
+        partnershipsLabel: 'Partnerschaften',
+        partnershipsDesc: 'Markenkooperationen, Medienanfragen und Partnerschaftsanfragen kannst du an dieselbe E-Mail senden.',
+        languageChanged: 'Sprache geändert'
+      },
+      ar: {
+        langLabel: 'AR',
+        dir: 'rtl',
+        pageTitle: 'تواصل معنا - Outfit Checkers',
+        brand: 'أوتفيت تشيكرز',
+        backHome: 'العودة للرئيسية',
+        badge: 'تواصل معنا',
+        title: 'لنتحدث.',
+        desc: 'هل لديك سؤال أو ملاحظة أو فكرة شراكة أو طلب دعم؟ تواصل معنا وسنرد عليك في أقرب وقت ممكن.',
+        emailLabel: 'البريد الإلكتروني',
+        supportLabel: 'الدعم',
+        supportDesc: 'إذا كانت لديك مشكلة متعلقة بالحساب أو الوصول أو الأمور التقنية، راسلنا وسنساعدك.',
+        partnershipsLabel: 'الشراكات',
+        partnershipsDesc: 'يمكن إرسال طلبات التعاون مع العلامات التجارية أو الإعلام أو الشراكات إلى نفس البريد الإلكتروني.',
+        languageChanged: 'تم تغيير اللغة'
+      }
+    };
+
+    const textMap = {
+      '.brand-text': 'brand',
+      '.back-home': 'backHome',
+      '.contact-badge': 'badge',
+      '.contact-title': 'title',
+      '.contact-desc': 'desc',
+      '.contact-email-label': 'emailLabel',
+      '.support-label': 'supportLabel',
+      '.support-desc': 'supportDesc',
+      '.partnerships-label': 'partnershipsLabel',
+      '.partnerships-desc': 'partnershipsDesc'
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+
+      htmlEl.lang = lang;
+      htmlEl.dir = dict.dir || 'ltr';
+      bodyEl.dir = dict.dir || 'ltr';
+      document.title = dict.pageTitle || 'Contact Us - Outfit Checkers';
+
+      if (currentLangLabel) {
+        currentLangLabel.textContent = dict.langLabel || lang.toUpperCase();
+      }
+
+      Object.entries(textMap).forEach(([selector, key]) => {
+        document.querySelectorAll(selector).forEach((el) => {
+          if (!dict[key]) return;
+          el.textContent = dict[key];
+        });
+      });
+
+      localStorage.setItem('oc_lang', lang);
+
+      if (liveRegion) {
+        liveRegion.textContent = dict.languageChanged || 'Language changed';
+      }
+    }
+
+    if (langToggle && langMenu) {
+      langToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        langMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!langToggle.contains(e.target) && !langMenu.contains(e.target)) {
+          langMenu.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.lang-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const lang = btn.getAttribute('data-lang');
+          applyTranslations(lang);
+          langMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    const savedLang = localStorage.getItem('oc_lang') || 'en';
+    applyTranslations(savedLang);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  </script>
+</body>
+</html>

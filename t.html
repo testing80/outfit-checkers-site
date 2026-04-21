@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Şartlar ve Koşullar - Outfit Checkers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-[#f5f2ea] font-sans text-[#1f1b16]">
+  <div class="mx-auto max-w-[1100px] px-4 py-6 md:px-8 md:py-10">
+    <header class="mb-8 flex items-center justify-between rounded-[24px] bg-[#faf6ee] px-5 py-4 shadow-soft">
+      <a href="index.html" class="text-[28px] font-black tracking-[-0.06em] text-[#29241d] md:text-[34px]">
+        Outfit Checkers
+      </a>
+
+      <a
+        href="index.html"
+        class="rounded-[16px] bg-[#1f1b16] px-5 py-3 text-[14px] font-bold text-white transition hover:translate-y-[-1px]"
+      >
+        Ana sayfaya dön
+      </a>
+    </header>
+
+    <main class="rounded-[36px] bg-white px-6 py-8 shadow-soft md:px-10 md:py-12">
+      <div class="mb-8">
+        <div class="inline-flex rounded-full border border-[#1f1b16]/8 bg-[#fff8da] px-4 py-2 text-[12px] font-black uppercase tracking-[0.2em] text-[#7e715b]">
+          Şartlar ve Koşullar
+        </div>
+
+        <h1 class="mt-5 text-[38px] font-black leading-[0.95] tracking-[-0.05em] text-[#1f1b16] md:text-[58px]">
+          Outfit Checkers Şartlar ve Koşullar
+        </h1>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-[22px] bg-[#f8f4ea] p-5">
+            <div class="text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Metin Türü</div>
+            <div class="mt-2 text-[18px] font-semibold text-[#1f1b16]">Kullanım Koşulları / Şartlar ve Koşullar</div>
+          </div>
+
+          <div class="rounded-[22px] bg-[#f8f4ea] p-5">
+            <div class="text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Uygulama Adı</div>
+            <div class="mt-2 text-[18px] font-semibold text-[#1f1b16]">Outfit Checkers</div>
+          </div>
+
+          <div class="rounded-[22px] bg-[#f8f4ea] p-5">
+            <div class="text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Hizmet Sağlayıcı / İşletmeci</div>
+            <div class="mt-2 text-[18px] font-semibold text-[#1f1b16]">[Ad Soyad / Şirket Unvanı]</div>
+          </div>
+
+          <div class="rounded-[22px] bg-[#f8f4ea] p-5">
+            <div class="text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Yürürlük / Güncelleme</div>
+            <div class="mt-2 text-[18px] font-semibold text-[#1f1b16]">[Tarih] / [Tarih]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-10 text-[17px] leading-8 text-[#41392f]">
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">1. Giriş</h2>
+          <p class="mt-4">
+            İşbu Şartlar ve Koşullar metni, Outfit Checkers mobil uygulamasının ve buna bağlı hizmetlerin kullanımına ilişkin kuralları,
+            tarafların hak ve yükümlülüklerini ve uygulama kullanım şartlarını belirlemektedir.
+          </p>
+          <p class="mt-4">
+            Outfit Checkers’ı indirmeniz, hesap oluşturmanız, giriş yapmanız veya herhangi bir şekilde kullanmanız halinde,
+            işbu Şartlar ve Koşullar’ı okuduğunuz, anladığınız ve kabul ettiğiniz varsayılır.
+          </p>
+          <p class="mt-4">
+            Eğer bu metindeki herhangi bir hükmü kabul etmiyorsanız, uygulamayı kullanmamanız gerekir.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">2. Taraflar</h2>
+          <p class="mt-4">
+            İşbu Şartlar ve Koşullar:
+          </p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>bir tarafta Outfit Checkers uygulamasını işleten [Ad Soyad / Şirket Unvanı],</li>
+            <li>diğer tarafta uygulamayı kullanan gerçek kişi kullanıcı</li>
+          </ul>
+          <p class="mt-4">
+            arasında akdedilmiş sayılır.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">3. Hizmetin Konusu</h2>
+          <p class="mt-4">
+            Outfit Checkers, kullanıcıların outfit / kombin içerikleri paylaşabildiği, diğer kullanıcılarla etkileşime geçebildiği,
+            puan alabildiği, yorumlaşabildiği, takip ilişkileri kurabildiği ve belirli sosyal özelliklerden yararlanabildiği dijital bir sosyal platformdur.
+          </p>
+          <p class="mt-4">
+            Uygulama kapsamında sunulan hizmetler zaman içinde değiştirilebilir, güncellenebilir, genişletilebilir,
+            daraltılabilir veya sonlandırılabilir.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">4. Uygunluk ve Kullanım Şartları</h2>
+
+          <div class="mt-6 space-y-6">
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">4.1. Kullanıcı Beyanı</h3>
+              <p class="mt-3">Kullanıcı, uygulamayı kullanırken:</p>
+              <ul class="mt-3 list-disc space-y-1 pl-6">
+                <li>verdiği bilgilerin doğru, güncel ve kendisine ait olduğunu,</li>
+                <li>hesabını hukuka aykırı amaçlarla kullanmayacağını,</li>
+                <li>başkalarının haklarını ihlal etmeyeceğini,</li>
+                <li>topluluk kurallarına ve yürürlükteki mevzuata uygun davranacağını</li>
+              </ul>
+              <p class="mt-3">kabul eder.</p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">4.2. Yaş ve Ehliyet</h3>
+              <p class="mt-3">
+                Kullanıcı, uygulamayı kullanmak için gerekli hukuki ehliyete sahip olduğunu beyan eder.
+                Gerekli olması halinde kullanıcıdan yaş doğrulaması, ebeveyn onayı veya ek bilgi talep edilebilir.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">4.3. Hesap Güvenliği</h3>
+              <p class="mt-3">
+                Kullanıcı, hesabına ilişkin erişim bilgilerinin gizliliğini korumakla yükümlüdür.
+                Kullanıcının kendi hesabı üzerinden yapılan işlemlerden, güvenlik açığının hizmet sağlayıcıdan kaynaklandığı açıkça gösterilmedikçe,
+                kullanıcı sorumlu olabilir.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">5. Hesap Oluşturma ve Kullanıcı Profili</h2>
+          <p class="mt-4">
+            Kullanıcı, Outfit Checkers üzerinden hesap oluştururken sunduğu bilgilerin doğru ve güncel olmasını sağlamakla yükümlüdür.
+          </p>
+          <p class="mt-4">Hizmet sağlayıcı;</p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>sahte,</li>
+            <li>yanıltıcı,</li>
+            <li>taklit niteliğinde,</li>
+            <li>topluluk güvenliğini zedeleyen,</li>
+            <li>kötüye kullanım amacı taşıyan</li>
+          </ul>
+          <p class="mt-4">
+            hesapları askıya alma, sınırlama veya kapatma hakkını saklı tutar.
+          </p>
+          <p class="mt-4">
+            Kullanıcı profili, kullanıcının belirlediği görünürlük ayarlarına göre diğer kullanıcılar tarafından görüntülenebilir.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">6. Kullanıcı İçerikleri</h2>
+
+          <div class="mt-6 space-y-6">
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">6.1. İçerik Sorumluluğu</h3>
+              <p class="mt-3">
+                Kullanıcı; uygulamaya yüklediği fotoğraf, görsel, yorum, açıklama, kullanıcı adı, biyografi,
+                mesaj ve diğer her türlü içeriğin hukuka uygun, doğru ve paylaşmaya yetkili olduğu bir içerik olduğunu kabul eder.
+              </p>
+              <p class="mt-3">Kullanıcı, aşağıdaki içerikleri paylaşmamayı kabul eder:</p>
+              <ul class="mt-3 list-disc space-y-1 pl-6">
+                <li>başkasına ait hakları ihlal eden içerikler,</li>
+                <li>hakaret, tehdit, taciz, zorbalık veya nefret söylemi içeren içerikler,</li>
+                <li>müstehcen, istismar edici veya hukuka aykırı içerikler,</li>
+                <li>izinsiz kişisel veri içeren içerikler,</li>
+                <li>başka kişileri ifşa eden veya küçük düşüren içerikler,</li>
+                <li>spam, dolandırıcılık veya manipülasyon amacı taşıyan içerikler,</li>
+                <li>topluluk güvenliğini tehdit eden içerikler.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">6.2. İçeriğin Kaldırılması</h3>
+              <p class="mt-3">
+                Hizmet sağlayıcı, topluluk kurallarına, yürürlükteki hukuka veya platform güvenliğine aykırı gördüğü içerikleri
+                önceden bildirim yapmaksızın kaldırabilir, erişimini sınırlandırabilir veya görünürlüğünü azaltabilir.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">6.3. İçerik Lisansı</h3>
+              <p class="mt-3">
+                Kullanıcı, uygulamaya yüklediği içerikler bakımından mülkiyet hakkını korur. Ancak kullanıcı,
+                hizmetin sunulabilmesi amacıyla, yüklediği içeriklerin:
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-6">
+                <li>barındırılması,</li>
+                <li>görüntülenmesi,</li>
+                <li>çoğaltılması,</li>
+                <li>teknik olarak işlenmesi,</li>
+                <li>uygulama içinde sunulması,</li>
+                <li>hizmetin tanıtımı ve işleyişi kapsamında makul ölçüde kullanılmasına</li>
+              </ul>
+              <p class="mt-4">
+                ilişkin olarak hizmet sağlayıcıya, hizmetin ifasıyla sınırlı, devredilebilir alt lisans verme yetkisi içeren,
+                dünya çapında geçerli, bedelsiz ve münhasır olmayan bir kullanım izni verdiğini kabul eder.
+              </p>
+              <p class="mt-4">
+                Bu izin, kullanıcının içeriği silmesi veya hesabını kapatması halinde, teknik, güvenlik, yedekleme ve hukuki saklama
+                zorunlulukları saklı kalmak kaydıyla makul süre içinde sona erer.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">7. Puanlama, Yorumlar ve Topluluk Etkileşimi</h2>
+
+          <div class="mt-6 space-y-6">
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.1. Platformun Sosyal Niteliği</h3>
+              <p class="mt-3">
+                Outfit Checkers, kullanıcılar arası puanlama, yorumlama ve sosyal etkileşim temelli çalışan bir platformdur.
+                Kullanıcı, platformdaki yorumların, puanların ve geri bildirimlerin diğer kullanıcıların öznel değerlendirmelerine
+                dayanabileceğini kabul eder.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.2. Sonuç Garantisi Verilmemesi</h3>
+              <p class="mt-3">Platform üzerinde alınan:</p>
+              <ul class="mt-3 list-disc space-y-1 pl-6">
+                <li>puanlar,</li>
+                <li>yorumlar,</li>
+                <li>görünürlük seviyeleri,</li>
+                <li>beğeniler,</li>
+                <li>sosyal etkileşim sonuçları</li>
+              </ul>
+              <p class="mt-4">
+                objektif, profesyonel, bilimsel, tıbbi veya psikolojik değerlendirme sonucu olarak kabul edilmez.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.3. Profesyonel Hizmet Sunulmaması</h3>
+              <p class="mt-3">
+                Outfit Checkers bir psikolojik danışmanlık, terapi, klinik değerlendirme, tıbbi destek veya profesyonel stil danışmanlığı hizmeti sunmaz;
+                aksi açıkça belirtilmedikçe platform üzerindeki etkileşimler yalnızca kullanıcılar arası dijital sosyal etkileşim niteliğindedir.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.4. Duygusal ve Psikolojik Etki Riski</h3>
+              <p class="mt-3">
+                Kullanıcı, platformda yer alan yorumların, puanların, karşılaştırmaların ve sosyal etkileşimlerin zaman zaman moral bozucu,
+                rahatsız edici, kırıcı veya duygusal açıdan hassasiyet yaratabilecek nitelikte olabileceğini kabul eder.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.5. Moderasyonun Sınırları</h3>
+              <p class="mt-3">
+                Hizmet sağlayıcı, moderasyon, şikayet değerlendirme, engelleme, filtreleme ve topluluk kurallarını uygulama mekanizmaları sunabilir.
+                Ancak bu durum:
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-6">
+                <li>hiçbir uygunsuz içeriğin asla yayınlanmayacağı,</li>
+                <li>tüm olumsuz etkileşimlerin tamamen önleneceği,</li>
+                <li>her ihlalin anında tespit edileceği,</li>
+                <li>kullanıcı deneyiminin her zaman kusursuz olacağı</li>
+              </ul>
+              <p class="mt-4">anlamına gelmez.</p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.6. Sorumluluğun Sınırı</h3>
+              <p class="mt-3">
+                Yürürlükteki emredici hukuk kuralları saklı kalmak kaydıyla, kullanıcıların öznel yorumları, puanları,
+                kişisel değerlendirmeleri, karşılaştırmaları ve diğer kullanıcı davranışlarından kaynaklanabilecek dolaylı duygusal rahatsızlık,
+                moral bozukluğu, sosyal memnuniyetsizlik, özgüven etkilenmesi veya benzeri öznel sonuçlar bakımından Outfit Checkers
+                otomatik olarak sorumlu tutulmaz.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">7.7. Kullanıcının Kendi Yönetim Araçları</h3>
+              <p class="mt-3">
+                Kullanıcı, platformdaki olumsuz etkileşimleri azaltmak amacıyla sunulan:
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-6">
+                <li>engelleme,</li>
+                <li>şikayet etme,</li>
+                <li>görünürlük ayarları,</li>
+                <li>bildirim ayarları,</li>
+                <li>hesap gizliliği seçenekleri</li>
+              </ul>
+              <p class="mt-4">gibi araçları kullanabileceğini kabul eder.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">8. Yasaklı Davranışlar</h2>
+          <p class="mt-4">Kullanıcı aşağıdaki davranışlarda bulunmamayı kabul eder:</p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>başka kullanıcıları taciz etmek, tehdit etmek, aşağılamak veya hedef göstermek,</li>
+            <li>nefret söylemi, zorbalık veya ayrımcılık yapmak,</li>
+            <li>sahte hesaplar oluşturmak,</li>
+            <li>başka bir kişiyi taklit etmek,</li>
+            <li>izinsiz reklam, ticari yönlendirme veya spam yapmak,</li>
+            <li>bot, script, otomatik araç veya manipülatif yöntemlerle sistemi kötüye kullanmak,</li>
+            <li>uygulamanın güvenliğini aşmaya çalışmak,</li>
+            <li>veri kazıma, toplu veri çekme veya yetkisiz erişim girişiminde bulunmak,</li>
+            <li>başka kullanıcıların kişisel verilerini hukuka aykırı şekilde paylaşmak,</li>
+            <li>platformun işleyişini bozacak davranışlarda bulunmak,</li>
+            <li>yürürlükteki mevzuata aykırı faaliyetlerde bulunmak.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">9. Moderasyon, Yaptırımlar ve Hesap İşlemleri</h2>
+          <p class="mt-4">
+            Hizmet sağlayıcı, kullanıcıların işbu koşullara veya topluluk kurallarına aykırı davranması halinde aşağıdaki işlemleri
+            tek taraflı olarak uygulayabilir:
+          </p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>içerik kaldırma,</li>
+            <li>görünürlük sınırlama,</li>
+            <li>yorum veya etkileşim kısıtlaması,</li>
+            <li>geçici askıya alma,</li>
+            <li>kalıcı hesap kapatma,</li>
+            <li>belirli özellikleri kullanım dışı bırakma,</li>
+            <li>gerektiğinde hukuki süreç başlatma veya yetkili mercilere bildirimde bulunma.</li>
+          </ul>
+          <p class="mt-4">
+            Bu işlemler, ihlalin niteliğine ve ağırlığına göre önceden uyarı yapılmaksızın da uygulanabilir.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">10. Premium Üyelik ve Ücretli Özellikler</h2>
+
+          <div class="mt-6 space-y-6">
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">10.1. Premium Hizmetler</h3>
+              <p class="mt-3">
+                Outfit Checkers, belirli özellikleri ücretli veya abonelik esaslı olarak sunabilir.
+                Premium hizmetlerin kapsamı, avantajları ve süresi uygulama içinde ayrıca belirtilir.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">10.2. Ücretlendirme</h3>
+              <p class="mt-3">
+                Ücretli hizmetler, ilgili mağaza, ödeme altyapısı veya platform üzerinden tahsil edilebilir.
+                Fiyatlar zaman içinde değiştirilebilir.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">10.3. Yenileme ve İptal</h3>
+              <p class="mt-3">
+                Aboneliklerin yenilenmesi, iptali, iadesi ve faturalandırılması, ilgili uygulama mağazasının
+                veya ödeme sağlayıcının kurallarına tabi olabilir.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-[20px] font-black text-[#1f1b16]">10.4. Hizmet Değişiklikleri</h3>
+              <p class="mt-3">
+                Premium özelliklerin kapsamı zaman içinde değişebilir. Bu değişiklikler,
+                kullanıcının yasal haklarını bertaraf etmeyecek şekilde uygulanır.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">11. Fikri Mülkiyet Hakları</h2>
+          <p class="mt-4">Outfit Checkers uygulamasına ilişkin;</p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>tasarım,</li>
+            <li>yazılım,</li>
+            <li>logo,</li>
+            <li>marka,</li>
+            <li>arayüz,</li>
+            <li>sistem kurgusu,</li>
+            <li>veri tabanı yapısı,</li>
+            <li>metinler,</li>
+            <li>grafikler,</li>
+            <li>platform unsurları</li>
+          </ul>
+          <p class="mt-4">aksi belirtilmedikçe hizmet sağlayıcıya veya lisans verenlerine aittir.</p>
+
+          <p class="mt-4">
+            Kullanıcı, hizmet sağlayıcının önceden yazılı izni olmaksızın uygulamayı veya içeriğini:
+          </p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>kopyalayamaz,</li>
+            <li>çoğaltamaz,</li>
+            <li>dağıtamaz,</li>
+            <li>türev eser oluşturamaz,</li>
+            <li>ticari olarak kullanamaz.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">12. Üçüncü Taraf Hizmetler</h2>
+          <p class="mt-4">
+            Outfit Checkers, bazı özelliklerin sunulabilmesi amacıyla üçüncü taraf servis ve altyapılar kullanabilir.
+            Kullanıcı, uygulamanın çalışması için üçüncü taraf teknik servislerden yararlanılabileceğini kabul eder.
+          </p>
+          <p class="mt-4">
+            Bu üçüncü taraf hizmetler, kendi koşul ve politikalarına tabi olabilir. Hizmet sağlayıcı,
+            kendi kontrolü dışındaki üçüncü taraf sistemlerin kesintisiz veya hatasız çalışacağını garanti etmez.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">13. Gizlilik ve Kişisel Veriler</h2>
+          <p class="mt-4">
+            Kullanıcının kişisel verileri, ayrı olarak yayımlanan Gizlilik Politikası, KVKK Aydınlatma Metni
+            ve gerektiği ölçüde Açık Rıza Metni kapsamında işlenir.
+          </p>
+          <p class="mt-4">
+            Kullanıcı, bu metinleri incelemekle yükümlüdür. İşbu Şartlar ve Koşullar,
+            kişisel verilerin işlenmesine ilişkin özel düzenlemeleri ortadan kaldırmaz.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">14. Hizmetin Değiştirilmesi, Askıya Alınması ve Sonlandırılması</h2>
+          <p class="mt-4">Hizmet sağlayıcı;</p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>uygulamanın tamamını veya bir kısmını değiştirme,</li>
+            <li>belirli özellikleri kaldırma,</li>
+            <li>yeni özellik ekleme,</li>
+            <li>teknik bakım yapma,</li>
+            <li>hizmeti geçici veya kalıcı olarak askıya alma,</li>
+            <li>hizmeti sona erdirme</li>
+          </ul>
+          <p class="mt-4">hakkını saklı tutar.</p>
+          <p class="mt-4">
+            Bu tür durumlarda, şartlara göre kullanıcılara bildirim yapılabilir; ancak acil güvenlik,
+            teknik bakım veya hukuki zorunluluk halleri istisna oluşturabilir.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">15. Garanti Reddi</h2>
+          <p class="mt-4">
+            Uygulama, yürürlükteki emredici hükümler saklı kalmak kaydıyla, mevcut haliyle ve mevcut olduğu ölçüde sunulur.
+          </p>
+          <p class="mt-4">Hizmet sağlayıcı;</p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>uygulamanın kesintisiz çalışacağını,</li>
+            <li>tüm hataların tamamen giderileceğini,</li>
+            <li>her içeriğin doğru veya güvenilir olduğunu,</li>
+            <li>platformdaki her etkileşimin olumlu sonuç doğuracağını,</li>
+            <li>puan ve yorumların objektif veya profesyonel değerlendirme niteliğinde olacağını</li>
+          </ul>
+          <p class="mt-4">garanti etmez.</p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">16. Sorumluluğun Sınırlandırılması</h2>
+          <p class="mt-4">
+            Yürürlükteki emredici hukuk kuralları saklı kalmak kaydıyla, hizmet sağlayıcı;
+          </p>
+          <ul class="mt-4 list-disc space-y-1 pl-6">
+            <li>kullanıcıların kendi paylaşımlarından,</li>
+            <li>diğer kullanıcıların yorum, puan ve mesajlarından,</li>
+            <li>üçüncü taraf hizmet kesintilerinden,</li>
+            <li>cihaz, bağlantı veya platform uyumsuzluklarından,</li>
+            <li>dolaylı zararlar, itibar kaybı, veri kaybı veya öznel memnuniyetsizliklerden</li>
+          </ul>
+          <p class="mt-4">doğrudan sorumlu tutulamaz.</p>
+          <p class="mt-4">
+            Bu hüküm, hizmet sağlayıcının kasten veya ağır kusurla doğurduğu ve mevzuat gereği sınırlandırılamayan
+            sorumlulukları ortadan kaldırmaz.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">17. Tazminat</h2>
+          <p class="mt-4">
+            Kullanıcı, işbu Şartlar ve Koşullar’a, yürürlükteki mevzuata veya üçüncü kişilerin haklarına aykırı davranışı nedeniyle
+            hizmet sağlayıcının zarara uğraması halinde, bu zararları tazmin etmeyi kabul eder.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">18. Uygulanacak Hukuk ve Yetki</h2>
+          <p class="mt-4">
+            İşbu Şartlar ve Koşullar, Türkiye Cumhuriyeti hukuku kapsamında yorumlanır ve uygulanır.
+          </p>
+          <p class="mt-4">
+            Uyuşmazlık halinde, yürürlükteki mevzuat uyarınca yetkili mahkeme ve icra daireleri esas alınır.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">19. Bölünebilirlik</h2>
+          <p class="mt-4">
+            İşbu metindeki herhangi bir hükmün geçersiz, uygulanamaz veya hükümsüz sayılması halinde,
+            bu durum metnin diğer hükümlerinin geçerliliğini etkilemez.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">20. Değişiklik Hakkı</h2>
+          <p class="mt-4">
+            Hizmet sağlayıcı, işbu Şartlar ve Koşullar metnini zaman zaman güncelleyebilir.
+          </p>
+          <p class="mt-4">
+            Güncel metin uygulama içinde, web sitesinde veya uygun görülen diğer mecralarda yayımlanabilir.
+            Kullanıcının güncelleme sonrası uygulamayı kullanmaya devam etmesi, yeni koşulları kabul ettiği şeklinde yorumlanabilir.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-[26px] font-black tracking-[-0.03em] text-[#1f1b16]">21. İletişim</h2>
+          <p class="mt-4">
+            İşbu Şartlar ve Koşullar ile ilgili sorularınız için aşağıdaki iletişim bilgilerini kullanabilirsiniz:
+          </p>
+
+          <div class="mt-5 rounded-[24px] bg-[#fff8da] p-6">
+            <p><strong>Hizmet Sağlayıcı / Veri Sorumlusu:</strong> [Ad Soyad / Şirket Unvanı]</p>
+            <p><strong>E-posta:</strong> [İletişim E-postası]</p>
+            <p><strong>Adres:</strong> [Adres]</p>
+            <p><strong>Uygulama:</strong> Outfit Checkers</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
