@@ -1,88 +1,677 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Açık Rıza Metni - Outfit Checkers</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Açık Rıza Metni | Outfit Checkers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+            float: '0 24px 70px rgba(24, 20, 15, 0.12)',
+          },
+        },
+      },
+    };
+  </script>
+
   <style>
-    body { margin:0; font-family:Inter,system-ui,sans-serif; background:#f6f3ea; color:#1f1b16; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 80px; }
-    .card { background:white; border-radius:32px; padding:32px; box-shadow:0 18px 50px rgba(0,0,0,.05); }
-    h1 { font-size:42px; line-height:1; letter-spacing:-.04em; margin:0 0 12px; }
-    h2 { font-size:22px; margin-top:30px; }
-    p, li { font-size:16px; line-height:1.8; color:#3f382f; }
-    .meta { color:#6b6358; font-weight:600; }
-    ul { padding-left:20px; }
-    a { color:inherit; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f2ea;
+      color: #1f1b16;
+    }
+    .floating-nav.scrolled {
+      backdrop-filter: blur(16px);
+      background: rgba(250, 246, 236, 0.9);
+      box-shadow: 0 10px 35px rgba(24, 20, 15, 0.09);
+      border-color: rgba(31, 27, 22, 0.08);
+    }
+    .legal-content h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      color: #1f1b16;
+    }
+    .legal-content h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 850;
+      color: #1f1b16;
+    }
+    .legal-content h4 {
+      margin-top: 1.7rem;
+      margin-bottom: 0.65rem;
+      font-size: 1.08rem;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      font-weight: 850;
+      color: #1f1b16;
+    }
+    .legal-content p {
+      margin-top: 0.8rem;
+      color: #4f463b;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .legal-content ul {
+      margin-top: 0.8rem;
+      margin-left: 1.25rem;
+      list-style: disc;
+      color: #4f463b;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .legal-content li { padding-left: 0.25rem; }
+    .legal-content .divider {
+      height: 1px;
+      background: rgba(31, 27, 22, 0.10);
+      margin: 2rem 0;
+    }
+    .meta-card dt {
+      color: #7a6f62;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .meta-card dd {
+      margin-top: 0.35rem;
+      color: #1f1b16;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .consent-box {
+      margin-top: 1rem;
+      border: 1px solid rgba(31, 27, 22, 0.10);
+      background: #fbfaf5;
+      border-radius: 24px;
+      padding: 1rem;
+    }
+    .checkline {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-top: 0.7rem;
+      color: #3f372e;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+    .fake-check {
+      width: 1.2rem;
+      height: 1.2rem;
+      flex: 0 0 auto;
+      margin-top: 0.15rem;
+      border: 2px solid rgba(31, 27, 22, 0.35);
+      border-radius: 6px;
+      background: white;
+    }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>OUTFIT CHECKERS AÇIK RIZA METNİ</h1>
-      <p class="meta">Metin Türü: Kişisel Veri İşleme Açık Rıza Metni<br>Uygulama Adı: Outfit Checkers<br>Veri Sorumlusu: [Ad Soyad / Şirket Unvanı]<br>Yürürlük Tarihi: [Tarih]<br>Son Güncelleme Tarihi: [Tarih]</p>
 
-      <h2>1. Giriş</h2>
-      <p>İşbu Açık Rıza Metni, Outfit Checkers mobil uygulaması kapsamında, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca açık rıza gerektiren kişisel veri işleme faaliyetleri bakımından ilgili kişilerin bilgilendirilmesi ve özgür iradeleri doğrultusunda onaylarının alınması amacıyla hazırlanmıştır.</p>
-      <p>Tarafıma sunulan KVKK Aydınlatma Metni’ni okuduğumu, kişisel verilerimin işlenmesine ilişkin genel çerçeve hakkında bilgilendirildiğimi ve aşağıda açıkça belirtilen sınırlı konular bakımından özgür irademle açık rıza verebileceğimi kabul ederim.</p>
-      <p>İşbu metin, yalnızca açık rıza gerektiren veri işleme faaliyetleri bakımından geçerlidir. Açık rıza gerekmeyen ve ilgili mevzuatta yer alan diğer hukuki sebeplere dayalı veri işleme faaliyetleri ayrıca yürütülebilir.</p>
+<body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
+  <div class="mx-auto max-w-[1320px] px-4 pb-14 pt-4 md:px-8 lg:px-10">
 
-      <h2>2. Veri Sorumlusu Bilgileri</h2>
-      <p>[Ad Soyad / Şirket Unvanı]<br>Adres: [Adres]<br>E-posta: [İletişim E-postası]<br>Uygulama / Hizmet: Outfit Checkers</p>
+    <header
+      id="siteHeader"
+      class="floating-nav sticky top-4 z-50 mx-auto flex w-full items-center justify-between gap-4 rounded-[28px] border border-transparent px-4 py-3 transition-all duration-300 md:px-5"
+    >
+      <a href="index.html" class="text-[28px] font-black tracking-[-0.06em] text-[#29241d] md:text-[34px]">
+        Outfit Checkers
+      </a>
 
-      <h2>3. Açık Rızaya Konu Olabilecek Kişisel Veri Kategorileri</h2>
-      <ul>
-        <li>Profil ve Kullanıcı Tercihleri: kullanıcı adı, profil fotoğrafı, biyografi, stil tercihleri, ilgi alanları, hesap görünürlük ve etkileşim tercihleri.</li>
-        <li>Kullanıcı İçerikleri: outfit fotoğrafları, açıklamalar, gönderi başlıkları, etiketler, içerik kategorileri ve alenileştirilmiş görsel/metinsel paylaşımlar.</li>
-        <li>Etkileşim Verileri: verilen puanlar, yapılan yorumlar, beğeni/favori işlemleri, takip/takip isteği verileri, etkileşim kayıtları.</li>
-        <li>Davranışsal ve Kullanım Verileri: uygulama içinde geçirilen süre, tıklama ve gezinme alışkanlıkları, kullanılan ekranlar, etkileşim kalıpları.</li>
-        <li>Bildirim ve İletişim Verileri: push bildirim tercihleri, bildirim token’ı, kampanya/duyuru tercihleri, pazarlama iletişimi onay bilgisi.</li>
-        <li>Teknik Veriler: cihaz modeli, işletim sistemi, uygulama sürümü, teknik sinyaller, hata ve çökme kayıtları, performans verileri.</li>
-        <li>Yurt Dışı Teknik Servis Kullanımı Nedeniyle İşlenebilecek Veriler: bulut altyapısı, bildirim altyapısı, analitik altyapı, kimlik doğrulama ve teknik hizmet altyapıları kapsamındaki kullanıcı verileri.</li>
-      </ul>
+      <nav class="hidden items-center gap-1 rounded-[22px] border border-[#1f1b16]/8 bg-[#f8f4ea] px-2 py-2 lg:flex">
+        <a href="index.html#product" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Ürün</a>
+        <a href="index.html#how-it-works" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Nasıl çalışır</a>
+        <a href="index.html#community" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Topluluk</a>
+        <a href="index.html#trust" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Güven</a>
+      </nav>
 
-      <h2>4. Açık Rızaya Dayalı İşleme Amaçları</h2>
-      <p>Açık rıza vermem halinde kişisel verilerim aşağıdaki amaçlarla işlenebilecektir:</p>
-      <ul>
-        <li>Kişiselleştirilmiş içerik ve öneri sunulması.</li>
-        <li>Ürün geliştirme ve deneyim iyileştirme.</li>
-        <li>Pazarlama, ticari elektronik ileti ve duyuru süreçleri.</li>
-        <li>Bildirim tabanlı etkileşim süreçleri.</li>
-        <li>Yurt dışında bulunan hizmet sağlayıcıların kullanılması nedeniyle teknik süreçlerin yürütülmesi.</li>
-      </ul>
+      <a
+        href="index.html"
+        class="rounded-[18px] bg-[#1f1b16] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_12px_30px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]"
+      >
+        Ana sayfa
+      </a>
+    </header>
 
-      <h2>5. Verilerin Aktarılabileceği Kişi ve Kuruluşlar</h2>
-      <p>Açık rızamın bulunması halinde kişisel verilerim; bulut hizmet sağlayıcıları, kimlik doğrulama altyapısı sağlayıcıları, bildirim ve mesaj iletim altyapıları, analiz ve performans ölçüm araçları, teknik hata ve çökme izleme hizmetleri, veri barındırma ve güvenlik tedarikçileri, gerektiğinde hukuk/denetim/uyum danışmanları ve açıkça yetkili kamu kurum ve kuruluşlarına aktarılabilecektir.</p>
+    <main class="pt-7">
+      <section class="overflow-hidden rounded-[44px] bg-[#ffdb5b] px-6 py-10 shadow-float md:px-10 md:py-14 lg:px-14">
+        <div class="max-w-5xl">
+          <div class="inline-flex rounded-full border border-[#1f1b16]/10 bg-[#fff7d2] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#75663f]">
+            Kişisel Veri İşleme Açık Rıza Metni
+          </div>
 
-      <h2>6. Saklama Süresi</h2>
-      <p>Açık rıza kapsamında işlenen kişisel veriler, ilgili işleme amacının gerektirdiği süre boyunca ve varsa ilgili mevzuatta öngörülen saklama süreleri kadar muhafaza edilir. Gerek kalmaması halinde mevzuata uygun biçimde silinir, yok edilir veya anonim hale getirilir.</p>
+          <h1 class="mt-6 text-[42px] font-black leading-[0.95] tracking-[-0.065em] text-[#1f1b16] md:text-[72px] lg:text-[92px]">
+            Outfit Checkers Açık Rıza Metni
+          </h1>
 
-      <h2>7. Açık Rızanın Geri Alınması</h2>
-      <p>Açık rıza, ilgili kişi tarafından her zaman geri alınabilir. Açık rızanın geri alınması, geri alma işleminden önce açık rızaya dayanılarak yapılan veri işleme faaliyetlerinin hukuka uygunluğunu etkilemez. Açık rızamı uygulama ayarları üzerinden, e-posta yoluyla veya veri sorumlusuna başvuru kanalları aracılığıyla geri alabileceğimi biliyorum.</p>
+          <p class="mt-7 max-w-4xl text-[19px] leading-8 text-[#43392f] md:text-[22px]">
+            Bu metin, açık rıza gerektirebilecek kişisel veri işleme faaliyetleri bakımından kullanıcıların bilgilendirilmesi ve onaylarının alınması amacıyla hazırlanmıştır.
+          </p>
+        </div>
+      </section>
 
-      <h2>8. İlgili Kişi Hakları</h2>
-      <p>6698 sayılı Kanun’un 11 inci maddesi kapsamında; veri işlenip işlenmediğini öğrenme, bilgi talep etme, işleme amacını öğrenme, aktarılan üçüncü kişileri bilme, düzeltme isteme, silme veya yok etme talebinde bulunma, üçüncü kişilere bildirilmesini isteme, otomatik analiz sonuçlarına itiraz etme ve zarara uğranması halinde tazminat talep etme haklarına sahibim.</p>
+      <section class="mt-7 grid gap-7 lg:grid-cols-[330px_1fr]">
+        <aside class="lg:sticky lg:top-28 lg:self-start">
+          <div class="rounded-[34px] border border-[#1f1b16]/8 bg-[#fbfaf5] p-6 shadow-soft">
+            <h2 class="text-[24px] font-black tracking-[-0.04em]">Metin Bilgileri</h2>
 
-      <h2>9. Outfit Checkers’a Özgü Topluluk, Puanlama ve Etkileşim Yapısına İlişkin Açıklamalar</h2>
-      <p>Outfit Checkers’ın kullanıcılar arası değerlendirme, puanlama, yorumlama, keşfetme ve topluluk etkileşimi esasına dayanan bir sosyal platform olduğunu bildiğimi kabul ederim.</p>
-      <ul>
-        <li>Puanlar, yorumlar ve kullanıcı geri bildirimleri büyük ölçüde diğer kullanıcıların öznel değerlendirmelerine dayanabilir.</li>
-        <li>Alınan puan ve yorumların objektif, mutlak doğru, profesyonel uzman görüşü, psikolojik danışmanlık, tıbbi değerlendirme veya sosyal kabul garantisi niteliğinde olmadığını biliyorum.</li>
-        <li>Outfit Checkers’ın bir psikolojik danışmanlık, terapi, ruh sağlığı değerlendirmesi, klinik destek veya tıbbi destek hizmeti sunmadığını kabul ederim.</li>
-        <li>Kullanıcıların yaptığı yorumlar, puanlamalar ve etkileşimler zaman zaman moral bozucu, rahatsız edici veya duygusal açıdan hassasiyet yaratabilecek nitelikte olabilir.</li>
-        <li>Kullanıcı kaynaklı içeriklerin tümünün anlık olarak filtrelenebileceği veya tüm olası olumsuz etkileşimlerin bütünüyle engellenebileceği garanti edilmez.</li>
-        <li>Yürürlükteki emredici mevzuat hükümleri saklı kalmak kaydıyla, öznel kullanıcı davranışlarından doğabilecek dolaylı duygusal rahatsızlık, moral bozukluğu, sosyal memnuniyetsizlik veya özgüven etkilenmesi gibi sonuçlar bakımından Outfit Checkers’ın otomatik olarak sorumlu tutulamayacağını anladığımı kabul ederim.</li>
-        <li>İşbu metindeki hiçbir hüküm, veri sorumlusunun kanundan doğan yükümlülüklerini veya emredici hukuk kurallarını ortadan kaldıracak şekilde yorumlanamaz.</li>
-        <li>Gerekirse uygulama kullanımını durdurabileceğimi, görünürlük ve bildirim ayarlarımı değiştirebileceğimi, içerikleri şikayet/engelleme araçlarıyla yönetebileceğimi ve gerekiyorsa profesyonel destek alabileceğimi biliyorum.</li>
-      </ul>
+            <dl class="meta-card mt-6 space-y-5">
+              <div>
+                <dt>Metin Türü</dt>
+                <dd>Kişisel Veri İşleme Açık Rıza Metni</dd>
+              </div>
+              <div>
+                <dt>Uygulama Adı</dt>
+                <dd>Outfit Checkers</dd>
+              </div>
+              <div>
+                <dt>Veri Sorumlusu</dt>
+                <dd>Cenk Turan</dd>
+              </div>
+              <div>
+                <dt>E-posta</dt>
+                <dd class="break-words">cenk.turan@outfitcheckers.com</dd>
+              </div>
+              <div>
+                <dt>Adres</dt>
+                <dd>İstanbul / Üsküdar / Çengelköy</dd>
+              </div>
+              <div>
+                <dt>Yürürlük Tarihi</dt>
+                <dd>05.05.2026</dd>
+              </div>
+              <div>
+                <dt>Son Güncelleme</dt>
+                <dd>05.05.2026</dd>
+              </div>
+            </dl>
 
-      <h2>10. Açık Rızanın Geçerliliğine İlişkin Beyan</h2>
-      <p>Tarafıma sunulan bu metni okuyup anladığımı, kişisel verilerimin hangi veri kategorileri bakımından, hangi amaçlarla, hangi alıcılara aktarılabileceği ve hangi sonuçları doğurabileceği konusunda bilgilendirildiğimi, açık rızamı baskı altında kalmadan ve özgür irademle verdiğimi beyan ederim.</p>
-      <p><a href="index.html">Ana sayfaya dön</a></p>
-    </div>
+            <div class="mt-7 rounded-[24px] bg-[#ffdb5b] p-5">
+              <p class="text-[15px] font-bold leading-7 text-[#3f3527]">
+                Açık rıza her zaman geri alınabilir. Geri alma, önceki işleme faaliyetlerinin hukuka uygunluğunu etkilemez.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+        <article class="legal-content rounded-[38px] border border-[#1f1b16]/8 bg-white px-6 py-8 shadow-soft md:px-10 md:py-12 lg:px-14">
+          <h2>1. Giriş</h2>
+          <p>İşbu Açık Rıza Metni, Outfit Checkers mobil uygulaması kapsamında, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca açık rıza gerektirebilecek kişisel veri işleme faaliyetleri bakımından ilgili kişilerin bilgilendirilmesi ve özgür iradeleri doğrultusunda onaylarının alınması amacıyla hazırlanmıştır.</p>
+          <p>Tarafıma sunulan Outfit Checkers Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni’ni okuduğumu, kişisel verilerimin işlenmesine ilişkin genel çerçeve hakkında bilgilendirildiğimi ve yalnızca aşağıda açıkça belirtilen konular bakımından açık rıza verebileceğimi kabul ederim.</p>
+          <p>İşbu metin, yalnızca açık rıza gerektiren veya açık rıza alınması tercih edilen veri işleme faaliyetleri bakımından geçerlidir. Açık rıza gerekmeyen ve Kanun’da yer alan diğer hukuki sebeplere dayalı veri işleme faaliyetleri, Açık Rıza Metni’nden bağımsız olarak yürütülebilir.</p>
+          <p>Açık rızanın verilmemesi, yalnızca açık rızaya bağlı özelliklerin veya iletişimlerin kullanılamamasına neden olabilir. Uygulamanın temel hizmetleri, açık rızaya bağlı olmayan veri işleme şartları kapsamında sunulmaya devam edebilir.</p>
+
+          <div class="divider"></div>
+
+          <h2>2. Veri Sorumlusu Bilgileri</h2>
+          <p>Açık rıza gerektiren kişisel veri işleme faaliyetleri bakımından veri sorumlusu:</p>
+          <p><strong>Veri Sorumlusu:</strong> Cenk Turan<br />
+          <strong>E-posta:</strong> cenk.turan@outfitcheckers.com<br />
+          <strong>Adres:</strong> İstanbul / Üsküdar / Çengelköy<br />
+          <strong>Uygulama / Hizmet:</strong> Outfit Checkers</p>
+
+          <div class="divider"></div>
+
+          <h2>3. Açık Rızanın Niteliği</h2>
+          <p>Açık rıza;</p>
+          <ul>
+            <li>belirli bir konuya ilişkin,</li>
+            <li>bilgilendirmeye dayanan,</li>
+            <li>özgür iradeyle açıklanan</li>
+          </ul>
+          <p>rıza anlamına gelir.</p>
+          <p>Bu nedenle Outfit Checkers kapsamında açık rıza gereken işlemler, mümkün olduğu ölçüde ayrı başlıklar halinde sunulur. Kullanıcı, aşağıdaki açık rıza seçeneklerinden birine, birkaçına veya tamamına onay verebilir. Kullanıcı, açık rıza vermediği konular bakımından açık rızaya dayalı veri işleme faaliyetlerine tabi tutulmaz.</p>
+          <p>Açık rıza her zaman geri alınabilir. Açık rızanın geri alınması, geri alma tarihinden önce açık rızaya dayanılarak gerçekleştirilen veri işleme faaliyetlerinin hukuka uygunluğunu etkilemez.</p>
+
+          <h2>4. Açık Rızaya Konu Olabilecek Kişisel Veri Kategorileri</h2>
+          <p>Açık rıza verilmesi halinde, ilgili rıza başlığının kapsamına göre aşağıdaki kişisel veri kategorileri işlenebilir:</p>
+
+          <h3>4.1. Profil ve Kullanıcı Tercihi Verileri</h3>
+          <ul>
+            <li>kullanıcı adı,</li>
+            <li>profil fotoğrafı,</li>
+            <li>biyografi,</li>
+            <li>stil tercihleri,</li>
+            <li>ilgi alanları,</li>
+            <li>hesap görünürlük tercihleri,</li>
+            <li>etkileşim tercihleri,</li>
+            <li>tema ve uygulama kullanım tercihleri.</li>
+          </ul>
+
+          <h3>4.2. Kullanıcı İçerikleri</h3>
+          <ul>
+            <li>outfit fotoğrafları,</li>
+            <li>profil fotoğrafı,</li>
+            <li>fotoğraf açıklamaları,</li>
+            <li>gönderi başlıkları,</li>
+            <li>etiketler,</li>
+            <li>içerik kategorileri,</li>
+            <li>kullanıcının platformda kendi iradesiyle paylaştığı görsel ve metinsel içerikler.</li>
+          </ul>
+
+          <h3>4.3. Etkileşim Verileri</h3>
+          <ul>
+            <li>verilen puanlar,</li>
+            <li>alınan puanlar,</li>
+            <li>yapılan yorumlar,</li>
+            <li>beğeni, kaydetme veya favori işlemleri,</li>
+            <li>takip ve takip isteği verileri,</li>
+            <li>kullanıcıların içeriklerle kurduğu etkileşimler,</li>
+            <li>topluluk geri bildirimleri.</li>
+          </ul>
+
+          <h3>4.4. Kullanım ve Davranış Verileri</h3>
+          <ul>
+            <li>uygulama içinde geçirilen süre,</li>
+            <li>ekran ve özellik kullanım bilgileri,</li>
+            <li>tıklama ve gezinme alışkanlıkları,</li>
+            <li>hangi içeriklerle daha fazla etkileşim kurulduğu,</li>
+            <li>öneri ve sıralama sistemlerinin geliştirilmesine esas kullanım kalıpları,</li>
+            <li>performans ve deneyim iyileştirme amacıyla oluşturulan analiz verileri.</li>
+          </ul>
+
+          <h3>4.5. Bildirim ve İletişim Verileri</h3>
+          <ul>
+            <li>push bildirim tercihleri,</li>
+            <li>bildirim token bilgisi,</li>
+            <li>kampanya ve duyuru tercihleri,</li>
+            <li>ürün güncelleme bildirim tercihleri,</li>
+            <li>pazarlama iletişimi onay bilgisi,</li>
+            <li>kullanıcıya özel bildirim tercihleri.</li>
+          </ul>
+
+          <h3>4.6. Teknik Veriler</h3>
+          <ul>
+            <li>cihaz modeli,</li>
+            <li>işletim sistemi,</li>
+            <li>uygulama sürümü,</li>
+            <li>dil ve bölge ayarları,</li>
+            <li>uygulama kullanımı sırasında oluşan teknik sinyaller,</li>
+            <li>hata ve çökme kayıtları,</li>
+            <li>performans iyileştirmeye yönelik analiz verileri.</li>
+          </ul>
+
+          <h3>4.7. Yurt Dışı Teknik Servis Kullanımı Kapsamında İşlenebilecek Veriler</h3>
+          <ul>
+            <li>kimlik doğrulama süreçlerinde kullanılan veriler,</li>
+            <li>bulut depolama ve veri barındırma süreçlerinde kullanılan veriler,</li>
+            <li>bildirim altyapısı kapsamında kullanılan veriler,</li>
+            <li>abonelik ve ödeme doğrulama süreçlerinde kullanılan veriler,</li>
+            <li>reklam, analiz, hata takibi ve güvenlik altyapıları kapsamında işlenen teknik veriler.</li>
+          </ul>
+
+          <h2>5. Açık Rıza Seçenekleri</h2>
+          <p>Aşağıdaki başlıklar ayrı açık rıza seçenekleri olarak sunulabilir. Kullanıcı her bir başlık için ayrı ayrı onay verebilir veya onayını geri alabilir.</p>
+
+          <div class="divider"></div>
+
+          <h3>5.1. Kişiselleştirilmiş İçerik ve Öneri Sistemleri İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; profil bilgilerim, stil tercihlerim, uygulama içi davranışlarım, takip ilişkilerim, puanlama alışkanlıklarım, yorum ve etkileşim bilgilerim, görüntüleme ve kullanım verilerim analiz edilerek bana daha uygun içerikler, kullanıcılar, stiller, outfit paylaşımları, keşfet sonuçları ve öneriler sunulabileceğini kabul ederim.</p>
+          <p>Bu kapsamda kişisel verilerim aşağıdaki amaçlarla işlenebilir:</p>
+          <ul>
+            <li>bana daha uygun outfit içerikleri gösterilmesi,</li>
+            <li>ilgi alanıma yakın kullanıcıların ve içeriklerin önerilmesi,</li>
+            <li>keşfet ve sıralama deneyiminin kişiselleştirilmesi,</li>
+            <li>platform deneyimimin ilgi alanlarıma göre şekillendirilmesi,</li>
+            <li>uygulama içi görünürlük ve öneri sistemlerinin iyileştirilmesi.</li>
+          </ul>
+          <p>Bu açık rıza verilmediğinde, uygulama genel veya sınırlı kişiselleştirme içeren standart içerik gösterimiyle çalışabilir. Ancak kişiye özel öneriler ve gelişmiş keşfet deneyimi sınırlanabilir.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Kişiselleştirilmiş içerik ve öneri sistemleri amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.2. Premium Analizler, Stil İçgörüleri ve Gelişmiş Raporlama İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; gönderilerim, profil bilgilerim, stil tercihlerim, aldığım ve verdiğim puanlar, yorumlar, takip ilişkilerim, profil ve gönderi görüntülenme verilerim, etkileşim bilgilerim ve benzeri kullanım verilerim analiz edilerek premium özellikler kapsamında bana veya uygulama içinde yetkilendirilen alanlara istatistik, analiz ve içgörü sunulabileceğini kabul ederim.</p>
+          <p>Bu kapsamda kişisel verilerim aşağıdaki amaçlarla işlenebilir:</p>
+          <ul>
+            <li>stil içgörüleri oluşturulması,</li>
+            <li>gelişmiş look analitiği sunulması,</li>
+            <li>haftalık veya dönemsel stil raporları hazırlanması,</li>
+            <li>profil ve gönderi performansının analiz edilmesi,</li>
+            <li>sık görüntüleyen kullanıcılar veya ziyaretçi istatistiklerinin gösterilmesi,</li>
+            <li>link ve etkileşim analitiği sunulması,</li>
+            <li>premium özelliklerin çalıştırılması ve kişiselleştirilmesi.</li>
+          </ul>
+          <p>Bu analizlerin bilimsel ölçüm, psikolojik değerlendirme, profesyonel moda danışmanlığı, kişilik analizi, sosyal başarı göstergesi veya kesin gerçek niteliğinde olmadığını; platform içi etkileşimlerden türetilen teknik ve istatistiksel çıktılar olduğunu kabul ederim.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Premium analizler, stil içgörüleri ve gelişmiş raporlama amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.3. Profil ve Gönderi Ziyaretçi Özellikleri İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; profilimi veya gönderilerimi görüntüleyen kullanıcılarla ilgili istatistiklerin oluşturulması, benim profil veya gönderi ziyaretlerime ilişkin bazı bilgilerin ilgili özellikler kapsamında işlenmesi ve premium özellikler dahilinde ziyaretçi, sık bakanlar, görüntülenme ve benzeri istatistiklerin sunulması amacıyla kişisel verilerimin işlenebileceğini kabul ederim.</p>
+          <p>Bu kapsamda:</p>
+          <ul>
+            <li>profil görüntüleme bilgileri,</li>
+            <li>gönderi veya look görüntüleme bilgileri,</li>
+            <li>ziyaret zamanı,</li>
+            <li>toplam görüntüleme sayıları,</li>
+            <li>dönemsel görüntülenme istatistikleri,</li>
+            <li>sık görüntüleyen kullanıcı bilgileri,</li>
+            <li>link görüntüleme ve link analitiği bilgileri</li>
+          </ul>
+          <p>işlenebilir.</p>
+          <p>Anonim mod kullanılsa dahi, anonim modun tüm teknik kayıtları kaldırmadığını; güvenlik, kötüye kullanım önleme, yasal yükümlülükler ve sistem bütünlüğü için bazı kayıtların tutulmaya devam edebileceğini kabul ederim.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Profil ve gönderi ziyaretçi özelliklerinin çalışması amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.4. Pazarlama, Kampanya ve Ticari Elektronik İleti İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; kampanyalar, premium üyelik teklifleri, uygulama güncellemeleri, yeni özellik duyuruları, promosyonlar, bilgilendirici içerikler ve ürün odaklı iletişim faaliyetleri kapsamında tarafımla elektronik iletişim araçları üzerinden iletişime geçilebileceğini kabul ederim.</p>
+          <p>Bu kapsamda:</p>
+          <ul>
+            <li>e-posta adresim,</li>
+            <li>bildirim token bilgilerim,</li>
+            <li>iletişim tercihlerim,</li>
+            <li>pazarlama onay durumum,</li>
+            <li>kampanya ve duyuru etkileşim bilgilerim</li>
+          </ul>
+          <p>işlenebilir.</p>
+          <p>Bu açık rıza verilmediğinde, pazarlama ve tanıtım iletişimleri gönderilmeyebilir. Ancak hesap güvenliği, hizmetin çalışması, işlem bildirimleri ve kullanıcı talebiyle bağlantılı zorunlu bilgilendirmeler gönderilmeye devam edebilir.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Pazarlama, kampanya, premium teklifleri ve ticari elektronik ileti gönderilmesi amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.5. Bildirim Tabanlı Kişiselleştirilmiş Etkileşimler İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; uygulama içi etkileşimlerim, takip ilişkilerim, gönderilerim, puanlama ve yorum hareketlerim, mesajlaşma durumum ve kullanım tercihlerim dikkate alınarak bana kişiselleştirilmiş bildirimler gönderilebileceğini kabul ederim.</p>
+          <p>Bu kapsamda aşağıdaki bildirimler gönderilebilir:</p>
+          <ul>
+            <li>yeni yorum,</li>
+            <li>yeni puan,</li>
+            <li>yeni takipçi,</li>
+            <li>takip isteği,</li>
+            <li>mesaj bildirimi,</li>
+            <li>içerik görünürlüğü ve etkileşim güncellemeleri,</li>
+            <li>kullanıcının ilgisine göre önerilen içerik bildirimleri,</li>
+            <li>premium analiz veya içgörü bildirimleri,</li>
+            <li>uygulama içi hatırlatmalar.</li>
+          </ul>
+          <p>Bu açık rıza verilmediğinde, kişiselleştirilmiş bildirimler sınırlanabilir. Ancak hesap güvenliği, işlem bildirimleri ve hizmetin çalışması için gerekli bazı bildirimler gönderilmeye devam edebilir.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Bildirim tabanlı kişiselleştirilmiş etkileşimler amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.6. Ürün Geliştirme, Deneyim İyileştirme ve Davranışsal Analiz İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; uygulama kullanım verilerim, ekran ve özellik kullanım bilgilerim, tıklama ve gezinme alışkanlıklarım, etkileşim kalıplarım, hata ve performans verilerim analiz edilerek uygulamanın geliştirilmesi ve kullanıcı deneyiminin iyileştirilmesi amacıyla işlenebileceğini kabul ederim.</p>
+          <p>Bu kapsamda kişisel verilerim aşağıdaki amaçlarla işlenebilir:</p>
+          <ul>
+            <li>uygulama tasarımının geliştirilmesi,</li>
+            <li>kullanıcı akışlarının iyileştirilmesi,</li>
+            <li>etkileşim yapısının güçlendirilmesi,</li>
+            <li>teknik sorunların azaltılması,</li>
+            <li>performansın artırılması,</li>
+            <li>yeni özelliklerin test edilmesi,</li>
+            <li>öneri ve sıralama sistemlerinin optimize edilmesi,</li>
+            <li>ürün kararlarının kullanıcı davranışlarına göre değerlendirilmesi.</li>
+          </ul>
+          <p>Bu açık rıza verilmediğinde, uygulamanın temel kullanımı devam edebilir; ancak kişiselleştirilmiş ürün geliştirme ve davranışsal analiz süreçleri sınırlanabilir.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Ürün geliştirme, deneyim iyileştirme ve davranışsal analiz amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.7. Yurt Dışında Bulunan Hizmet Sağlayıcıların Kullanılması İçin Açık Rıza</h3>
+          <p>Açık rıza vermem halinde; Outfit Checkers’ın hizmet sunumu için kullandığı teknik altyapıların niteliği gereği kişisel verilerimin yurt dışında bulunan veya yurt dışı bağlantılı hizmet sağlayıcılar nezdinde işlenebileceğini ve bu kapsamda yurt dışına aktarılabileceğini kabul ederim.</p>
+          <p>Bu kapsamda verilerim aşağıdaki amaçlarla yurt dışında işlenebilir veya yurt dışına aktarılabilir:</p>
+          <ul>
+            <li>kimlik doğrulama,</li>
+            <li>bulut veri depolama,</li>
+            <li>fotoğraf ve içerik saklama,</li>
+            <li>bildirim gönderimi,</li>
+            <li>abonelik ve ödeme doğrulama,</li>
+            <li>reklam gösterimi,</li>
+            <li>hata ve çökme takibi,</li>
+            <li>performans analizi,</li>
+            <li>güvenlik ve kötüye kullanım önleme,</li>
+            <li>teknik altyapının işletilmesi.</li>
+          </ul>
+          <p>Bu aktarım, yalnızca hizmetin sunulması ve yukarıda belirtilen amaçlarla sınırlı olarak gerçekleştirilir. Açık rızamı geri almam halinde, yurt dışı aktarımına bağlı bazı özelliklerin çalışmayabileceğini veya sınırlanabileceğini biliyorum.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Kişisel verilerimin yurt dışında bulunan hizmet sağlayıcılar nezdinde işlenmesine ve gerekli olduğu ölçüde yurt dışına aktarılmasına açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h3>5.8. Özel Nitelikli Veri Riski Taşıyabilecek Görsel ve İçeriklerin İşlenmesi İçin Açık Rıza</h3>
+          <p>Outfit Checkers’ın temel amacı özel nitelikli kişisel veri işlemek değildir. Ancak kullanıcı tarafından yüklenen fotoğraflar, mesajlar, açıklamalar veya diğer içerikler; somut içeriğine göre kişinin görünüşü, beden bilgisi, sağlık belirtisi, dini sembol, hassas yaşam tarzı bilgisi veya benzeri özel nitelikli veri riski taşıyabilecek unsurlar içerebilir.</p>
+          <p>Açık rıza vermem halinde, kendi irademle yüklediğim veya paylaştığım görsel ve metinsel içeriklerde özel nitelikli veri riski taşıyabilecek unsurlar bulunması halinde, bu içeriklerin uygulamanın temel işlevleri, içerik paylaşımı, profil görüntüleme, sosyal etkileşim, moderasyon, şikâyet değerlendirme, güvenlik ve ilgili özelliklerin çalışması amacıyla işlenebileceğini kabul ederim.</p>
+          <p>Üçüncü kişilere ait özel nitelikli veri içerebilecek içerikleri izinsiz paylaşmamam gerektiğini bildiğimi kabul ederim.</p>
+          <div class="consent-box">
+            <p><strong>Açık rıza beyanı:</strong> Kendi irademle paylaştığım görsel ve metinsel içeriklerde özel nitelikli veri riski taşıyabilecek unsurların bulunması halinde, bu içeriklerin yukarıda belirtilen amaçlarla işlenmesine açık rıza veriyorum.</p>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul ediyorum</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kabul etmiyorum</span></div>
+          </div>
+
+          <h2>6. Verilerin Aktarılabileceği Kişi ve Kuruluşlar</h2>
+          <p>Açık rızamın bulunması halinde kişisel verilerim, ilgili açık rıza başlığında belirtilen amaçlarla sınırlı olmak üzere aşağıdaki alıcı gruplarına aktarılabilir:</p>
+          <ul>
+            <li>bulut hizmet sağlayıcıları,</li>
+            <li>kimlik doğrulama altyapısı sağlayıcıları,</li>
+            <li>veri depolama ve barındırma hizmeti sağlayıcıları,</li>
+            <li>bildirim ve mesaj iletim altyapıları,</li>
+            <li>analiz ve performans ölçüm araçları,</li>
+            <li>teknik hata ve çökme izleme hizmetleri,</li>
+            <li>reklam ve kampanya hizmeti sağlayıcıları,</li>
+            <li>abonelik ve ödeme doğrulama hizmeti sağlayıcıları,</li>
+            <li>güvenlik ve kötüye kullanım önleme hizmeti sağlayıcıları,</li>
+            <li>gerektiğinde hukuk, denetim ve uyum danışmanları,</li>
+            <li>açıkça yetkili kamu kurum ve kuruluşları.</li>
+          </ul>
+          <p>Bu aktarım yalnızca belirtilen amaçlarla sınırlı olarak ve gerekli olduğu ölçüde gerçekleştirilir.</p>
+
+          <h2>7. Saklama Süresi</h2>
+          <p>Açık rıza kapsamında işlenen kişisel veriler, ilgili işleme amacının gerektirdiği süre boyunca ve varsa ilgili mevzuatta öngörülen saklama süreleri kadar muhafaza edilir.</p>
+          <p>İşleme amacının ortadan kalkması, açık rızanın geri alınması veya ilgili mevzuat kapsamında saklama gereğinin sona ermesi halinde kişisel veriler mevzuata uygun biçimde silinir, yok edilir veya anonim hale getirilir.</p>
+          <p>Ancak açık rızanın geri alınması; güvenlik, yasal yükümlülük, uyuşmazlık çözümü, kötüye kullanım önleme, abonelik/ödeme uyuşmazlıkları veya hukuki hakların korunması için saklanması gereken kayıtların derhal silineceği anlamına gelmez. Bu tür veriler, ilgili hukuki sebep kapsamında sınırlı süreyle saklanabilir.</p>
+
+          <h2>8. Açık Rızanın Geri Alınması</h2>
+          <p>Açık rıza, ilgili kişi tarafından her zaman geri alınabilir.</p>
+          <p>Açık rızamı:</p>
+          <ul>
+            <li>uygulama ayarları üzerinden,</li>
+            <li>e-posta yoluyla,</li>
+            <li>veri sorumlusuna başvuru kanalları aracılığıyla</li>
+          </ul>
+          <p>geri alabileceğimi biliyorum.</p>
+          <p>Açık rızanın geri alınması, geri alma işleminden önce açık rızaya dayanılarak yapılan veri işleme faaliyetlerinin hukuka uygunluğunu etkilemez.</p>
+          <p>Açık rızanın geri alınması halinde, ilgili açık rızaya bağlı özellikler devre dışı kalabilir, sınırlanabilir veya kişiselleştirilmiş biçimde sunulmayabilir.</p>
+
+          <h2>9. İlgili Kişi Hakları</h2>
+          <p>6698 sayılı Kanun’un 11 inci maddesi kapsamında veri sorumlusuna başvurarak;</p>
+          <ul>
+            <li>kişisel verilerimin işlenip işlenmediğini öğrenme,</li>
+            <li>kişisel verilerim işlenmişse buna ilişkin bilgi talep etme,</li>
+            <li>kişisel verilerimin işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+            <li>kişisel verilerimin yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
+            <li>kişisel verilerimin eksik veya yanlış işlenmiş olması halinde düzeltilmesini isteme,</li>
+            <li>şartları oluşmuşsa kişisel verilerimin silinmesini veya yok edilmesini isteme,</li>
+            <li>düzeltme ve silme işlemlerinin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+            <li>işlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhime bir sonucun ortaya çıkmasına itiraz etme,</li>
+            <li>kişisel verilerimin kanuna aykırı işlenmesi nedeniyle zarara uğramam halinde zararın giderilmesini talep etme</li>
+          </ul>
+          <p>haklarına sahip olduğumu biliyorum.</p>
+          <p>Başvurularımı aşağıdaki iletişim bilgileri üzerinden iletebilirim:</p>
+          <p><strong>Veri Sorumlusu:</strong> Cenk Turan<br />
+          <strong>E-posta:</strong> cenk.turan@outfitcheckers.com<br />
+          <strong>Adres:</strong> İstanbul / Üsküdar / Çengelköy</p>
+
+          <h2>10. Outfit Checkers’a Özgü Topluluk, Puanlama ve Etkileşim Yapısına İlişkin Bilgilendirme</h2>
+          <p>Outfit Checkers’ın kullanıcılar arası değerlendirme, puanlama, yorumlama, keşfetme ve topluluk etkileşimi esasına dayanan bir sosyal platform olduğunu biliyorum.</p>
+          <p>Bu kapsamda aşağıdaki hususları anladığımı kabul ederim.</p>
+
+          <h3>10.1. Kullanıcı Etkileşimlerinin Doğası</h3>
+          <p>Outfit Checkers üzerinde yer alan puanlar, yorumlar, kullanıcı geri bildirimleri, beğeniler ve benzeri etkileşimler büyük ölçüde diğer kullanıcıların kişisel değerlendirmelerine, öznel bakış açılarına ve platform içi sosyal dinamiklere dayanabilir.</p>
+
+          <h3>10.2. Sonuç Garantisi Bulunmaması</h3>
+          <p>Platformda alınan puan, yorum, görünürlük, etkileşim veya kullanıcı geri bildirimlerinin:</p>
+          <ul>
+            <li>objektif,</li>
+            <li>mutlak doğru,</li>
+            <li>profesyonel uzman görüşü niteliğinde,</li>
+            <li>psikolojik danışmanlık sonucu,</li>
+            <li>tıbbi değerlendirme,</li>
+            <li>sosyal kabul veya beğeni garantisi sağlayan bir çıktı</li>
+          </ul>
+          <p>olmadığını biliyorum.</p>
+
+          <h3>10.3. Psikolojik Destek Hizmeti Sunulmaması</h3>
+          <p>Outfit Checkers’ın bir psikolojik danışmanlık, terapi, ruh sağlığı değerlendirmesi, klinik destek veya tıbbi destek hizmeti sunmadığını; platformun temel işlevinin kullanıcılar arası sosyal etkileşim, içerik paylaşımı, puanlama ve yorumlaşma mekanizması olduğunu kabul ederim.</p>
+
+          <h3>10.4. Algısal ve Duygusal Etkiler</h3>
+          <p>Kullanıcıların yaptığı yorumlar, puanlamalar, karşılaştırmalar veya etkileşim sonuçları zaman zaman moral bozucu, rahatsız edici, kırıcı, yanlış anlaşılmaya açık veya duygusal açıdan hassasiyet yaratabilecek nitelikte olabilir.</p>
+          <p>Bu nedenle platformdaki etkileşimlerin, kullanıcıların bireysel algılarına, beklentilerine, sosyal çevresine ve duygusal durumuna göre farklı sonuçlar doğurabileceğini biliyorum.</p>
+
+          <h3>10.5. Kullanıcı İçeriklerinden Kaynaklanan Riskler</h3>
+          <p>Diğer kullanıcıların yaptığı yorumlar, puanlamalar, mesajlar veya paylaşımlar kullanıcı kaynaklı içerik niteliği taşıyabilir.</p>
+          <p>Platform, topluluk güvenliğini sağlamak için makul ölçüde moderasyon, şikâyet değerlendirme ve kural uygulama süreçleri yürütebilir. Ancak tüm kullanıcı davranışlarının her an tamamen önlenebileceği, her içeriğin anlık olarak filtrelenebileceği veya tüm olası olumsuz etkileşimlerin bütünüyle engellenebileceği garanti edilmez.</p>
+
+          <h3>10.6. Moderasyonun Sınırları</h3>
+          <p>Outfit Checkers, kullanıcı deneyimini daha güvenli hale getirmek amacıyla içerik denetimi, topluluk kuralı uygulaması, raporlama mekanizmaları, engelleme ve şikâyet araçları sağlayabilir.</p>
+          <p>Ancak bu araçların varlığı, platform üzerinde hiçbir zaman uygunsuz, kırıcı, öznel veya kullanıcıyı rahatsız edici içerik ortaya çıkmayacağı anlamına gelmez.</p>
+
+          <h3>10.7. Sorumluluğun Sınırına İlişkin Bilgilendirme</h3>
+          <p>Yürürlükteki emredici mevzuat hükümleri saklı kalmak kaydıyla; kullanıcıların öznel puanlamaları, kişisel yorumları, topluluk etkileşimleri, sosyal karşılaştırma etkileri, görünürlük değişimleri veya benzeri kullanıcı davranışlarından doğabilecek dolaylı duygusal rahatsızlık, moral bozukluğu, sosyal memnuniyetsizlik, özgüven etkilenmesi, algısal rahatsızlık veya benzeri öznel sonuçlar bakımından Outfit Checkers’ın otomatik olarak sorumlu tutulamayacağını anladığımı kabul ederim.</p>
+
+          <h3>10.8. Emredici Hukuk Kurallarının Saklılığı</h3>
+          <p>İşbu metinde yer alan hiçbir hüküm, yürürlükteki emredici hukuk kuralları kapsamında veri sorumlusunun kanundan doğan yükümlülüklerini, tüketici hukukundan doğabilecek sorumluluklarını, kişilik haklarına ilişkin sorumluluklarını veya açıkça üstlenmiş olduğu hukuki yükümlülükleri ortadan kaldıracak şekilde yorumlanamaz.</p>
+
+          <h3>10.9. Destek Alma ve Kullanım Kontrolü</h3>
+          <p>Platform kullanımı sırasında duygusal, psikolojik veya sosyal açıdan ciddi olumsuzluk yaşadığımı düşünmem halinde;</p>
+          <ul>
+            <li>uygulama kullanımını durdurabileceğimi,</li>
+            <li>hesap görünürlüğü ve bildirim ayarlarımı değiştirebileceğimi,</li>
+            <li>ilgili içerikleri şikâyet veya engelleme araçlarıyla yönetebileceğimi,</li>
+            <li>gerekirse profesyonel destek alabileceğimi</li>
+          </ul>
+          <p>biliyorum.</p>
+
+          <h2>11. Açık Rızanın Geçerliliğine İlişkin Genel Beyan</h2>
+          <p>Tarafıma sunulan Outfit Checkers Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni’ni ve işbu Açık Rıza Metni’ni okuduğumu; kişisel verilerimin hangi veri kategorileri bakımından, hangi amaçlarla, hangi alıcılara aktarılabileceği ve açık rızamın hangi sonuçları doğurabileceği konusunda bilgilendirildiğimi kabul ederim.</p>
+          <p>Açık rızamı, yukarıda ayrı ayrı belirtilen rıza başlıkları bakımından, baskı altında kalmadan, özgür irademle ve dilediğim seçenekleri seçerek verebileceğimi biliyorum.</p>
+          <p>Açık rıza vermediğim konularda, açık rızaya dayalı veri işleme faaliyetlerinin yürütülmeyeceğini; ancak Kanun’da yer alan diğer hukuki sebeplere dayalı zorunlu veya gerekli veri işleme faaliyetlerinin devam edebileceğini kabul ederim.</p>
+
+          <h2>12. Kullanıcı Onay Alanı</h2>
+          <p>Aşağıdaki açık rıza seçeneklerinden dilediklerimi seçerek onay verebilirim.</p>
+
+          <div class="consent-box">
+            <div class="checkline"><span class="fake-check"></span><span>Kişiselleştirilmiş içerik ve öneri sistemleri amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Premium analizler, stil içgörüleri ve gelişmiş raporlama amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Profil ve gönderi ziyaretçi özellikleri amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Pazarlama, kampanya, premium teklifleri ve ticari elektronik ileti amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Bildirim tabanlı kişiselleştirilmiş etkileşimler amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Ürün geliştirme, deneyim iyileştirme ve davranışsal analiz amacıyla kişisel verilerimin işlenmesine açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Yurt dışında bulunan hizmet sağlayıcılar nezdinde kişisel verilerimin işlenmesine ve gerekli olduğu ölçüde yurt dışına aktarılmasına açık rıza veriyorum.</span></div>
+            <div class="checkline"><span class="fake-check"></span><span>Kendi irademle paylaştığım görsel ve metinsel içeriklerde özel nitelikli veri riski taşıyabilecek unsurların bulunması halinde, bu içeriklerin belirtilen amaçlarla işlenmesine açık rıza veriyorum.</span></div>
+          </div>
+
+          <h2>13. Yürürlük</h2>
+          <p>İşbu Açık Rıza Metni, 05.05.2026 tarihinde yürürlüğe girer.</p>
+          <p>Veri sorumlusu, uygulamadaki teknik, operasyonel veya hukuki gelişmelere göre işbu metinde değişiklik yapabilir. Açık rıza gerektiren veri işleme faaliyetlerinde esaslı değişiklik olması halinde kullanıcıdan yeniden açık rıza alınabilir.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="mt-7 rounded-[38px] bg-[#f5f2ea] px-4 py-12 md:px-8 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <div class="text-[56px] font-black leading-none tracking-[-0.07em] text-[#1f1b16] md:text-[88px]">
+            Outfit Checkers
+          </div>
+          <p class="mt-5 max-w-xl text-[18px] leading-8 text-[#665d52]">
+            Kombin paylaş, puan al, geri bildirimlerle tarzını geliştir.
+          </p>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-3">
+          <div>
+            <div class="text-[18px] font-semibold text-[#7a6f62]">Ürün</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="index.html#product" class="block">Genel bakış</a>
+              <a href="index.html#how-it-works" class="block">Nasıl çalışır</a>
+              <a href="index.html#community" class="block">Topluluk</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-[18px] font-semibold text-[#7a6f62]">Şirket</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="index.html#trust" class="block">Güven</a>
+              <a href="contact.html" class="block">Bize ulaş</a>
+              <a href="support.html" class="block">Destek</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-[18px] font-semibold text-[#7a6f62]">Yasal</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="kvkk.html" class="block">KVKK Aydınlatma</a>
+              <a href="acik-riza.html" class="block">Açık Rıza</a>
+              <a href="gizlilik.html" class="block">Gizlilik Politikası</a>
+              <a href="t.html" class="block">Şartlar ve Koşullar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
+        <div>© 2026 Outfit Checkers</div>
+        <div class="flex items-center gap-4">
+          <span>Instagram</span>
+          <span>X</span>
+          <span>TikTok</span>
+          <span>LinkedIn</span>
+        </div>
+      </div>
+    </footer>
   </div>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+
+    function handleScroll() {
+      if (window.scrollY > 18) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  </script>
 </body>
 </html>
