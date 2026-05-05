@@ -58,6 +58,27 @@
       box-shadow: 0 24px 60px rgba(20, 16, 10, 0.18);
     }
 
+    /* YENİ HAREKETLİ KARTLAR */
+    .motion-card {
+      transform-style: preserve-3d;
+      transition: transform 420ms cubic-bezier(.2,.8,.2,1), box-shadow 420ms ease;
+      will-change: transform;
+      transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0);
+    }
+
+    .motion-card:hover {
+      box-shadow: 0 24px 60px rgba(20, 16, 10, 0.12);
+    }
+
+    .motion-card img {
+      transition: transform 420ms cubic-bezier(.2,.8,.2,1);
+      will-change: transform;
+    }
+
+    .motion-card:hover img {
+      transform: scale(1.025);
+    }
+
     .floating-nav.scrolled {
       backdrop-filter: blur(16px);
       background: rgba(250, 246, 236, 0.88);
@@ -72,6 +93,15 @@
     @keyframes marquee {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .motion-card,
+      .hero-card,
+      .motion-card img {
+        transition: none !important;
+        animation: none !important;
+      }
     }
   </style>
 </head>
@@ -201,11 +231,10 @@
                   <div class="hero-card absolute left-[33%] top-[0%] z-30 h-[530px] w-[290px] overflow-hidden rounded-[40px] bg-white p-2 shadow-[0_30px_80px_rgba(17,14,9,0.20)]">
                     <div class="relative h-full w-full overflow-hidden rounded-[34px]">
                       <img
-                       <img
-  src="assets/12.png"
-  alt="Outfit card 2"
-  class="h-full w-full object-cover"
-/>
+                        src="assets/12.png"
+                        alt="Outfit card 2"
+                        class="h-full w-full object-cover"
+                      />
 
                       <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-5">
                         <div class="flex items-end justify-between gap-4">
@@ -285,13 +314,13 @@
             </p>
 
             <div class="mt-9 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-[26px] bg-[#ffdb5b] p-6">
+              <div class="motion-card rounded-[26px] bg-[#ffdb5b] p-6" data-rotate="5" data-lift="8">
                 <div class="why-works-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it works</div>
                 <div class="why-works-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Score instead of likes</div>
                 <p class="why-works-desc mt-3 text-[16px] leading-7 text-[#473f33]">This is the main value proposition. The landing page should put it at the center.</p>
               </div>
 
-              <div class="rounded-[26px] bg-[#fff0a8] p-6">
+              <div class="motion-card rounded-[26px] bg-[#fff0a8] p-6" data-rotate="5" data-lift="8">
                 <div class="why-premium-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it feels premium</div>
                 <div class="why-premium-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Cleaner card language</div>
                 <p class="why-premium-desc mt-3 text-[16px] leading-7 text-[#473f33]">To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.</p>
@@ -300,7 +329,7 @@
           </div>
 
           <div class="grid gap-4 md:grid-cols-2">
-            <div class="rounded-[30px] bg-white p-5 shadow-soft">
+            <div class="motion-card rounded-[30px] bg-white p-5 shadow-soft" data-rotate="5" data-lift="8">
               <div class="rounded-[24px] bg-[#f4efe4] p-5">
                 <div class="flex items-center justify-between">
                   <div>
@@ -312,15 +341,15 @@
 
                 <div class="mt-5 h-[220px] overflow-hidden rounded-[22px]">
                   <img
-  src="assets/streetwear-blue.png"
-  alt="Outfit card 2"
-  class="h-full w-full object-cover"
-/>
+                    src="assets/streetwear-blue.png"
+                    alt="Outfit card 2"
+                    class="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
 
-            <div class="rounded-[30px] bg-white p-5 shadow-soft">
+            <div class="motion-card rounded-[30px] bg-white p-5 shadow-soft" data-rotate="5" data-lift="8">
               <div class="rounded-[24px] bg-[#f4efe4] p-5">
                 <div class="comment-quality-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Comment quality</div>
                 <div class="comment-quality-title mt-2 text-[24px] font-black tracking-[-0.04em]">Structured feedback</div>
@@ -337,7 +366,7 @@
 
       <!-- HOW IT WORKS -->
       <section id="how-it-works" class="grid gap-6 lg:grid-cols-3">
-        <article class="rounded-[34px] bg-[#ffdb5b] p-6 shadow-soft">
+        <article class="motion-card rounded-[34px] bg-[#ffdb5b] p-6 shadow-soft" data-rotate="6" data-lift="10">
           <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
               src="assets/hero-minimal.png"
@@ -350,7 +379,7 @@
           <p class="how1-desc mt-4 text-[19px] leading-8 text-[#41392f]">Share your fit and start collecting real scores and comments.</p>
         </article>
 
-        <article class="rounded-[34px] bg-[#ffe98a] p-6 shadow-soft">
+        <article class="motion-card rounded-[34px] bg-[#ffe98a] p-6 shadow-soft" data-rotate="6" data-lift="10">
           <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
               src="assets/streetwear-blue.png"
@@ -363,7 +392,7 @@
           <p class="how2-desc mt-4 text-[19px] leading-8 text-[#41392f]">Quickly understand your average, comments, and overall performance.</p>
         </article>
 
-        <article class="rounded-[34px] bg-[#fff1b8] p-6 shadow-soft">
+        <article class="motion-card rounded-[34px] bg-[#fff1b8] p-6 shadow-soft" data-rotate="6" data-lift="10">
           <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
               src="assets/urbane-originals.png"
@@ -380,7 +409,7 @@
       <!-- COMMUNITY -->
       <section id="community" class="rounded-[42px] border border-[#1f1b16]/6 bg-white p-6 shadow-soft md:p-8 lg:p-10">
         <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-          <div class="overflow-hidden rounded-[34px] bg-[#efe7db]">
+          <div class="motion-card overflow-hidden rounded-[34px] bg-[#efe7db]" data-rotate="4" data-lift="8">
             <img
               src="assets/12.png"
               alt="Community image"
@@ -406,12 +435,12 @@
             </p>
 
             <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-[24px] bg-[#f8f4ea] p-5">
+              <div class="motion-card rounded-[24px] bg-[#f8f4ea] p-5" data-rotate="5" data-lift="8">
                 <div class="community-card1-title text-[28px] font-black tracking-[-0.04em]">Trend by rating</div>
                 <p class="community-card1-desc mt-2 text-[16px] leading-7 text-[#554d42]">Trending should highlight actually rated posts, not unrated filler content.</p>
               </div>
 
-              <div class="rounded-[24px] bg-[#f8f4ea] p-5">
+              <div class="motion-card rounded-[24px] bg-[#f8f4ea] p-5" data-rotate="5" data-lift="8">
                 <div class="community-card2-title text-[28px] font-black tracking-[-0.04em]">Discovery by vibe</div>
                 <p class="community-card2-desc mt-2 text-[16px] leading-7 text-[#554d42]">Users can discover new profiles by visual taste and style direction.</p>
               </div>
@@ -422,7 +451,7 @@
 
       <!-- TRUST -->
       <section id="trust" class="grid gap-8 lg:grid-cols-[0.94fr_1.06fr]">
-        <div class="rounded-[40px] bg-[#faf7f0] p-8 shadow-soft md:p-10">
+        <div class="motion-card rounded-[40px] bg-[#faf7f0] p-8 shadow-soft md:p-10" data-rotate="4" data-lift="8">
           <div class="text-[48px] font-black leading-none text-[#1f1b16]">“</div>
           <h3 class="trust-quote-title mt-2 max-w-[640px] text-[52px] font-black leading-[0.95] tracking-[-0.06em] text-[#1f1b16] md:text-[76px]">
             A stronger product feeling comes from trust, clarity, and consistency.
@@ -432,7 +461,7 @@
           </p>
         </div>
 
-        <div class="rounded-[40px] bg-[#fff8dd] p-6 shadow-soft md:p-8">
+        <div class="motion-card rounded-[40px] bg-[#fff8dd] p-6 shadow-soft md:p-8" data-rotate="4" data-lift="8">
           <div class="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
             <div class="overflow-hidden rounded-[30px] bg-[#e8dfd1]">
               <img
@@ -460,7 +489,7 @@
       </section>
 
       <!-- DOWNLOAD CTA -->
-      <section class="rounded-[42px] bg-[#ffdb5b] px-8 py-10 shadow-float md:px-12 md:py-14">
+      <section class="motion-card rounded-[42px] bg-[#ffdb5b] px-8 py-10 shadow-float md:px-12 md:py-14" data-rotate="3" data-lift="6">
         <div class="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
             <div class="app-access-badge inline-flex rounded-full border border-white/40 bg-white/25 px-4 py-2 text-[12px] font-black uppercase tracking-[0.24em] text-[#4b412f]">
@@ -499,7 +528,6 @@
             <div class="absolute left-[32%] top-[4%] z-20 h-[340px] w-[205px] overflow-hidden rounded-[40px] border-[10px] border-[#1f1b16] bg-white shadow-[0_30px_60px_rgba(0,0,0,0.16)]">
               <img
                 src="assets/streetwear-blue.png"
-
                 alt="Phone 2"
                 class="h-full w-full object-cover"
               />
@@ -1085,6 +1113,35 @@
       }
     }
 
+    function initMotionCards() {
+      const cards = document.querySelectorAll('.motion-card');
+
+      cards.forEach((card) => {
+        const maxRotate = parseFloat(card.dataset.rotate || '5');
+        const lift = parseFloat(card.dataset.lift || '8');
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateY = ((x - centerX) / centerX) * maxRotate;
+          const rotateX = -((y - centerY) / centerY) * maxRotate;
+
+          card.style.transform =
+            `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-${lift}px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform =
+            'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)';
+        });
+      });
+    }
+
     if (langToggle && langMenu) {
       langToggle.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -1111,6 +1168,7 @@
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+    initMotionCards();
   </script>
 </body>
 </html>
