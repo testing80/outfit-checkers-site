@@ -1,78 +1,851 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KVKK Aydınlatma Metni - Outfit Checkers</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>KVKK Aydınlatma Metni | Outfit Checkers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+            float: '0 24px 70px rgba(24, 20, 15, 0.12)',
+          },
+        },
+      },
+    };
+  </script>
+
   <style>
-    body { margin:0; font-family:Inter,system-ui,sans-serif; background:#f6f3ea; color:#1f1b16; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 80px; }
-    .card { background:white; border-radius:32px; padding:32px; box-shadow:0 18px 50px rgba(0,0,0,.05); }
-    h1 { font-size:42px; line-height:1; letter-spacing:-.04em; margin:0 0 12px; }
-    h2 { font-size:22px; margin-top:30px; }
-    p, li { font-size:16px; line-height:1.8; color:#3f382f; }
-    .meta { color:#6b6358; font-weight:600; }
-    ul { padding-left:20px; }
-    a { color:inherit; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f2ea;
+      color: #1f1b16;
+    }
+    .floating-nav.scrolled {
+      backdrop-filter: blur(16px);
+      background: rgba(250, 246, 236, 0.9);
+      box-shadow: 0 10px 35px rgba(24, 20, 15, 0.09);
+      border-color: rgba(31, 27, 22, 0.08);
+    }
+    .legal-content h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      color: #1f1b16;
+    }
+    .legal-content h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 850;
+      color: #1f1b16;
+    }
+    .legal-content p {
+      margin-top: 0.8rem;
+      color: #4f463b;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .legal-content ul {
+      margin-top: 0.8rem;
+      margin-left: 1.25rem;
+      list-style: disc;
+      color: #4f463b;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .legal-content li { padding-left: 0.25rem; }
+    .legal-content .divider {
+      height: 1px;
+      background: rgba(31, 27, 22, 0.10);
+      margin: 2rem 0;
+    }
+    .meta-card dt {
+      color: #7a6f62;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .meta-card dd {
+      margin-top: 0.35rem;
+      color: #1f1b16;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>OUTFIT CHECKERS KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN AYDINLATMA METNİ</h1>
-      <p class="meta">Metin Türü: KVKK Aydınlatma Metni<br>Hazırlayan Veri Sorumlusu: [Ad Soyad / Şirket Unvanı]<br>Uygulama Adı: Outfit Checkers<br>Yürürlük Tarihi: [Tarih]<br>Son Güncelleme Tarihi: [Tarih]</p>
 
-      <h2>BİRİNCİ BÖLÜM - Amaç, Kapsam ve Tanımlar</h2>
-      <p><strong>MADDE 1 -</strong> İşbu Aydınlatma Metni’nin amacı, Outfit Checkers mobil uygulaması kapsamında işlenen kişisel verilere ilişkin olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca ilgili kişilerin bilgilendirilmesi ve veri sorumlusu tarafından yürütülen veri işleme faaliyetleri hakkında açıklama yapılmasıdır.</p>
-      <p>Bu metin ile kullanıcıların kişisel verilerinin hangi amaçlarla işlendiği, hangi hukuki sebeplere dayanıldığı, kimlere ve hangi amaçlarla aktarılabileceği, kişisel veri toplamanın yöntemi ve ilgili kişinin hakları açıklanmaktadır.</p>
-      <p>İşbu aydınlatma, kişisel verilerin ilgili kişiden elde edilmesi sırasında yerine getirilir ve açık rıza süreçlerinden bağımsız olarak uygulanır.</p>
-      <p><strong>MADDE 2 -</strong> İşbu metin, Outfit Checkers mobil uygulamasını kullanan tüm gerçek kişileri kapsar. Uygulama üzerinden hesap oluşturan, profil düzenleyen, içerik paylaşan, puan veren, yorum yapan, takip işlemi gerçekleştiren, mesaj gönderen, bildirim alan, premium üyelik kullanan veya uygulamayı herhangi bir şekilde kullanan kullanıcılar bakımından uygulanır.</p>
-      <p><strong>MADDE 3 -</strong> İşbu metinde geçen; Uygulama, Veri Sorumlusu, İlgili Kişi, Kişisel Veri, Özel Nitelikli Kişisel Veri, İşleme, Kullanıcı, Kurum ve Kanun tanımları, 6698 sayılı Kanun ve ilgili mevzuattaki anlamlarıyla kullanılır.</p>
+<body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
+  <div class="mx-auto max-w-[1320px] px-4 pb-14 pt-4 md:px-8 lg:px-10">
 
-      <h2>İKİNCİ BÖLÜM - İşlenen Kişisel Veriler</h2>
-      <p><strong>MADDE 4 -</strong> Outfit Checkers kapsamında aşağıdaki kişisel veriler işlenebilmektedir:</p>
-      <ul>
-        <li>Kimlik ve Hesap Bilgileri: E-posta adresi, kullanıcı adı, kullanıcı kimliği.</li>
-        <li>Profil Bilgileri: Profil fotoğrafı, biyografi, stil tercihleri, hesap görünürlük ayarları.</li>
-        <li>Kullanıcı İçerikleri: Outfit fotoğrafları, açıklamalar, içerik başlıkları, etiketler ve sınıflandırmalar.</li>
-        <li>Etkileşim Verileri: Puanlama verileri, yorum içerikleri, beğeni/favori bilgileri, takip ve takip isteği bilgileri, engelleme ve şikâyet kayıtları.</li>
-        <li>İletişim ve Mesaj Verileri: Uygulama içi mesaj içerikleri, alıcı ve gönderici bilgileri, mesaj zamanları.</li>
-        <li>Teknik ve İşlem Güvenliği Verileri: Cihaz modeli, işletim sistemi, uygulama sürümü, IP adresine bağlı teknik kayıtlar, loglar, hata/çökme kayıtları.</li>
-        <li>Bildirim Verileri: Push bildirim token bilgisi, bildirim tercihleri ve kullanıcı ayarları.</li>
-        <li>Abonelik ve Premium Bilgileri: Premium üyelik durumu, paket tipi, başlangıç ve bitiş tarihleri, erişim yetki durumu.</li>
-      </ul>
-      <p>Kullanıcı tarafından yüklenen bazı fotoğraf ve içerikler, içeriğin niteliğine göre özel nitelikli kişisel veri değerlendirmesine konu olabilecek unsurlar içerebilir. Bu tür veriler bakımından veri sorumlusu, somut olayın niteliğine göre Kanun’a uygun ek tedbirler alır ve gerektiğinde ayrıca açık rıza süreci işletir.</p>
+    <header
+      id="siteHeader"
+      class="floating-nav sticky top-4 z-50 mx-auto flex w-full items-center justify-between gap-4 rounded-[28px] border border-transparent px-4 py-3 transition-all duration-300 md:px-5"
+    >
+      <a href="index.html" class="text-[28px] font-black tracking-[-0.06em] text-[#29241d] md:text-[34px]">
+        Outfit Checkers
+      </a>
 
-      <h2>ÜÇÜNCÜ BÖLÜM - İşleme Amaçları</h2>
-      <p><strong>MADDE 5 -</strong> Kişisel veriler; kullanıcı hesabının oluşturulması ve yönetilmesi, güvenli girişin sağlanması, profil ve kişiselleştirme süreçlerinin yürütülmesi, fotoğraf paylaşımı, puanlama ve yorum özelliklerinin sunulması, sosyal etkileşim ve topluluk özelliklerinin işletilmesi, mesajlaşma, bildirim süreçleri, güvenlik ve sahteciliğin önlenmesi, teknik hata tespiti ve performans iyileştirmesi, premium üyelik süreçleri, şikâyet/destek başvuruları ile yasal yükümlülüklerin yerine getirilmesi amaçlarıyla işlenebilir.</p>
+      <nav class="hidden items-center gap-1 rounded-[22px] border border-[#1f1b16]/8 bg-[#f8f4ea] px-2 py-2 lg:flex">
+        <a href="index.html#product" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Ürün</a>
+        <a href="index.html#how-it-works" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Nasıl çalışır</a>
+        <a href="index.html#community" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Topluluk</a>
+        <a href="index.html#trust" class="rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Güven</a>
+      </nav>
 
-      <h2>DÖRDÜNCÜ BÖLÜM - Hukuki Sebepler</h2>
-      <p><strong>MADDE 6 -</strong> Kişisel veriler, Kanun’un 5 inci maddesinde belirtilen kişisel veri işleme şartları çerçevesinde işlenmektedir. Buna göre veri işleme; açık rıza, sözleşmenin kurulması veya ifası, hukuki yükümlülüklerin yerine getirilmesi, bir hakkın tesisi/kullanılması/korunması, meşru menfaat ve ilgili kişinin alenileştirdiği veriler bakımından uygunluk hallerine dayanabilir.</p>
-      <p>Özel nitelikli kişisel veriler bakımından Kanun’un 6 ncı maddesinde öngörülen şartlar esas alınır. Açık rıza gerektiren veri işleme faaliyetleri bakımından ilgili kişiden ayrıca açık rıza alınır; açık rıza, aydınlatma metni ile birleştirilmez ve ayrı bir süreç olarak yürütülür.</p>
+      <a
+        href="index.html"
+        class="rounded-[18px] bg-[#1f1b16] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_12px_30px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]"
+      >
+        Ana sayfa
+      </a>
+    </header>
 
-      <h2>BEŞİNCİ BÖLÜM - Toplama Yöntemi</h2>
-      <p><strong>MADDE 7 -</strong> Kişisel veriler; kullanıcı kayıt ve giriş ekranları, profil oluşturma ve düzenleme alanları, fotoğraf yükleme ve paylaşım ekranları, yorum/puan/etkileşim alanları, mesajlaşma ekranları, bildirim tercih ekranları ile teknik sistemler, log kayıtları, güvenlik altyapıları ve analiz araçları aracılığıyla elektronik ortamda elde edilmektedir.</p>
+    <main class="pt-7">
+      <section class="overflow-hidden rounded-[44px] bg-[#ffdb5b] px-6 py-10 shadow-float md:px-10 md:py-14 lg:px-14">
+        <div class="max-w-5xl">
+          <div class="inline-flex rounded-full border border-[#1f1b16]/10 bg-[#fff7d2] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#75663f]">
+            KVKK Aydınlatma Metni
+          </div>
 
-      <h2>ALTINCI BÖLÜM - Aktarım</h2>
-      <p><strong>MADDE 8 -</strong> Kişisel veriler, Kanun’un 8 inci maddesine uygun olarak; bulut altyapı, veri depolama, kimlik doğrulama, bildirim, teknik destek, analiz ve güvenlik hizmeti sunan tedarikçiler ile iş ortaklarına, kullanıcının görünürlük ve etkileşim tercihleri doğrultusunda diğer kullanıcılara, hukuken yetkili kamu kurum ve kuruluşlarına ve abonelik/ödeme süreçlerinde ilgili platform ve hizmet sağlayıcılara aktarılabilir.</p>
-      <p><strong>MADDE 9 -</strong> Teknik servislerin bir kısmının yurt dışında bulunması hâlinde kişisel veriler, Kanun’un 9 uncu maddesi kapsamında ve yürürlükteki mevzuata uygun şekilde yurt dışına aktarılabilir. Açık rıza gerektiren hâllerde ilgili kişiden ayrıca açık rıza alınır.</p>
+          <h1 class="mt-6 text-[42px] font-black leading-[0.95] tracking-[-0.065em] text-[#1f1b16] md:text-[72px] lg:text-[92px]">
+            Outfit Checkers Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni
+          </h1>
 
-      <h2>YEDİNCİ ve SEKİZİNCİ BÖLÜM - Saklama, İmha ve Güvenlik</h2>
-      <p><strong>MADDE 10 -</strong> Kişisel veriler, işlendikleri amaç için gerekli olan süre kadar ve ilgili mevzuatta öngörülen saklama süreleri boyunca muhafaza edilir; gerek kalmadığında silinir, yok edilir veya anonim hâle getirilir.</p>
-      <p><strong>MADDE 11 -</strong> Veri sorumlusu, kişisel verilerin hukuka aykırı işlenmesini ve erişilmesini önlemek ve muhafazasını sağlamak amacıyla uygun teknik ve idari tedbirleri alır veya almaya çalışır.</p>
+          <p class="mt-7 max-w-4xl text-[19px] leading-8 text-[#43392f] md:text-[22px]">
+            Bu metin, Outfit Checkers mobil uygulaması kapsamında işlenen kişisel verilere ilişkin olarak kullanıcıları bilgilendirmek amacıyla hazırlanmıştır.
+          </p>
+        </div>
+      </section>
 
-      <h2>DOKUZUNCU BÖLÜM - İlgili Kişinin Hakları</h2>
-      <p><strong>MADDE 12 -</strong> İlgili kişiler; veri işlenip işlenmediğini öğrenme, bilgi talep etme, işleme amacını öğrenme, aktarım yapılan üçüncü kişileri bilme, düzeltme isteme, silme veya yok etme talebinde bulunma, otomatik analizlere itiraz etme ve zarara uğranması hâlinde giderim talep etme haklarına sahiptir.</p>
+      <section class="mt-7 grid gap-7 lg:grid-cols-[330px_1fr]">
+        <aside class="lg:sticky lg:top-28 lg:self-start">
+          <div class="rounded-[34px] border border-[#1f1b16]/8 bg-[#fbfaf5] p-6 shadow-soft">
+            <h2 class="text-[24px] font-black tracking-[-0.04em]">Metin Bilgileri</h2>
 
-      <h2>ONUNCU ve ON BİRİNCİ BÖLÜM - Başvuru ve Yürürlük</h2>
-      <p><strong>MADDE 13 -</strong> İlgili kişi, taleplerini veri sorumlusuna yazılı olarak veya mevzuatta öngörülen diğer yöntemlerle iletebilir. Başvurular en kısa sürede ve en geç otuz gün içinde sonuçlandırılır.</p>
-      <p><strong>MADDE 14 -</strong> Veri sorumlusu iletişim bilgileri:<br>Veri Sorumlusu: [Ad Soyad / Şirket Unvanı]<br>E-posta: [iletişim e-postası]<br>Adres: [adres]<br>Uygulama: Outfit Checkers</p>
-      <p><strong>MADDE 15 -</strong> İşbu Aydınlatma Metni [Tarih] tarihinde yürürlüğe girer. Veri sorumlusu, uygulamadaki teknik ve hukuki gelişmelere göre işbu metinde değişiklik yapma hakkını saklı tutar. Esaslı değişiklik olması hâlinde ilgili kişilere uygun şekilde yeniden aydınlatma yapılır.</p>
-      <p><a href="index.html">Ana sayfaya dön</a></p>
-    </div>
+            <dl class="meta-card mt-6 space-y-5">
+              <div>
+                <dt>Metin Türü</dt>
+                <dd>KVKK Aydınlatma Metni</dd>
+              </div>
+              <div>
+                <dt>Uygulama Adı</dt>
+                <dd>Outfit Checkers</dd>
+              </div>
+              <div>
+                <dt>Veri Sorumlusu</dt>
+                <dd>Cenk TURAN</dd>
+              </div>
+              <div>
+                <dt>E-posta</dt>
+                <dd class="break-words">cenk.turan@outfitcheckers.com</dd>
+              </div>
+              <div>
+                <dt>Adres</dt>
+                <dd>İstanbul / Üsküdar / Çengelköy</dd>
+              </div>
+              <div>
+                <dt>Yürürlük Tarihi</dt>
+                <dd>05.05.2026</dd>
+              </div>
+              <div>
+                <dt>Son Güncelleme</dt>
+                <dd>05.05.2026</dd>
+              </div>
+            </dl>
+
+            <div class="mt-7 rounded-[24px] bg-[#ffdb5b] p-5">
+              <p class="text-[15px] font-bold leading-7 text-[#3f3527]">
+                Bu sayfa bilgilendirme amacı taşır. Açık rıza gerektiren işlemler için kullanıcıdan ayrıca açık rıza alınabilir.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+        <article class="legal-content rounded-[38px] border border-[#1f1b16]/8 bg-white px-6 py-8 shadow-soft md:px-10 md:py-12 lg:px-14">
+          <h2>BİRİNCİ BÖLÜM<br />Amaç, Kapsam ve Tanımlar</h2>
+
+          <h3>MADDE 1 - Amaç</h3>
+          <p>(1) İşbu Aydınlatma Metni’nin amacı, Outfit Checkers mobil uygulaması kapsamında işlenen kişisel verilere ilişkin olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca ilgili kişilerin bilgilendirilmesi ve veri sorumlusu tarafından yürütülen veri işleme faaliyetleri hakkında açıklama yapılmasıdır.</p>
+          <p>(2) Bu metin ile kullanıcıların kişisel verilerinin hangi amaçlarla işlendiği, hangi hukuki sebeplere dayanıldığı, kimlere ve hangi amaçlarla aktarılabileceği, kişisel verilerin hangi yöntemlerle toplandığı, ne kadar süre saklanabileceği ve ilgili kişinin hakları açıklanmaktadır.</p>
+          <p>(3) İşbu Aydınlatma Metni, açık rıza metni değildir. Açık rıza gerektiren veri işleme faaliyetleri bakımından kullanıcıdan ayrıca, açık, belirli ve özgür iradeye dayalı rıza alınabilir.</p>
+          <p>(4) İşbu metin, kişisel verilerin ilgili kişiden elde edilmesi sırasında veya en geç kişisel veri işleme faaliyetiyle bağlantılı makul süre içinde kullanıcıların erişimine sunulur.</p>
+
+          <div class="divider"></div>
+
+          <h3>MADDE 2 - Kapsam</h3>
+          <p>(1) İşbu metin, Outfit Checkers mobil uygulamasını kullanan tüm gerçek kişileri kapsar.</p>
+          <p>(2) Bu metin; uygulama üzerinden hesap oluşturan, giriş yapan, profil düzenleyen, stil tercihi seçen, içerik paylaşan, fotoğraf yükleyen, puan veren, yorum yapan, takip işlemi gerçekleştiren, mesaj gönderen, bildirim alan, reklam veya ödüllü reklam özelliklerinden yararlanan, premium üyelik kullanan veya uygulamayı herhangi bir şekilde kullanan kullanıcılar bakımından uygulanır.</p>
+          <p>(3) Outfit Checkers; kullanıcıların outfit ve stil odaklı görsel içerikler paylaşabildiği, diğer kullanıcılarla etkileşime geçebildiği, yorum yapabildiği, puan verebildiği, takip edebildiği, mesajlaşabildiği, profil ve gönderi ziyaretlerine ilişkin bazı istatistiklerden yararlanabildiği, reklam destekli veya premium özellikleri kullanabildiği sosyal nitelikli bir platformdur.</p>
+
+          <div class="divider"></div>
+
+          <h3>MADDE 3 - Tanımlar</h3>
+          <p>(1) İşbu metinde geçen:</p>
+          <p>a) Uygulama: Outfit Checkers isimli mobil uygulamayı,<br />
+          b) Veri Sorumlusu: Kişisel verilerin işleme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan gerçek kişi Cenk TURAN’ı,<br />
+          c) İlgili Kişi: Kişisel verisi işlenen gerçek kişiyi,<br />
+          ç) Kullanıcı: Outfit Checkers uygulamasını kullanan gerçek kişiyi,<br />
+          d) Kişisel Veri: Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgiyi,<br />
+          e) Özel Nitelikli Kişisel Veri: Kanun kapsamında ayrıca korunan kişisel veri kategorilerini,<br />
+          f) İşleme: Kişisel verilerin elde edilmesi, kaydedilmesi, depolanması, muhafaza edilmesi, değiştirilmesi, açıklanması, aktarılması, devralınması, sınıflandırılması, kullanılmasının engellenmesi, silinmesi, yok edilmesi veya anonim hale getirilmesi dâhil olmak üzere veriler üzerinde gerçekleştirilen her türlü işlemi,<br />
+          g) Kanun: 6698 sayılı Kişisel Verilerin Korunması Kanunu’nu,<br />
+          ğ) Kurum: Kişisel Verileri Koruma Kurumu’nu,<br />
+          h) Kurul: Kişisel Verileri Koruma Kurulu’nu,<br />
+          ı) Açık Rıza: Belirli bir konuya ilişkin, bilgilendirilmeye dayanan ve özgür iradeyle açıklanan rızayı,<br />
+          ifade eder.</p>
+
+          <h2>İKİNCİ BÖLÜM<br />İşlenen Kişisel Veriler</h2>
+
+          <h3>MADDE 4 - Kişisel Veri Kategorileri</h3>
+          <p>(1) Outfit Checkers kapsamında, uygulamanın özelliklerine ve kullanıcının kullanım tercihine bağlı olarak aşağıdaki kişisel veri kategorileri işlenebilir.</p>
+
+          <h3>a) Hesap ve Kimlik Bilgileri</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>e-posta adresi,</li>
+            <li>kullanıcı adı,</li>
+            <li>kullanıcı kimliği,</li>
+            <li>hesap oluşturma zamanı,</li>
+            <li>hesap durumu,</li>
+            <li>hesap doğrulama bilgileri,</li>
+            <li>giriş ve oturum bilgileri,</li>
+            <li>son aktiflik veya kullanım zamanı.</li>
+          </ul>
+          <p>Bu veriler, kullanıcının hesap oluşturabilmesi, uygulamaya giriş yapabilmesi, hesabın güvenli biçimde yönetilebilmesi ve kullanıcı adının benzersizliğinin sağlanabilmesi amacıyla işlenebilir.</p>
+
+          <h3>b) Yaş ve Doğum Tarihi Bilgileri</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>doğum tarihi,</li>
+            <li>yaş bilgisi,</li>
+            <li>13 yaş üzerinde olunduğuna ilişkin beyan,</li>
+            <li>yaş doğrulama ve profil tamamlama bilgileri.</li>
+          </ul>
+          <p>Outfit Checkers, 13 yaş altındaki kişilere yönelik değildir. Kullanıcının yaşını yanlış beyan etmesi halinde doğabilecek sonuçlardan kullanıcı ve varsa veli/vasisi sorumludur.</p>
+
+          <h3>c) Profil Bilgileri</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>görünen ad,</li>
+            <li>kullanıcı adı,</li>
+            <li>biyografi veya profil açıklaması,</li>
+            <li>profil fotoğrafı,</li>
+            <li>avatar veya görsel bağlantısı,</li>
+            <li>stil tercihleri,</li>
+            <li>hesap görünürlük ayarları,</li>
+            <li>tema tercihi,</li>
+            <li>bildirim ve iletişim tercihleri,</li>
+            <li>takipçi ve takip edilen bilgileri,</li>
+            <li>premium rozet veya üyelik görünümü,</li>
+            <li>kullanıcının tercihine bağlı diğer profil bilgileri.</li>
+          </ul>
+          <p>Bu veriler, profil oluşturma, profil kişiselleştirme, sosyal etkileşim, kullanıcı deneyimi ve uygulama içi görünürlük ayarlarının yürütülmesi amacıyla işlenebilir.</p>
+
+          <h3>ç) Stil Tercihleri ve İlgi Alanları</h3>
+          <p>Kullanıcının seçtiği veya uygulama içinde etkileşimlerinden çıkarılabilen stil tercihleri işlenebilir.</p>
+          <p>Bu kapsamda örneğin:</p>
+          <ul>
+            <li>günlük stil,</li>
+            <li>sokak modası,</li>
+            <li>klasik stil,</li>
+            <li>sportif stil,</li>
+            <li>minimal stil,</li>
+            <li>vintage/retro stil,</li>
+            <li>koyu/gotik stil,</li>
+            <li>Y2K,</li>
+            <li>techwear,</li>
+            <li>plaj stili,</li>
+            <li>androgynous stil,</li>
+            <li>benzeri stil veya kıyafet kategorileri</li>
+          </ul>
+          <p>işlenebilir. Bu veriler; profil kişiselleştirme, içerik önerileri, stil analizi, premium içgörüler, topluluk etkileşimi ve kullanıcı deneyiminin geliştirilmesi amacıyla kullanılabilir.</p>
+
+          <h3>d) Kullanıcı Tarafından Oluşturulan İçerikler</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>uygulamaya yüklenen outfit fotoğrafları,</li>
+            <li>profil fotoğrafları,</li>
+            <li>mesaj içinde gönderilen görseller,</li>
+            <li>gönderi başlıkları,</li>
+            <li>fotoğraf açıklamaları,</li>
+            <li>içerik açıklamaları,</li>
+            <li>etiketler,</li>
+            <li>stil ve içerik sınıflandırmaları,</li>
+            <li>içerik görünürlük ayarları,</li>
+            <li>oluşturulma ve güncellenme zamanları.</li>
+          </ul>
+          <p>Kullanıcı tarafından yüklenen fotoğraflar; yüz, beden görünümü, kıyafet, dini sembol, sağlık belirtisi, konum ipucu, okul veya iş yeri logosu, üçüncü kişilere ait görüntüler veya benzeri unsurlar içerebilir. Bu nedenle bazı görsel içerikler, somut içeriğine göre özel nitelikli kişisel veri riski taşıyabilir.</p>
+          <p>Kullanıcı, yüklediği içeriklerin hukuka uygun olduğunu, üçüncü kişilerin kişilik haklarını, özel hayatını, telif haklarını veya kişisel verilerini ihlal etmediğini kabul eder.</p>
+
+          <h3>e) Sosyal Etkileşim Verileri</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>verilen puanlar,</li>
+            <li>alınan puanlar,</li>
+            <li>ortalama puanlar,</li>
+            <li>oy sayıları,</li>
+            <li>yorum içerikleri,</li>
+            <li>yorum tarihleri,</li>
+            <li>yorum yanıtları,</li>
+            <li>beğeni, kaydetme veya favori bilgileri,</li>
+            <li>takip ve takip isteği bilgileri,</li>
+            <li>engelleme kayıtları,</li>
+            <li>şikâyet ve rapor kayıtları,</li>
+            <li>kullanıcı geri bildirimleri,</li>
+            <li>içeriklerle kurulan etkileşim bilgileri.</li>
+          </ul>
+          <p>Bu veriler, uygulamanın sosyal platform özelliklerinin çalışması, topluluk güvenliği, kötüye kullanımın önlenmesi, içerik kalitesinin artırılması ve premium analiz özelliklerinin sunulması amacıyla işlenebilir.</p>
+
+          <h3>f) Mesajlaşma ve İletişim Verileri</h3>
+          <p>Uygulama içi mesajlaşma özelliği kullanıldığında aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>mesaj içerikleri,</li>
+            <li>mesaj içinde gönderilen görseller,</li>
+            <li>mesaj içindeki bağlantılar,</li>
+            <li>emoji ve benzeri ifade kullanımları,</li>
+            <li>mesaj gönderim ve alım zamanları,</li>
+            <li>gönderen ve alıcı bilgileri,</li>
+            <li>konuşma üyeleri,</li>
+            <li>son mesaj önizlemeleri,</li>
+            <li>okunmamış mesaj sayısı,</li>
+            <li>okundu veya görüldü bilgisi,</li>
+            <li>mesaj silme, engelleme ve raporlama bilgileri,</li>
+            <li>mesaj gönderme izin tercihleri.</li>
+          </ul>
+          <p>Kullanıcılar, mesajlaşma özelliğini hukuka ve topluluk güvenliğine uygun şekilde kullanmakla yükümlüdür.</p>
+
+          <h3>g) Bildirim Verileri</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>push bildirim token bilgisi,</li>
+            <li>bildirim izni,</li>
+            <li>bildirim tercihleri,</li>
+            <li>bildirim türü,</li>
+            <li>bildirim başlığı ve içeriği,</li>
+            <li>bildirime konu olan kullanıcı, içerik veya işlem bilgisi,</li>
+            <li>bildirim okunma durumu,</li>
+            <li>bildirim oluşturulma zamanı,</li>
+            <li>aktivite, içgörü ve istek bildirimleri.</li>
+          </ul>
+          <p>Bu veriler, kullanıcıya uygulama içi etkileşimlerin, mesajların, takip isteklerinin, yorumların, puanların, güvenlik uyarılarının ve premium içgörülerin iletilmesi amacıyla işlenebilir.</p>
+
+          <h3>ğ) Profil ve Gönderi Ziyaret Verileri</h3>
+          <p>Özellikle premium özellikler kapsamında aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>profil görüntüleme bilgileri,</li>
+            <li>gönderi veya look görüntüleme bilgileri,</li>
+            <li>ziyaret zamanı,</li>
+            <li>toplam görüntüleme sayısı,</li>
+            <li>günlük veya dönemsel görüntülenme istatistikleri,</li>
+            <li>tekil ziyaretçi bilgileri,</li>
+            <li>sık görüntüleyen kullanıcılar,</li>
+            <li>link görüntüleme ve link analitiği bilgileri.</li>
+          </ul>
+          <p>Bu veriler; profil ziyaretçileri, look ziyaretçileri, sık bakanlar, link analitiği, haftalık raporlar ve premium içgörü özelliklerinin çalışması amacıyla işlenebilir.</p>
+
+          <h3>h) Premium, Abonelik ve Yetkilendirme Verileri</h3>
+          <p>Premium ve abonelik süreçleri kapsamında aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>premium üyelik durumu,</li>
+            <li>premium plan tipi,</li>
+            <li>premium üyelik kaynağı,</li>
+            <li>premium başlangıç ve bitiş bilgileri,</li>
+            <li>aktif abonelik durumu,</li>
+            <li>premium erişim hakları,</li>
+            <li>premium özellik kullanım bilgileri,</li>
+            <li>abonelik doğrulama bilgileri,</li>
+            <li>ödüllü kampanya veya geçici premium kullanım bilgileri.</li>
+          </ul>
+          <p>Premium özellikler arasında örneğin:</p>
+          <ul>
+            <li>profil ziyaretçileri,</li>
+            <li>look ziyaretçileri,</li>
+            <li>sık bakanlar,</li>
+            <li>stil içgörüleri,</li>
+            <li>gelişmiş look analitiği,</li>
+            <li>haftalık stil raporu,</li>
+            <li>link analitiği,</li>
+            <li>gelişmiş filtreler,</li>
+            <li>profil temaları,</li>
+            <li>anonim mod,</li>
+            <li>premium rozet,</li>
+            <li>sabitlenmiş look,</li>
+            <li>gelişmiş rozetler,</li>
+            <li>creator/media kit özellikleri</li>
+          </ul>
+          <p>bulunabilir. Ödeme kartı bilgileri Outfit Checkers tarafından doğrudan saklanmaz. Abonelik satın alma, ödeme ve doğrulama süreçleri App Store, Google Play, RevenueCat veya benzeri üçüncü taraf ödeme/abonelik altyapıları üzerinden yürütülebilir.</p>
+
+          <h3>ı) Reklam ve Ödüllü Reklam Verileri</h3>
+          <p>Uygulamada reklam ve ödüllü reklam özellikleri bulunabilir. Bu kapsamda aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>reklam gösterim bilgileri,</li>
+            <li>reklam etkileşimleri,</li>
+            <li>ödüllü reklam izleme durumu,</li>
+            <li>reklamla kazanılan ek haklar,</li>
+            <li>kampanya ilerlemesi,</li>
+            <li>reklam izleme sayısı,</li>
+            <li>ödül kazanma durumu,</li>
+            <li>günlük veya dönemsel reklam/kota bilgileri,</li>
+            <li>reklam servislerinin işlediği teknik cihaz bilgileri.</li>
+          </ul>
+          <p>Reklam servisleri, kendi gizlilik politikaları ve kullanım şartları kapsamında cihaz bilgileri, reklam tanımlayıcıları, gösterim ve etkileşim verilerini işleyebilir.</p>
+
+          <h3>i) Teknik ve İşlem Güvenliği Verileri</h3>
+          <p>Aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>cihaz modeli,</li>
+            <li>işletim sistemi bilgisi,</li>
+            <li>uygulama sürümü,</li>
+            <li>dil ve bölge ayarları,</li>
+            <li>IP adresine bağlı teknik kayıtlar,</li>
+            <li>bağlantı ve oturum bilgileri,</li>
+            <li>log kayıtları,</li>
+            <li>hata ve çökme kayıtları,</li>
+            <li>güvenlik kayıtları,</li>
+            <li>kötüye kullanım önleme kayıtları,</li>
+            <li>performans verileri,</li>
+            <li>teknik destek ve hata ayıklama bilgileri.</li>
+          </ul>
+          <p>Bu veriler; uygulamanın güvenli, kararlı ve düzgün şekilde çalıştırılması, hata tespiti, kötüye kullanımın önlenmesi ve yasal yükümlülüklerin yerine getirilmesi amacıyla işlenebilir.</p>
+
+          <h3>j) Moderasyon, Şikâyet ve Güvenlik Verileri</h3>
+          <p>Topluluk güvenliği kapsamında aşağıdaki veriler işlenebilir:</p>
+          <ul>
+            <li>şikâyet ve rapor içerikleri,</li>
+            <li>rapora konu kullanıcı veya içerik bilgileri,</li>
+            <li>engelleme bilgileri,</li>
+            <li>ihlal değerlendirme kayıtları,</li>
+            <li>hesap kısıtlama veya askıya alma kayıtları,</li>
+            <li>uygunsuz içerik değerlendirme bilgileri,</li>
+            <li>kötüye kullanım, spam, taciz veya sahte hesap tespit kayıtları.</li>
+          </ul>
+          <p>Bu veriler, kullanıcı güvenliğini korumak, topluluk kurallarını uygulamak, ihlal iddialarını değerlendirmek ve hukuki süreçlerde hakların korunmasını sağlamak amacıyla işlenebilir.</p>
+
+          <div class="divider"></div>
+
+          <h3>MADDE 5 - Özel Nitelikli Kişisel Veri Riski Taşıyan İçerikler</h3>
+          <p>(1) Outfit Checkers’ın temel amacı özel nitelikli kişisel veri işlemek değildir.</p>
+          <p>(2) Ancak kullanıcılar tarafından yüklenen fotoğraflar, mesajlar, açıklamalar veya diğer içerikler; somut içeriğine göre kişinin görünüşü, sağlık durumu, dini sembolleri, hassas yaşam tarzı bilgileri veya benzeri özel nitelikli kişisel veri riski taşıyan unsurlar içerebilir.</p>
+          <p>(3) Kullanıcılar, özel nitelikli veri içerebilecek paylaşımları yapmadan önce dikkatli olmalı ve üçüncü kişilere ait hassas verileri izinsiz paylaşmamalıdır.</p>
+          <p>(4) Açık rıza veya ek koruma gerektiren veri işleme faaliyetleri bakımından ilgili mevzuat hükümleri dikkate alınır.</p>
+
+          <h2>ÜÇÜNCÜ BÖLÜM<br />Kişisel Verilerin İşlenme Amaçları</h2>
+
+          <h3>MADDE 6 - İşleme Amaçları</h3>
+          <p>(1) Kişisel veriler aşağıdaki amaçlarla işlenebilir:</p>
+          <p>a) Kullanıcı hesabının oluşturulması ve yönetilmesi,<br />
+          b) Kullanıcının uygulamaya güvenli şekilde giriş yapmasının sağlanması,<br />
+          c) Kullanıcı adının benzersizliğinin kontrol edilmesi,<br />
+          ç) Yaş doğrulaması ve çocuk güvenliği süreçlerinin yürütülmesi,<br />
+          d) Profil oluşturma, düzenleme ve kişiselleştirme süreçlerinin yürütülmesi,<br />
+          e) Stil tercihleri ve ilgi alanlarına göre kullanıcı deneyiminin şekillendirilmesi,<br />
+          f) Fotoğraf paylaşımı, gönderi oluşturma ve içerik görünürlük özelliklerinin sunulması,<br />
+          g) Yorum, puanlama, beğeni, kaydetme, takip ve sosyal etkileşim özelliklerinin işletilmesi,<br />
+          ğ) Kullanıcılar arası mesajlaşma ve iletişim süreçlerinin yürütülmesi,<br />
+          h) Bildirim gönderim süreçlerinin yönetilmesi,<br />
+          ı) Profil ve gönderi ziyaretlerine ilişkin istatistiklerin oluşturulması,<br />
+          i) Premium üyelik, abonelik ve yetkilendirme süreçlerinin yürütülmesi,<br />
+          j) Premium analiz, stil içgörüleri, haftalık raporlar ve benzeri özelliklerin sunulması,<br />
+          k) Reklam ve ödüllü reklam süreçlerinin yürütülmesi,<br />
+          l) Uygulama güvenliğinin sağlanması,<br />
+          m) Sahte hesap, spam, taciz, kötüye kullanım ve dolandırıcılığın önlenmesi,<br />
+          n) Şikâyet, rapor ve içerik ihlali bildirimlerinin değerlendirilmesi,<br />
+          o) Teknik hata tespiti, performans takibi, kalite kontrol ve sistem iyileştirmelerinin yapılması,<br />
+          ö) Kullanıcı deneyiminin iyileştirilmesi ve hizmet kalitesinin artırılması,<br />
+          p) Destek taleplerinin yanıtlanması,<br />
+          r) Hukuki yükümlülüklerin yerine getirilmesi,<br />
+          s) Uyuşmazlıkların çözülmesi ve hakların korunması.</p>
+
+          <h3>MADDE 7 - Premium Analizler ve Otomatik Değerlendirmeler</h3>
+          <p>(1) Outfit Checkers, premium özellikler kapsamında kullanıcıya bazı analizler, istatistikler ve içgörüler sunabilir.</p>
+          <p>(2) Bu analizler örneğin:</p>
+          <p>a) ortalama puan,<br />
+          b) toplam oy sayısı,<br />
+          c) gönderi performansı,<br />
+          ç) stil kırılımları,<br />
+          d) takipçi ve etkileşim istatistikleri,<br />
+          e) profil ziyaretçileri,<br />
+          f) sık bakanlar,<br />
+          g) link analitiği,<br />
+          ğ) haftalık stil raporu,<br />
+          h) gelişmiş look analitiği</p>
+          <p>gibi sonuçlardan oluşabilir.</p>
+          <p>(3) Bu analizler, platform içi etkileşimler ve kullanıcı faaliyetleri üzerinden oluşturulur.</p>
+          <p>(4) Bu analizler; bilimsel ölçüm, psikolojik değerlendirme, profesyonel moda danışmanlığı, kişilik analizi, kullanıcı değerini belirleyen kesin bir sonuç veya sosyal başarı göstergesi niteliğinde değildir.</p>
+
+          <h3>MADDE 8 - Anonim Modun Kapsamı ve Sınırları</h3>
+          <p>(1) Outfit Checkers’ta premium özellikler kapsamında anonim mod sunulabilir.</p>
+          <p>(2) Anonim mod, kullanıcının bazı profil veya gönderi ziyaret bilgilerinin diğer kullanıcılara görünmesini sınırlayabilir.</p>
+          <p>(3) Anonim mod;</p>
+          <p>a) kullanıcının uygulama içinde tamamen kimliksiz hale geldiği,<br />
+          b) tüm teknik kayıtların silindiği,<br />
+          c) güvenlik kayıtlarının tutulmadığı,<br />
+          ç) yasal yükümlülüklerin ortadan kalktığı,<br />
+          d) kötüye kullanım tespitinin devre dışı kaldığı,<br />
+          e) veri sorumlusunun hiçbir kayıt tutmadığı</p>
+          <p>anlamına gelmez.</p>
+          <p>(4) Güvenlik, kötüye kullanım önleme, sahte hesap tespiti, sistem bütünlüğü, yasal yükümlülükler, uyuşmazlık çözümü ve teknik zorunluluklar kapsamında gerekli kayıtlar tutulmaya devam edebilir.</p>
+
+          <h2>DÖRDÜNCÜ BÖLÜM<br />Kişisel Verilerin Hukuki Sebepleri</h2>
+
+          <h3>MADDE 9 - Hukuki Sebepler</h3>
+          <p>(1) Kişisel veriler, Kanun’un 5 inci maddesinde belirtilen kişisel veri işleme şartları çerçevesinde işlenir.</p>
+          <p>(2) Buna göre kişisel veriler, aşağıdaki hukuki sebeplerden bir veya birkaçına dayanılarak işlenebilir:</p>
+          <p>a) İlgili kişinin açık rızasının bulunması,<br />
+          b) Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması kaydıyla veri işlemenin gerekli olması,<br />
+          c) Veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması,<br />
+          ç) Bir hakkın tesisi, kullanılması veya korunması için veri işlemenin zorunlu olması,<br />
+          d) İlgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması,<br />
+          e) İlgili kişinin kendisi tarafından alenileştirilmiş kişisel verilere ilişkin ve alenileştirme iradesine uygun veri işleme faaliyetleri,<br />
+          f) Kanunlarda açıkça öngörülmesi.</p>
+          <p>(3) Özel nitelikli kişisel veriler bakımından Kanun’un 6 ncı maddesinde öngörülen şartlar dikkate alınır.</p>
+          <p>(4) Açık rıza gerektiren veri işleme faaliyetleri bakımından kullanıcıdan ayrıca açık rıza alınır. Açık rıza, bu Aydınlatma Metni ile birleştirilmez ve ayrı bir süreç olarak yürütülür.</p>
+
+          <h3>MADDE 10 - Açık Rıza Gerektirebilecek İşlemler</h3>
+          <p>(1) Aşağıdaki işlemler, somut kullanım şekline ve yürürlükteki mevzuata göre açık rıza gerektirebilir:</p>
+          <p>a) pazarlama, tanıtım ve kampanya bildirimleri,<br />
+          b) kişiselleştirilmiş reklam veya davranışsal analiz süreçleri,<br />
+          c) yurt dışındaki teknik altyapıların kullanılması kapsamında açık rıza gerektiren aktarımlar,<br />
+          ç) özel nitelikli kişisel veri riski taşıyan içeriklerin işlenmesi,<br />
+          d) kullanıcının herkese açık hale getirmediği bazı verilerin ek analiz veya ürün geliştirme amacıyla kullanılması.</p>
+          <p>(2) Kullanıcı, açık rızasını daha sonra geri alabilir. Açık rızanın geri alınması, geri alma tarihinden önceki veri işleme faaliyetlerinin hukuka uygunluğunu etkilemez.</p>
+
+          <h2>BEŞİNCİ BÖLÜM<br />Kişisel Verilerin Toplanma Yöntemi</h2>
+
+          <h3>MADDE 11 - Toplama Yöntemi</h3>
+          <p>(1) Kişisel veriler, Outfit Checkers uygulaması kapsamında tamamen veya kısmen otomatik yollarla elektronik ortamda toplanabilir.</p>
+          <p>(2) Kişisel veriler aşağıdaki kanallar aracılığıyla elde edilebilir:</p>
+          <p>a) kullanıcı kayıt ve giriş ekranları,<br />
+          b) profil oluşturma ve düzenleme alanları,<br />
+          c) yaş doğrulama ve stil tercihi ekranları,<br />
+          ç) fotoğraf yükleme ve paylaşım ekranları,<br />
+          d) gönderi oluşturma ve düzenleme alanları,<br />
+          e) yorum, puan ve sosyal etkileşim alanları,<br />
+          f) mesajlaşma ekranları,<br />
+          g) bildirim tercihleri ve bildirim etkileşimleri,<br />
+          ğ) premium ve abonelik ekranları,<br />
+          h) reklam ve ödüllü reklam süreçleri,<br />
+          ı) şikâyet, rapor ve destek başvuruları,<br />
+          i) teknik sistemler, log kayıtları, güvenlik altyapıları, hata takip araçları ve analiz sistemleri,<br />
+          j) üçüncü taraf teknik hizmet sağlayıcıları.</p>
+          <p>(3) Kişisel veri toplamanın hukuki sebebi, ilgili veri işleme faaliyetinin niteliğine göre Kanun’un 5 inci ve gerektiğinde 6 ncı maddelerinde yer alan işleme şartlarına dayanır.</p>
+
+          <h2>ALTINCI BÖLÜM<br />Kişisel Verilerin Aktarılması</h2>
+
+          <h3>MADDE 12 - Yurt İçi Aktarım</h3>
+          <p>(1) Kişisel veriler, işbu metinde belirtilen amaçlarla ve Kanun’un 8 inci maddesine uygun olarak aşağıdaki alıcı gruplarına aktarılabilir:</p>
+          <p>a) bulut altyapı, veri depolama, kimlik doğrulama, bildirim, teknik destek, analiz, reklam ve güvenlik hizmeti sunan tedarikçiler ile hizmet sağlayıcılara,<br />
+          b) abonelik ve ödeme işlemleri kapsamında App Store, Google Play, RevenueCat veya benzeri platform ve hizmet sağlayıcılara,<br />
+          c) kullanıcının görünürlük tercihleri ve uygulama içi etkileşimleri doğrultusunda diğer kullanıcılara,<br />
+          ç) hukuken yetkili kamu kurum ve kuruluşlarına,<br />
+          d) mahkemeler, icra daireleri ve diğer yetkili mercilere,<br />
+          e) hukuki süreçler, denetim, danışmanlık ve uyuşmazlık yönetimi kapsamında hizmet alınan yetkili kişi ve kuruluşlara.</p>
+          <p>(2) Kullanıcıların herkese açık, takipçilere açık veya belirli kullanıcılara görünür şekilde paylaştığı içerikler, kullanıcının seçtiği görünürlük ayarına göre diğer kullanıcılar tarafından görüntülenebilir.</p>
+
+          <h3>MADDE 13 - Üçüncü Taraf Teknik Servisler</h3>
+          <p>(1) Outfit Checkers, hizmetin sunulabilmesi için üçüncü taraf teknik servislerden yararlanabilir.</p>
+          <p>(2) Bu servisler örneğin:</p>
+          <p>a) Firebase,<br />
+          b) Firebase Authentication,<br />
+          c) Cloud Firestore,<br />
+          ç) Firebase Storage,<br />
+          d) Firebase Cloud Messaging,<br />
+          e) Firebase App Check,<br />
+          f) Firebase Cloud Functions,<br />
+          g) Google Mobile Ads / AdMob,<br />
+          ğ) RevenueCat,<br />
+          h) App Store,<br />
+          ı) Google Play,<br />
+          i) hata ve çökme takip sistemleri,<br />
+          j) analiz ve performans araçları,<br />
+          k) bildirim altyapıları,<br />
+          l) bulut depolama ve güvenlik servisleri</p>
+          <p>olabilir.</p>
+          <p>(3) Bu servis sağlayıcılar, yalnızca hizmetin sunulması, güvenliğin sağlanması, ödeme ve abonelik doğrulaması, bildirim gönderimi, veri depolama, hata takibi, reklam gösterimi veya teknik altyapının işletilmesi için gerekli olduğu ölçüde veri işleyebilir.</p>
+          <p>(4) Üçüncü taraf servislerin kendi gizlilik politikaları ve kullanım şartları bulunabilir. Bu servislerin kendi veri işleme faaliyetlerinden ilgili servis sağlayıcılar kendi sorumluluk alanları kapsamında sorumludur.</p>
+
+          <h3>MADDE 14 - Yurt Dışı Aktarım</h3>
+          <p>(1) Outfit Checkers kapsamında kullanılan bazı teknik servisler, sunucular veya hizmet sağlayıcılar yurt dışında bulunabilir.</p>
+          <p>(2) Bu nedenle kişisel veriler; hizmetin sağlanması, güvenliğin temini, bildirim gönderimi, abonelik doğrulaması, reklam gösterimi, veri depolama, teknik altyapının işletilmesi, hata takibi ve performans analizi amacıyla yurt dışına aktarılabilir veya yurt dışında işlenebilir.</p>
+          <p>(3) Yurt dışına veri aktarımı, Kanun’un 9 uncu maddesi ve yürürlükteki ilgili mevzuat hükümleri kapsamında gerçekleştirilir.</p>
+          <p>(4) Yurt dışına aktarım, somut aktarım türüne göre aşağıdaki hukuki mekanizmalardan birine dayanabilir:</p>
+          <p>a) yeterlilik kararı bulunması,<br />
+          b) uygun güvencelerin sağlanması,<br />
+          c) standart sözleşmelerin kullanılması,<br />
+          ç) bağlayıcı şirket kuralları,<br />
+          d) yazılı taahhütname ve Kurul izni,<br />
+          e) Kanun’da öngörülen arızi aktarım halleri,<br />
+          f) açık rıza gerektiren hallerde ilgili kişinin açık rızası.</p>
+          <p>(5) Açık rıza gerektiren yurt dışı aktarım faaliyetleri bakımından kullanıcıdan ayrıca açık rıza alınabilir.</p>
+
+          <h2>YEDİNCİ BÖLÜM<br />Saklama ve İmha</h2>
+
+          <h3>MADDE 15 - Saklama Süresi</h3>
+          <p>(1) Kişisel veriler, işlendikleri amaç için gerekli olan süre kadar ve ilgili mevzuatta öngörülen saklama süreleri boyunca muhafaza edilir.</p>
+          <p>(2) Saklama süresi belirlenirken:</p>
+          <p>a) veri kategorisi,<br />
+          b) işleme amacı,<br />
+          c) kullanıcının hesap durumu,<br />
+          ç) abonelik veya premium üyelik durumu,<br />
+          d) güvenlik ihtiyacı,<br />
+          e) hukuki yükümlülükler,<br />
+          f) uyuşmazlık ihtimali,<br />
+          g) kötüye kullanım önleme ihtiyacı,<br />
+          ğ) teknik zorunluluklar</p>
+          <p>dikkate alınır.</p>
+          <p>(3) İşleme amacının ortadan kalkması veya ilgili mevzuatta öngörülen saklama süresinin sona ermesi halinde kişisel veriler silinir, yok edilir veya anonim hale getirilir.</p>
+          <p>(4) Ancak bazı veriler; güvenlik, yasal yükümlülük, ödeme veya abonelik uyuşmazlığı, şikâyet incelemesi, kötüye kullanım önleme, hukuki hakların korunması veya teknik sistem bütünlüğü amacıyla sınırlı süreyle saklanabilir.</p>
+
+          <h3>MADDE 16 - Hesap Silme, Gönderi Silme ve Veri Silme Talepleri</h3>
+          <p>(1) Kullanıcılar, uygulama içindeki hesap ayarları üzerinden veya veri sorumlusu ile iletişime geçerek hesap silme veya veri silme talebinde bulunabilir.</p>
+          <p>(2) Hesap silme halinde, mümkün olduğu ölçüde kullanıcının ana hesap verileri ve kişisel profil verileri silinir veya anonim hale getirilir.</p>
+          <p>(3) Ancak aşağıdaki veriler sınırlı süreyle saklanabilir:</p>
+          <p>a) güvenlik kayıtları,<br />
+          b) şikâyet ve rapor kayıtları,<br />
+          c) ihlal ve hesap kısıtlama kayıtları,<br />
+          ç) ödeme ve abonelik doğrulama kayıtları,<br />
+          d) yasal yükümlülük kapsamında tutulması gereken kayıtlar,<br />
+          e) uyuşmazlık çözümüne ilişkin kayıtlar,<br />
+          f) teknik loglar,<br />
+          g) kötüye kullanım önleme kayıtları,<br />
+          ğ) sistem bütünlüğü için gerekli kayıtlar.</p>
+          <p>(4) Gönderi silindiğinde, gönderiye ait ana içerik ve teknik olarak bağlı silinebilen yorum, puan ve görsel kayıtları silinebilir.</p>
+          <p>(5) Ancak bildirim geçmişi, rapor kayıtları, güvenlik kayıtları, analitik özetler, başka kullanıcıların bildirim veya mesaj geçmişinde yer alan sınırlı kayıtlar ya da yasal saklama gerektiren veriler her durumda anında silinmeyebilir.</p>
+
+          <h2>SEKİZİNCİ BÖLÜM<br />Veri Güvenliği</h2>
+
+          <h3>MADDE 17 - Güvenlik Tedbirleri</h3>
+          <p>(1) Veri sorumlusu, kişisel verilerin hukuka aykırı olarak işlenmesini ve erişilmesini önlemek, kişisel verilerin muhafazasını sağlamak ve uygulama güvenliğini korumak amacıyla makul teknik ve idari tedbirleri alır veya almaya çalışır.</p>
+          <p>(2) Bu kapsamda örneğin:</p>
+          <p>a) kimlik doğrulama,<br />
+          b) erişim yetkilendirmesi,<br />
+          c) kullanıcı bazlı güvenlik kontrolleri,<br />
+          ç) güvenli oturum yönetimi,<br />
+          d) veri minimizasyonu,<br />
+          e) loglama,<br />
+          f) kötüye kullanım tespiti,<br />
+          g) şikâyet ve engelleme mekanizmaları,<br />
+          ğ) teknik izleme,<br />
+          h) yedekleme,<br />
+          ı) hata ve çökme takibi,<br />
+          i) güncelleme ve bakım süreçleri</p>
+          <p>uygulanabilir.</p>
+          <p>(3) İnternet ve mobil uygulama altyapıları üzerinden yürütülen hiçbir veri işleme faaliyetinin mutlak surette sıfır riskli olduğu garanti edilemez.</p>
+          <p>(4) Kişisel verilerin kanuni olmayan yollarla başkaları tarafından elde edilmesi halinde, yürürlükteki mevzuat çerçevesinde ilgili kişilere ve Kurum’a gerekli bildirim süreçleri işletilir.</p>
+
+          <h2>DOKUZUNCU BÖLÜM<br />Kullanıcı İçerikleri, Topluluk Etkileşimi ve Sorumluluk Sınırları</h2>
+
+          <h3>MADDE 18 - Kullanıcı İçerikleri ve Kamuya Açıklık</h3>
+          <p>(1) Kullanıcıların profil, gönderi, yorum, puan, takip ve benzeri etkileşimleri, seçilen gizlilik ve görünürlük ayarlarına göre diğer kullanıcılar tarafından görüntülenebilir.</p>
+          <p>(2) Kullanıcılar, paylaşacakları içeriklerin:</p>
+          <p>a) kendilerine ait olduğunu,<br />
+          b) üçüncü kişilerin haklarını ihlal etmediğini,<br />
+          c) üçüncü kişilerin fotoğraf, isim, kişisel veri veya özel hayatını izinsiz içermediğini,<br />
+          ç) hukuka ve topluluk kurallarına uygun olduğunu</p>
+          <p>kabul eder.</p>
+          <p>(3) Kullanıcıların herkese açık şekilde paylaştığı veriler, diğer kullanıcılar tarafından görüntülenebilir, ekran görüntüsü alınabilir veya uygulama dışına aktarılabilir.</p>
+          <p>(4) Veri sorumlusu, kullanıcıların kendi iradesiyle herkese açık hale getirdiği içeriklerin üçüncü kişiler tarafından uygulama dışı kullanımını her durumda kontrol edemeyebilir.</p>
+
+          <h3>MADDE 19 - Mesajlaşma Güvenliği ve Kullanıcı Sorumluluğu</h3>
+          <p>(1) Outfit Checkers mesajlaşma altyapısı, kullanıcılar arasında iletişim kurulmasını sağlar. Mesaj içerikleri kullanıcılar tarafından oluşturulur.</p>
+          <p>(2) Kullanıcılar:</p>
+          <p>a) hakaret,<br />
+          b) tehdit,<br />
+          c) taciz,<br />
+          ç) cinsel içerikli rahatsız edici mesaj,<br />
+          d) nefret söylemi,<br />
+          e) kişisel veri ihlali,<br />
+          f) izinsiz fotoğraf paylaşımı,<br />
+          g) spam,<br />
+          ğ) dolandırıcılık,<br />
+          h) yasa dışı teklif veya yönlendirme</p>
+          <p>içeren mesajlar göndermemekle yükümlüdür.</p>
+          <p>(3) Veri sorumlusu, kullanıcı güvenliğini sağlamak amacıyla şikâyet, raporlama, engelleme, kötüye kullanım tespiti ve gerektiğinde hesap kısıtlama süreçleri yürütebilir.</p>
+          <p>(4) Ancak tüm mesajların önceden veya anlık olarak inceleneceği, tüm kötüye kullanımların tamamen engelleneceği veya her zararlı davranışın önceden tespit edileceği garanti edilmez.</p>
+
+          <h3>MADDE 20 - Psikolojik, Tıbbi veya Profesyonel Danışmanlık Sunulmaması</h3>
+          <p>(1) Outfit Checkers; psikolojik danışmanlık, terapi, ruh sağlığı değerlendirmesi, klinik destek, tıbbi danışmanlık, profesyonel moda danışmanlığı veya kişisel gelişim hizmeti sunmaz.</p>
+          <p>(2) Uygulamadaki yorumlar, puanlar, stil analizleri, topluluk geri bildirimleri ve premium içgörüler; kullanıcıların öznel değerlendirmelerine, platform içi etkileşimlere ve teknik hesaplamalara dayanır.</p>
+          <p>(3) Bu değerlendirmeler:</p>
+          <p>a) kesin gerçek,<br />
+          b) uzman görüşü,<br />
+          c) psikolojik değerlendirme,<br />
+          ç) kişilik analizi,<br />
+          d) kullanıcı değeri ölçümü,<br />
+          e) sosyal başarı göstergesi</p>
+          <p>olarak yorumlanmamalıdır.</p>
+          <p>(4) Kullanıcılar, platformdaki yorum ve puanların öznel olduğunu bilerek uygulamayı kullanmalıdır.</p>
+
+          <h3>MADDE 21 - Moderasyonun Sınırları</h3>
+          <p>(1) Outfit Checkers, platform güvenliğini sağlamak için içerik moderasyonu, fotoğraf kontrolü, metin kontrolü, uygunsuz içerik kontrolü, şikâyet değerlendirme, kullanıcı engelleme, taciz ve kötüye kullanım önleme, sahte hesap veya spam tespiti gibi süreçler uygulayabilir.</p>
+          <p>(2) Moderasyon sistemleri hatasız değildir.</p>
+          <p>(3) Uygunsuz bir içeriğin hiçbir zaman gözden kaçmayacağı, her ihlalin anında tespit edileceği veya tüm kullanıcı davranışlarının tamamen önlenebileceği garanti edilmez.</p>
+
+          <h2>ONUNCU BÖLÜM<br />İlgili Kişinin Hakları</h2>
+
+          <h3>MADDE 22 - İlgili Kişinin Hakları</h3>
+          <p>(1) İlgili kişiler, Kanun’un 11 inci maddesi uyarınca veri sorumlusuna başvurarak kendileriyle ilgili:</p>
+          <p>a) kişisel veri işlenip işlenmediğini öğrenme,<br />
+          b) kişisel verileri işlenmişse buna ilişkin bilgi talep etme,<br />
+          c) kişisel verilerin işlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme,<br />
+          ç) yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,<br />
+          d) kişisel verilerin eksik veya yanlış işlenmiş olması halinde düzeltilmesini isteme,<br />
+          e) Kanun’da öngörülen şartlar çerçevesinde kişisel verilerin silinmesini veya yok edilmesini isteme,<br />
+          f) düzeltme ve silme işlemlerinin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,<br />
+          g) işlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhe bir sonucun ortaya çıkmasına itiraz etme,<br />
+          ğ) kişisel verilerin kanuna aykırı işlenmesi nedeniyle zarara uğranması halinde zararın giderilmesini talep etme</p>
+          <p>haklarına sahiptir.</p>
+
+          <h2>ON BİRİNCİ BÖLÜM<br />Başvuru ve İletişim</h2>
+
+          <h3>MADDE 23 - Başvuru Usulü</h3>
+          <p>(1) İlgili kişi, Kanun’un 13 üncü maddesi kapsamında taleplerini veri sorumlusuna yazılı olarak veya mevzuatta öngörülen diğer yöntemlerle iletebilir.</p>
+          <p>(2) Başvurular, talebin niteliğine göre en kısa sürede ve en geç otuz gün içinde sonuçlandırılır.</p>
+          <p>(3) Başvurunun ayrıca bir maliyet gerektirmesi halinde, ilgili mevzuatta öngörülen ücret talep edilebilir.</p>
+          <p>(4) Veri sorumlusu, başvuruda bulunan kişinin kimliğini doğrulamak amacıyla ek bilgi veya belge talep edebilir.</p>
+
+          <h3>MADDE 24 - İletişim Bilgileri</h3>
+          <p>(1) İşbu metin kapsamındaki talepler ve başvurular için veri sorumlusu iletişim bilgileri aşağıdadır:</p>
+          <p><strong>Veri Sorumlusu:</strong> Cenk TURAN<br />
+          <strong>E-posta:</strong> cenk.turan@outfitcheckers.com<br />
+          <strong>Adres:</strong> İstanbul / Üsküdar / Çengelköy<br />
+          <strong>Uygulama:</strong> Outfit Checkers</p>
+          <p>(2) Kullanıcıların kişisel veri başvurularını iletebilmesi için yukarıdaki iletişim bilgilerinin güncel tutulması esastır.</p>
+
+          <h2>ON İKİNCİ BÖLÜM<br />Çocukların Gizliliği</h2>
+
+          <h3>MADDE 25 - Yaş Sınırı ve Çocukların Korunması</h3>
+          <p>(1) Outfit Checkers, 13 yaş altındaki kişilere yönelik değildir.</p>
+          <p>(2) Kullanıcı, hesap oluştururken 13 yaşından büyük olduğunu beyan eder.</p>
+          <p>(3) 13 yaş altı olduğu tespit edilen hesaplar askıya alınabilir, kapatılabilir veya silinebilir.</p>
+          <p>(4) Veri sorumlusu, çocuk güvenliği ve mevzuata uyum amacıyla yaş doğrulama, hesap inceleme ve gerekli görülen durumlarda ek önlemler alma hakkını saklı tutar.</p>
+          <p>(5) Veli veya yasal temsilci, 13 yaş altı bir kişinin izinsiz şekilde hesap oluşturduğunu düşünüyorsa veri sorumlusu ile iletişime geçebilir.</p>
+
+          <h2>ON ÜÇÜNCÜ BÖLÜM<br />Çerezler ve Benzeri Teknolojiler</h2>
+
+          <h3>MADDE 26 - Çerezler, Yerel Depolama ve Benzeri Teknolojiler</h3>
+          <p>(1) Outfit Checkers mobil uygulaması ve bağlantılı web alanları kapsamında çerezler, yerel depolama, cihaz tanımlayıcıları, oturum belirteçleri ve benzeri teknolojiler kullanılabilir.</p>
+          <p>(2) Bu teknolojiler şu amaçlarla kullanılabilir:</p>
+          <p>a) oturum yönetimi,<br />
+          b) kullanıcı tercihlerini hatırlama,<br />
+          c) tema tercihini saklama,<br />
+          ç) güvenlik doğrulaması,<br />
+          d) hata ve performans analizi,<br />
+          e) reklam gösterimi,<br />
+          f) abonelik doğrulaması,<br />
+          g) kullanıcı deneyimini iyileştirme.</p>
+          <p>(3) Web tabanlı alanlar kullanıma açılırsa ayrıca çerez politikası hazırlanabilir.</p>
+
+          <h2>ON DÖRDÜNCÜ BÖLÜM<br />Yürürlük ve Güncellemeler</h2>
+
+          <h3>MADDE 27 - Yürürlük</h3>
+          <p>(1) İşbu Aydınlatma Metni, 05.05.2026 tarihinde yürürlüğe girer.</p>
+          <p>(2) Aydınlatma Metni’nin yürürlüğe girmesi için herhangi bir kamu kurumuna başvuru yapılması gerekmez. Metnin kullanıcıların erişimine sunulması ve yürürlük tarihinin belirtilmesi esastır.</p>
+          <p>(3) İşbu metin, uygulama içinde, kayıt/giriş süreçlerinde, ayarlar bölümünde, web sitesinde veya uygulama mağazalarının ilgili alanlarında kullanıcıların erişimine sunulabilir.</p>
+
+          <h3>MADDE 28 - Güncelleme</h3>
+          <p>(1) Veri sorumlusu, uygulamadaki teknik, operasyonel, ticari veya hukuki gelişmelere göre işbu Aydınlatma Metni’nde değişiklik yapma hakkını saklı tutar.</p>
+          <p>(2) Kişisel veri işleme faaliyetlerinde esaslı değişiklik olması halinde ilgili kişilere uygun yöntemlerle yeniden aydınlatma yapılır.</p>
+          <p>(3) Güncellenen metin, yayınlandığı veya kullanıcıların erişimine sunulduğu tarihten itibaren geçerli olur.</p>
+
+          <h3>MADDE 29 - Son Hükümler</h3>
+          <p>(1) İşbu Aydınlatma Metni’nin herhangi bir hükmünün geçersiz, uygulanamaz veya hukuka aykırı kabul edilmesi, diğer hükümlerin geçerliliğini etkilemez.</p>
+          <p>(2) İşbu metindeki hiçbir hüküm, kullanıcıların yürürlükteki emredici mevzuattan doğan haklarını ortadan kaldıracak veya daraltacak şekilde yorumlanamaz.</p>
+          <p>(3) Veri sorumlusu, kullanıcı güvenliğini, veri gizliliğini ve platform bütünlüğünü korumak amacıyla gerekli gördüğü teknik ve idari tedbirleri alma hakkını saklı tutar.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="mt-7 rounded-[38px] bg-[#f5f2ea] px-4 py-12 md:px-8 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <div class="text-[56px] font-black leading-none tracking-[-0.07em] text-[#1f1b16] md:text-[88px]">
+            Outfit Checkers
+          </div>
+          <p class="mt-5 max-w-xl text-[18px] leading-8 text-[#665d52]">
+            Kombin paylaş, puan al, geri bildirimlerle tarzını geliştir.
+          </p>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-3">
+          <div>
+            <div class="text-[18px] font-semibold text-[#7a6f62]">Ürün</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="index.html#product" class="block">Genel bakış</a>
+              <a href="index.html#how-it-works" class="block">Nasıl çalışır</a>
+              <a href="index.html#community" class="block">Topluluk</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-[18px] font-semibold text-[#7a6f62]">Şirket</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="index.html#trust" class="block">Güven</a>
+              <a href="contact.html" class="block">Bize ulaş</a>
+              <a href="support.html" class="block">Destek</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-[18px] font-semibold text-[#7a6f62]">Yasal</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="kvkk.html" class="block">KVKK Aydınlatma</a>
+              <a href="acik-riza.html" class="block">Açık Rıza</a>
+              <a href="gizlilik.html" class="block">Gizlilik Politikası</a>
+              <a href="t.html" class="block">Şartlar ve Koşullar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
+        <div>© 2026 Outfit Checkers</div>
+        <div class="flex items-center gap-4">
+          <span>Instagram</span>
+          <span>X</span>
+          <span>TikTok</span>
+          <span>LinkedIn</span>
+        </div>
+      </div>
+    </footer>
   </div>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+
+    function handleScroll() {
+      if (window.scrollY > 18) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  </script>
 </body>
 </html>
