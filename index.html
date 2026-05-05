@@ -54,9 +54,17 @@
     }
 
     .hero-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 60px rgba(20, 16, 10, 0.18);
-    }
+  box-shadow: 0 24px 60px rgba(20, 16, 10, 0.18);
+}
+
+.hero-card img {
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+.hero-card:hover img {
+  transform: scale(1.025);
+}
 
     /* YENİ HAREKETLİ KARTLAR */
     .motion-card {
