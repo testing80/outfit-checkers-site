@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account - Outfit Checkers</title>
+  <meta name="description" content="Outfit Checkers account deletion request page." />
+
+  <style>
+    :root {
+      --bg: #f8f8f5;
+      --card: #ffffff;
+      --text: #171717;
+      --muted: #666666;
+      --line: #ececec;
+      --primary: #ffd752;
+      --danger: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 22px;
+    }
+
+    .back {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 24px 70px rgba(24, 20, 15, 0.07);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 215, 82, 0.35);
+      border: 1px solid rgba(255, 215, 82, 0.8);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      margin-top: 32px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      color: var(--muted);
+      margin: 10px 0;
+    }
+
+    ul {
+      color: var(--muted);
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .box {
+      background: #fafafa;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+
+    .email {
+      display: inline-block;
+      color: #111;
+      background: var(--primary);
+      text-decoration: none;
+      font-weight: 900;
+      padding: 12px 16px;
+      border-radius: 14px;
+      margin-top: 10px;
+    }
+
+    .warning {
+      border-left: 5px solid var(--danger);
+      background: #fff7f7;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div class="brand">Outfit Checkers</div>
+      <a class="back" href="index.html">Back to home</a>
+    </div>
+
+    <section class="hero">
+      <div class="pill">Account deletion request</div>
+
+      <h1>Delete your Outfit Checkers account</h1>
+
+      <p>
+        You can request deletion of your Outfit Checkers account and related personal data by contacting us using the email address below.
+      </p>
+
+      <div class="box">
+        <h2>How to request account deletion</h2>
+        <p>
+          Please send an email from the email address linked to your Outfit Checkers account.
+        </p>
+
+        <p><strong>Email subject:</strong> Delete my Outfit Checkers account</p>
+
+        <p>Please include the following information in your request:</p>
+        <ul>
+          <li>Your Outfit Checkers account email</li>
+          <li>Your username</li>
+          <li>A clear statement that you want your account deleted</li>
+        </ul>
+
+        <a class="email" href="mailto:outfitcheckers102@gmail.com?subject=Delete%20my%20Outfit%20Checkers%20account">
+          Contact support
+        </a>
+      </div>
+
+      <div class="box">
+        <h2>Processing time</h2>
+        <p>
+          Account deletion requests are generally processed within 30 days after we verify that the request belongs to the account owner.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2>Data that may be deleted or anonymized</h2>
+        <p>
+          When your account deletion request is processed, the following account-related data may be deleted or anonymized where technically and legally possible:
+        </p>
+        <ul>
+          <li>Account and profile information</li>
+          <li>Profile photo and uploaded outfit photos</li>
+          <li>Posts and post-related content</li>
+          <li>Comments and ratings linked to your account</li>
+          <li>Account-related social interaction data</li>
+        </ul>
+      </div>
+
+      <div class="box warning">
+        <h2>Data that may be retained</h2>
+        <p>
+          Some records may be retained for a limited period where required for security, abuse prevention, legal obligations, subscription or payment verification, dispute resolution, fraud prevention, or platform integrity.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2>Subscriptions</h2>
+        <p>
+          Deleting the app or requesting account deletion may not automatically cancel an active subscription.
+          If you have an active subscription, please cancel it through Google Play or the App Store.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © Outfit Checkers. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
