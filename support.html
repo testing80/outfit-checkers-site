@@ -23,6 +23,7 @@
           },
           boxShadow: {
             soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+            float: '0 24px 70px rgba(24, 20, 15, 0.12)',
           },
         },
       },
@@ -48,6 +49,7 @@
     }
   </style>
 </head>
+
 <body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
   <div class="mx-auto max-w-[1350px] px-4 pb-16 pt-4 md:px-8 lg:px-10">
     <header
@@ -114,10 +116,10 @@
               Email
             </div>
             <a
-              href="mailto:testing@outfitcheckers.com"
-              class="mt-3 block break-all text-[28px] font-black leading-8 tracking-[-0.03em] text-[#1f1b16]"
+              href="mailto:cenk.turan@outfitcheckers.com"
+              class="contact-email mt-3 block break-all text-[26px] font-black leading-8 tracking-[-0.03em] text-[#1f1b16] md:text-[28px]"
             >
-              testing@outfitcheckers.com
+              cenk.turan@outfitcheckers.com
             </a>
           </div>
 
@@ -126,7 +128,7 @@
               Support
             </div>
             <p class="support-desc mt-3 text-[18px] leading-7 text-[#4a4339]">
-              For account, technical, or access-related issues, send us an email and we’ll help you out.
+              For account, technical, privacy, or access-related issues, send us an email and we’ll help you out.
             </p>
           </div>
 
@@ -135,12 +137,97 @@
               Partnerships
             </div>
             <p class="partnerships-desc mt-3 text-[18px] leading-7 text-[#4a4339]">
-              Brand collaborations, media, and partnership requests can be sent to the same contact email.
+              Brand collaborations, media, legal, and partnership requests can be sent to the same contact email.
             </p>
+          </div>
+        </div>
+
+        <div class="mt-7 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="rounded-[32px] bg-[#ffdb5b] p-7 shadow-soft">
+            <div class="legal-contact-label text-[12px] font-black uppercase tracking-[0.18em] text-[#6f5e2e]">
+              Legal and privacy requests
+            </div>
+            <h2 class="legal-contact-title mt-3 text-[36px] font-black leading-[0.98] tracking-[-0.05em] text-[#1f1b16] md:text-[48px]">
+              KVKK, privacy, and account deletion requests.
+            </h2>
+            <p class="legal-contact-desc mt-4 text-[18px] leading-8 text-[#43392f]">
+              For personal data requests, privacy questions, or account deletion support, contact us by email.
+            </p>
+          </div>
+
+          <div class="rounded-[32px] border border-[#1f1b16]/8 bg-[#fbfaf5] p-7">
+            <div class="address-label text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">
+              Address
+            </div>
+            <p class="address-desc mt-3 text-[24px] font-black leading-8 tracking-[-0.04em] text-[#1f1b16]">
+              İstanbul / Üsküdar / Çengelköy
+            </p>
+
+            <div class="mt-7 border-t border-[#1f1b16]/8 pt-6">
+              <div class="owner-label text-[12px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">
+                Data controller
+              </div>
+              <p class="owner-desc mt-3 text-[24px] font-black leading-8 tracking-[-0.04em] text-[#1f1b16]">
+                Cenk TURAN
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="mt-7 rounded-[38px] bg-[#f5f2ea] px-4 py-12 md:px-8 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <div class="brand-text text-[56px] font-black leading-none tracking-[-0.07em] text-[#1f1b16] md:text-[88px]">
+            Outfit Checkers
+          </div>
+          <p class="footer-desc mt-5 max-w-xl text-[18px] leading-8 text-[#665d52]">
+            Post the fit, get the score, and improve your style with feedback.
+          </p>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-3">
+          <div>
+            <div class="footer-product text-[18px] font-semibold text-[#7a6f62]">Product</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="index.html#product" class="footer-overview block">Overview</a>
+              <a href="index.html#how-it-works" class="footer-how block">How it works</a>
+              <a href="index.html#community" class="footer-community block">Community</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-company text-[18px] font-semibold text-[#7a6f62]">Company</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="index.html#trust" class="footer-trust block">Trust</a>
+              <a href="contact.html" class="footer-contact block">Contact us</a>
+              <a href="support.html" class="footer-support block">Support</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-legal text-[18px] font-semibold text-[#7a6f62]">Legal</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="kvkk.html" class="footer-kvkk block">KVKK Notice</a>
+              <a href="acik-riza.html" class="footer-consent block">Explicit Consent</a>
+              <a href="gizlilik.html" class="footer-privacy block">Privacy policy</a>
+              <a href="t.html" class="footer-terms block">Terms and conditions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
+        <div class="footer-copyright">© 2026 Outfit Checkers</div>
+        <div class="flex items-center gap-4">
+          <span>Instagram</span>
+          <span>X</span>
+          <span>TikTok</span>
+          <span>LinkedIn</span>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -172,9 +259,31 @@
         desc: 'Have a question, feedback, partnership idea, or support request? Reach out and we’ll get back to you as soon as possible.',
         emailLabel: 'Email',
         supportLabel: 'Support',
-        supportDesc: 'For account, technical, or access-related issues, send us an email and we’ll help you out.',
+        supportDesc: 'For account, technical, privacy, or access-related issues, send us an email and we’ll help you out.',
         partnershipsLabel: 'Partnerships',
-        partnershipsDesc: 'Brand collaborations, media, and partnership requests can be sent to the same contact email.',
+        partnershipsDesc: 'Brand collaborations, media, legal, and partnership requests can be sent to the same contact email.',
+        legalContactLabel: 'Legal and privacy requests',
+        legalContactTitle: 'KVKK, privacy, and account deletion requests.',
+        legalContactDesc: 'For personal data requests, privacy questions, or account deletion support, contact us by email.',
+        addressLabel: 'Address',
+        addressDesc: 'İstanbul / Üsküdar / Çengelköy',
+        ownerLabel: 'Data controller',
+        ownerDesc: 'Cenk TURAN',
+        footerDesc: 'Post the fit, get the score, and improve your style with feedback.',
+        footerProduct: 'Product',
+        footerCompany: 'Company',
+        footerLegal: 'Legal',
+        footerOverview: 'Overview',
+        footerHow: 'How it works',
+        footerCommunity: 'Community',
+        footerTrust: 'Trust',
+        footerContact: 'Contact us',
+        footerSupport: 'Support',
+        footerKvkk: 'KVKK Notice',
+        footerConsent: 'Explicit Consent',
+        footerPrivacy: 'Privacy policy',
+        footerTerms: 'Terms and conditions',
+        footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Language changed'
       },
       tr: {
@@ -188,9 +297,31 @@
         desc: 'Bir sorunuz, geri bildiriminiz, iş birliği fikriniz veya destek talebiniz mi var? Bizimle iletişime geçin, en kısa sürede dönüş yapalım.',
         emailLabel: 'E-posta',
         supportLabel: 'Destek',
-        supportDesc: 'Hesap, teknik veya erişimle ilgili sorunlar için bize mail atın, yardımcı olalım.',
+        supportDesc: 'Hesap, teknik, gizlilik veya erişimle ilgili sorunlar için bize mail atın, yardımcı olalım.',
         partnershipsLabel: 'İş birlikleri',
-        partnershipsDesc: 'Marka iş birlikleri, medya ve ortaklık taleplerini aynı e-posta adresine gönderebilirsiniz.',
+        partnershipsDesc: 'Marka iş birlikleri, medya, yasal ve ortaklık taleplerini aynı e-posta adresine gönderebilirsiniz.',
+        legalContactLabel: 'Yasal ve gizlilik talepleri',
+        legalContactTitle: 'KVKK, gizlilik ve hesap silme talepleri.',
+        legalContactDesc: 'Kişisel veri talepleri, gizlilik soruları veya hesap silme desteği için bizimle e-posta yoluyla iletişime geçebilirsiniz.',
+        addressLabel: 'Adres',
+        addressDesc: 'İstanbul / Üsküdar / Çengelköy',
+        ownerLabel: 'Veri sorumlusu',
+        ownerDesc: 'Cenk TURAN',
+        footerDesc: 'Kombin paylaş, puan al, geri bildirimlerle tarzını geliştir.',
+        footerProduct: 'Ürün',
+        footerCompany: 'Şirket',
+        footerLegal: 'Yasal',
+        footerOverview: 'Genel bakış',
+        footerHow: 'Nasıl çalışır',
+        footerCommunity: 'Topluluk',
+        footerTrust: 'Güven',
+        footerContact: 'Bize ulaş',
+        footerSupport: 'Destek',
+        footerKvkk: 'KVKK Aydınlatma',
+        footerConsent: 'Açık Rıza',
+        footerPrivacy: 'Gizlilik Politikası',
+        footerTerms: 'Şartlar ve Koşullar',
+        footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Dil değiştirildi'
       },
       de: {
@@ -204,9 +335,31 @@
         desc: 'Hast du eine Frage, Feedback, eine Kooperationsidee oder brauchst Support? Schreib uns und wir melden uns so schnell wie möglich bei dir.',
         emailLabel: 'E-Mail',
         supportLabel: 'Support',
-        supportDesc: 'Bei Konto-, Technik- oder Zugangsproblemen kannst du uns per E-Mail kontaktieren.',
+        supportDesc: 'Bei Konto-, Technik-, Datenschutz- oder Zugangsproblemen kannst du uns per E-Mail kontaktieren.',
         partnershipsLabel: 'Partnerschaften',
-        partnershipsDesc: 'Markenkooperationen, Medienanfragen und Partnerschaftsanfragen kannst du an dieselbe E-Mail senden.',
+        partnershipsDesc: 'Markenkooperationen, Medienanfragen, rechtliche Anliegen und Partnerschaftsanfragen kannst du an dieselbe E-Mail senden.',
+        legalContactLabel: 'Rechtliche und Datenschutz-Anfragen',
+        legalContactTitle: 'KVKK-, Datenschutz- und Kontolöschungsanfragen.',
+        legalContactDesc: 'Für personenbezogene Daten, Datenschutzfragen oder Unterstützung bei der Kontolöschung kontaktiere uns per E-Mail.',
+        addressLabel: 'Adresse',
+        addressDesc: 'İstanbul / Üsküdar / Çengelköy',
+        ownerLabel: 'Datenverantwortlicher',
+        ownerDesc: 'Cenk TURAN',
+        footerDesc: 'Poste dein Outfit, bekomme einen Score und verbessere deinen Stil mit Feedback.',
+        footerProduct: 'Produkt',
+        footerCompany: 'Unternehmen',
+        footerLegal: 'Rechtliches',
+        footerOverview: 'Überblick',
+        footerHow: 'So funktioniert es',
+        footerCommunity: 'Community',
+        footerTrust: 'Vertrauen',
+        footerContact: 'Kontakt',
+        footerSupport: 'Support',
+        footerKvkk: 'KVKK-Hinweis',
+        footerConsent: 'Ausdrückliche Einwilligung',
+        footerPrivacy: 'Datenschutzrichtlinie',
+        footerTerms: 'AGB',
+        footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Sprache geändert'
       },
       ar: {
@@ -220,9 +373,31 @@
         desc: 'هل لديك سؤال أو ملاحظة أو فكرة شراكة أو طلب دعم؟ تواصل معنا وسنرد عليك في أقرب وقت ممكن.',
         emailLabel: 'البريد الإلكتروني',
         supportLabel: 'الدعم',
-        supportDesc: 'إذا كانت لديك مشكلة متعلقة بالحساب أو الوصول أو الأمور التقنية، راسلنا وسنساعدك.',
+        supportDesc: 'إذا كانت لديك مشكلة متعلقة بالحساب أو الخصوصية أو الوصول أو الأمور التقنية، راسلنا وسنساعدك.',
         partnershipsLabel: 'الشراكات',
-        partnershipsDesc: 'يمكن إرسال طلبات التعاون مع العلامات التجارية أو الإعلام أو الشراكات إلى نفس البريد الإلكتروني.',
+        partnershipsDesc: 'يمكن إرسال طلبات التعاون مع العلامات التجارية أو الإعلام أو الطلبات القانونية أو الشراكات إلى نفس البريد الإلكتروني.',
+        legalContactLabel: 'طلبات قانونية وخصوصية',
+        legalContactTitle: 'طلبات KVKK والخصوصية وحذف الحساب.',
+        legalContactDesc: 'لطلبات البيانات الشخصية أو أسئلة الخصوصية أو دعم حذف الحساب، تواصل معنا عبر البريد الإلكتروني.',
+        addressLabel: 'العنوان',
+        addressDesc: 'إسطنبول / أوسكودار / تشنغل كوي',
+        ownerLabel: 'مسؤول البيانات',
+        ownerDesc: 'Cenk TURAN',
+        footerDesc: 'انشر الإطلالة، احصل على التقييم، وطوّر أسلوبك من خلال التعليقات.',
+        footerProduct: 'المنتج',
+        footerCompany: 'الشركة',
+        footerLegal: 'القانوني',
+        footerOverview: 'نظرة عامة',
+        footerHow: 'كيف يعمل',
+        footerCommunity: 'المجتمع',
+        footerTrust: 'الثقة',
+        footerContact: 'اتصل بنا',
+        footerSupport: 'الدعم',
+        footerKvkk: 'إشعار KVKK',
+        footerConsent: 'موافقة صريحة',
+        footerPrivacy: 'سياسة الخصوصية',
+        footerTerms: 'الشروط والأحكام',
+        footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'تم تغيير اللغة'
       }
     };
@@ -237,7 +412,29 @@
       '.support-label': 'supportLabel',
       '.support-desc': 'supportDesc',
       '.partnerships-label': 'partnershipsLabel',
-      '.partnerships-desc': 'partnershipsDesc'
+      '.partnerships-desc': 'partnershipsDesc',
+      '.legal-contact-label': 'legalContactLabel',
+      '.legal-contact-title': 'legalContactTitle',
+      '.legal-contact-desc': 'legalContactDesc',
+      '.address-label': 'addressLabel',
+      '.address-desc': 'addressDesc',
+      '.owner-label': 'ownerLabel',
+      '.owner-desc': 'ownerDesc',
+      '.footer-desc': 'footerDesc',
+      '.footer-product': 'footerProduct',
+      '.footer-company': 'footerCompany',
+      '.footer-legal': 'footerLegal',
+      '.footer-overview': 'footerOverview',
+      '.footer-how': 'footerHow',
+      '.footer-community': 'footerCommunity',
+      '.footer-trust': 'footerTrust',
+      '.footer-contact': 'footerContact',
+      '.footer-support': 'footerSupport',
+      '.footer-kvkk': 'footerKvkk',
+      '.footer-consent': 'footerConsent',
+      '.footer-privacy': 'footerPrivacy',
+      '.footer-terms': 'footerTerms',
+      '.footer-copyright': 'footerCopyright'
     };
 
     function applyTranslations(lang) {
