@@ -22,10 +22,8 @@
             sans: ['Inter', 'sans-serif'],
           },
           boxShadow: {
-            soft: '0 20px 70px rgba(24, 20, 15, 0.10)',
-            float: '0 30px 90px rgba(24, 20, 15, 0.16)',
-            glow: '0 26px 90px rgba(255, 214, 10, 0.38)',
-            product: '0 32px 90px rgba(17, 14, 9, 0.22)',
+            soft: '0 20px 60px rgba(24, 20, 15, 0.08)',
+            float: '0 24px 70px rgba(24, 20, 15, 0.12)',
           },
         },
       },
@@ -33,37 +31,21 @@
   </script>
 
   <style>
-    :root {
-      --oc-yellow: #ffd60a;
-      --oc-yellow-2: #ffe45e;
-      --oc-yellow-3: #fff09a;
-      --oc-cream: #fff8df;
-      --oc-soft: #fffdf5;
-      --oc-ink: #18140f;
-      --oc-brown: #3d3023;
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at 12% 8%, rgba(255, 214, 10, 0.25), transparent 26%),
-        radial-gradient(circle at 92% 16%, rgba(255, 228, 94, 0.26), transparent 30%),
-        linear-gradient(180deg, #fff8df 0%, #fbf0c6 48%, #fffaf0 100%);
-      color: var(--oc-ink);
+      background: #f5f2ea;
+      color: #1f1b16;
     }
 
     .noise {
       background-image:
-        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.70), transparent 22%),
-        radial-gradient(circle at 82% 8%, rgba(255, 245, 170, 0.82), transparent 24%),
-        linear-gradient(135deg, rgba(255, 211, 0, 0.98), rgba(255, 232, 72, 0.96) 46%, rgba(255, 193, 7, 0.98)),
-        url("assets/texture-blue.png");
-      background-size: cover;
-      background-position: center;
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 22%),
+        radial-gradient(circle at 80% 0%, rgba(255,255,255,0.12), transparent 18%),
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04), transparent 24%);
     }
 
     .hero-card {
@@ -72,42 +54,19 @@
     }
 
     .hero-card:hover {
-      transform: translateY(-10px) scale(1.015);
-      box-shadow: 0 34px 90px rgba(20, 16, 10, 0.24);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(20, 16, 10, 0.18);
     }
 
     .floating-nav.scrolled {
-      backdrop-filter: blur(18px);
-      background: rgba(255, 250, 235, 0.92);
-      box-shadow: 0 14px 45px rgba(24, 20, 15, 0.12);
-      border-color: rgba(31, 27, 22, 0.10);
+      backdrop-filter: blur(16px);
+      background: rgba(250, 246, 236, 0.88);
+      box-shadow: 0 10px 35px rgba(24, 20, 15, 0.09);
+      border-color: rgba(31, 27, 22, 0.08);
     }
 
     .marquee-track {
       animation: marquee 20s linear infinite;
-    }
-
-    .marquee-wrap:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    .product-mesh {
-      background:
-        radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.76), transparent 30%),
-        radial-gradient(circle at 88% 4%, rgba(255, 214, 10, 0.28), transparent 32%),
-        linear-gradient(145deg, rgba(255, 253, 245, 0.98), rgba(255, 245, 184, 0.78));
-    }
-
-    .yellow-card {
-      background:
-        radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.58), transparent 28%),
-        linear-gradient(145deg, #ffd60a 0%, #ffe45e 58%, #fff09a 100%);
-    }
-
-    .soft-yellow-card {
-      background:
-        radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.62), transparent 28%),
-        linear-gradient(145deg, #ffe45e 0%, #fff09a 100%);
     }
 
     @keyframes marquee {
@@ -117,30 +76,31 @@
   </style>
 </head>
 
-<body class="min-h-screen bg-[#fff8df] text-[#18140f]">
+<body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
   <div class="mx-auto max-w-[1550px] px-4 pb-16 pt-4 md:px-8 lg:px-10">
 
+    <!-- HEADER -->
     <header
       id="siteHeader"
       class="floating-nav sticky top-4 z-50 mx-auto flex w-full items-center justify-between gap-4 rounded-[28px] border border-transparent px-4 py-3 transition-all duration-300 md:px-5"
     >
-      <a href="#" class="brand-text text-[28px] font-black tracking-[-0.06em] text-[#18140f] md:text-[34px]">
+      <a href="#" class="brand-text text-[28px] font-black tracking-[-0.06em] text-[#29241d] md:text-[34px]">
         Outfit Checkers
       </a>
 
-      <nav class="hidden items-center gap-1 rounded-[22px] border border-[#18140f]/10 bg-[#fffaf0]/85 px-2 py-2 shadow-sm backdrop-blur lg:flex">
-        <a href="#product" class="nav-product rounded-[16px] px-5 py-3 text-[15px] font-bold text-[#2e2822] transition hover:bg-[#ffd60a]">Product</a>
-        <a href="#how-it-works" class="nav-how rounded-[16px] px-5 py-3 text-[15px] font-bold text-[#2e2822] transition hover:bg-[#ffd60a]">How it works</a>
-        <a href="#community" class="nav-community rounded-[16px] px-5 py-3 text-[15px] font-bold text-[#2e2822] transition hover:bg-[#ffd60a]">Community</a>
-        <a href="#trust" class="nav-trust rounded-[16px] px-5 py-3 text-[15px] font-bold text-[#2e2822] transition hover:bg-[#ffd60a]">Trust</a>
-        <a href="#support" class="nav-support rounded-[16px] px-5 py-3 text-[15px] font-bold text-[#2e2822] transition hover:bg-[#ffd60a]">Support</a>
+      <nav class="hidden items-center gap-1 rounded-[22px] border border-[#1f1b16]/8 bg-[#f8f4ea] px-2 py-2 lg:flex">
+        <a href="#product" class="nav-product rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Product</a>
+        <a href="#how-it-works" class="nav-how rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">How it works</a>
+        <a href="#community" class="nav-community rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Community</a>
+        <a href="#trust" class="nav-trust rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Trust</a>
+        <a href="#support" class="nav-support rounded-[16px] px-5 py-3 text-[15px] font-semibold text-[#2e2822] transition hover:bg-white">Support</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <div class="relative hidden md:block">
           <button
             id="langToggle"
-            class="flex h-12 items-center gap-2 rounded-[16px] border border-[#18140f]/10 bg-[#fffaf0] px-4 text-[14px] font-bold text-[#2f2820] shadow-sm transition hover:bg-white"
+            class="flex h-12 items-center gap-2 rounded-[16px] border border-[#1f1b16]/10 bg-[#faf6ee] px-4 text-[14px] font-semibold text-[#2f2820] shadow-sm"
             type="button"
           >
             <span class="text-base">◎</span>
@@ -149,16 +109,16 @@
 
           <div
             id="langMenu"
-            class="absolute right-0 top-[58px] hidden min-w-[180px] rounded-[18px] border border-[#18140f]/10 bg-[#fffdf5] p-2 shadow-soft"
+            class="absolute right-0 top-[58px] hidden min-w-[180px] rounded-[18px] border border-[#1f1b16]/8 bg-[#fffaf0] p-2 shadow-soft"
           >
-            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-bold text-[#2f2820] hover:bg-[#fff09a]" data-lang="en">English</button>
-            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-bold text-[#2f2820] hover:bg-[#fff09a]" data-lang="tr">Türkçe</button>
-            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-bold text-[#2f2820] hover:bg-[#fff09a]" data-lang="de">Deutsch</button>
-            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-bold text-[#2f2820] hover:bg-[#fff09a]" data-lang="ar">العربية</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="en">English</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="tr">Türkçe</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="de">Deutsch</button>
+            <button type="button" class="lang-option flex w-full rounded-[14px] px-4 py-3 text-left text-[14px] font-semibold text-[#2f2820] hover:bg-white" data-lang="ar">العربية</button>
           </div>
         </div>
 
-        <button class="open-app-btn rounded-[18px] bg-[#18140f] px-6 py-3.5 text-[15px] font-black text-white shadow-[0_16px_36px_rgba(24,20,15,0.22)] transition hover:translate-y-[-1px] hover:bg-[#2c2116]">
+        <button class="open-app-btn rounded-[18px] bg-[#1f1b16] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_12px_30px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]">
           Open app
         </button>
       </div>
@@ -167,58 +127,59 @@
     <main class="space-y-7 pt-3">
       <div class="sr-only" aria-live="polite" id="liveRegion"></div>
 
-      <section class="noise relative overflow-hidden rounded-[44px] bg-[#ffd60a] px-6 pb-8 pt-6 shadow-glow md:px-10 md:pb-12 md:pt-8 lg:px-14">
-        <div class="relative min-h-[860px] overflow-hidden rounded-[34px] border border-white/35 bg-[#fff09a]/20">
-          <div class="absolute inset-0 opacity-90">
-            <div class="absolute left-[-120px] top-[160px] h-[440px] w-[440px] rounded-full bg-white/24 blur-3xl"></div>
-            <div class="absolute right-[-120px] top-[80px] h-[340px] w-[340px] rounded-full bg-[#fff09a]/45 blur-3xl"></div>
-            <div class="absolute bottom-[-120px] left-1/2 h-[310px] w-[720px] -translate-x-1/2 rounded-full bg-[#18140f]/10 blur-3xl"></div>
+      <!-- HERO -->
+      <section class="noise relative overflow-hidden rounded-[44px] bg-[#ffdb5b] px-6 pb-8 pt-6 shadow-float md:px-10 md:pb-12 md:pt-8 lg:px-14">
+        <div class="relative min-h-[860px] overflow-hidden rounded-[34px] bg-[#f9db63]/20">
+          <div class="absolute inset-0 opacity-80">
+            <div class="absolute left-[-120px] top-[160px] h-[420px] w-[420px] rounded-full bg-white/18 blur-3xl"></div>
+            <div class="absolute right-[-120px] top-[80px] h-[320px] w-[320px] rounded-full bg-[#f3c92f]/35 blur-3xl"></div>
+            <div class="absolute bottom-[-120px] left-1/2 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-[#1f1b16]/8 blur-3xl"></div>
           </div>
 
           <div class="relative z-20 flex min-h-[860px] flex-col justify-between">
             <div class="grid gap-8 pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-2">
               <div class="max-w-[760px] px-2 md:px-4 lg:px-8">
-                <div class="hero-badge mb-6 inline-flex rounded-full border border-[#18140f]/10 bg-white/70 px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7a5f06] shadow-sm backdrop-blur">
+                <div class="hero-badge mb-6 inline-flex rounded-full border border-[#1f1b16]/10 bg-[#fff7d2] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#75663f]">
                   Social rating platform
                 </div>
 
-                <h1 class="hero-title max-w-[790px] text-[58px] font-black leading-[0.88] tracking-[-0.075em] text-[#18140f] md:text-[84px] lg:text-[112px]">
+                <h1 class="hero-title max-w-[760px] text-[58px] font-black leading-[0.9] tracking-[-0.07em] text-[#26211b] md:text-[84px] lg:text-[112px]">
                   Post the fit.<br />
                   Get the score.<br />
                   Improve the vibe.
                 </h1>
 
-                <p class="hero-desc mt-7 max-w-[640px] text-[21px] font-medium leading-8 text-[#3d3023] md:text-[24px] md:leading-9">
+                <p class="hero-desc mt-7 max-w-[630px] text-[21px] leading-8 text-[#43392f] md:text-[24px] md:leading-9">
                   Outfit Checkers is not another empty social feed. It is built around outfit ratings,
-                  cleaner feedback, style discovery, and a stronger product loop that actually helps users improve.
+                  cleaner feedback, style discovery, and a sharper product loop that actually helps users improve.
                 </p>
 
                 <div class="mt-8 flex flex-wrap gap-4">
-                  <button class="hero-cta-1 rounded-[18px] bg-[#18140f] px-8 py-5 text-[17px] font-black text-white shadow-[0_18px_44px_rgba(24,20,15,0.24)] transition hover:translate-y-[-2px] hover:bg-[#2c2116]">
+                  <button class="hero-cta-1 rounded-[18px] bg-[#1f1b16] px-8 py-5 text-[17px] font-bold text-white shadow-[0_14px_34px_rgba(31,27,22,0.18)] transition hover:translate-y-[-1px]">
                     Join early access
                   </button>
-                  <button class="hero-cta-2 rounded-[18px] border border-[#18140f]/12 bg-white/65 px-8 py-5 text-[17px] font-black text-[#251f18] shadow-sm backdrop-blur transition hover:bg-white">
+                  <button class="hero-cta-2 rounded-[18px] border border-[#1f1b16]/12 bg-[#fff8e1] px-8 py-5 text-[17px] font-bold text-[#251f18] shadow-sm transition hover:bg-white">
                     See how it works
                   </button>
                 </div>
 
-                <div class="mt-10 grid max-w-[660px] gap-4 sm:grid-cols-3">
-                  <div class="rounded-[24px] border border-[#18140f]/8 bg-white/58 p-5 shadow-sm backdrop-blur">
-                    <div class="stat1-label text-[12px] font-black uppercase tracking-[0.18em] text-[#806c20]">Core</div>
+                <div class="mt-10 grid max-w-[640px] gap-4 sm:grid-cols-3">
+                  <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
+                    <div class="stat1-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Core</div>
                     <div class="stat1-title mt-3 text-[28px] font-black tracking-[-0.04em]">1–10 rating</div>
-                    <div class="stat1-desc mt-2 text-[15px] font-semibold leading-6 text-[#544631]">Not likes. Real evaluation.</div>
+                    <div class="stat1-desc mt-2 text-[15px] leading-6 text-[#564d42]">Not likes. Real evaluation.</div>
                   </div>
 
-                  <div class="rounded-[24px] border border-[#18140f]/8 bg-white/58 p-5 shadow-sm backdrop-blur">
-                    <div class="stat2-label text-[12px] font-black uppercase tracking-[0.18em] text-[#806c20]">Social</div>
+                  <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
+                    <div class="stat2-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Social</div>
                     <div class="stat2-title mt-3 text-[28px] font-black tracking-[-0.04em]">Discovery</div>
-                    <div class="stat2-desc mt-2 text-[15px] font-semibold leading-6 text-[#544631]">Find people that match your vibe.</div>
+                    <div class="stat2-desc mt-2 text-[15px] leading-6 text-[#564d42]">Find people that match your vibe.</div>
                   </div>
 
-                  <div class="rounded-[24px] border border-[#18140f]/8 bg-white/58 p-5 shadow-sm backdrop-blur">
-                    <div class="stat3-label text-[12px] font-black uppercase tracking-[0.18em] text-[#806c20]">Loop</div>
+                  <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
+                    <div class="stat3-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Loop</div>
                     <div class="stat3-title mt-3 text-[28px] font-black tracking-[-0.04em]">Improve</div>
-                    <div class="stat3-desc mt-2 text-[15px] font-semibold leading-6 text-[#544631]">Turn feedback into better style decisions.</div>
+                    <div class="stat3-desc mt-2 text-[15px] leading-6 text-[#564d42]">Turn feedback into better style decisions.</div>
                   </div>
                 </div>
               </div>
@@ -230,32 +191,32 @@
                     <div class="relative h-full w-full overflow-hidden rounded-[28px]">
                       <img
                         src="assets/hero-minimal.png"
-                        alt="Minimal high fashion outfit"
+                        alt="Outfit card 1"
                         class="h-full w-full object-cover"
                       />
-                      <div class="absolute bottom-4 left-4 rounded-full bg-black/75 px-3 py-1.5 text-sm font-black text-white backdrop-blur">Minimal</div>
+                      <div class="absolute bottom-4 left-4 rounded-full bg-black/70 px-3 py-1.5 text-sm font-bold text-white backdrop-blur">Sude, 22</div>
                     </div>
                   </div>
 
-                  <div class="hero-card absolute left-[33%] top-[0%] z-30 h-[530px] w-[290px] overflow-hidden rounded-[40px] bg-white p-2 shadow-product">
+                  <div class="hero-card absolute left-[33%] top-[0%] z-30 h-[530px] w-[290px] overflow-hidden rounded-[40px] bg-white p-2 shadow-[0_30px_80px_rgba(17,14,9,0.20)]">
                     <div class="relative h-full w-full overflow-hidden rounded-[34px]">
                       <img
                         src="assets/streetwear-blue.png"
-                        alt="Streetwear outfit card"
+                        alt="Outfit card 2"
                         class="h-full w-full object-cover"
                       />
 
-                      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/72 via-black/24 to-transparent p-5">
+                      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-5">
                         <div class="flex items-end justify-between gap-4">
                           <div>
-                            <div class="text-[24px] font-black tracking-[-0.03em] text-white">Street Fit</div>
-                            <div class="mt-1 text-[13px] font-bold uppercase tracking-[0.14em] text-white/78">Streetwear • Color pop</div>
+                            <div class="text-[24px] font-black tracking-[-0.03em] text-white">Alya, 20</div>
+                            <div class="mt-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/75">Streetwear • Night fit</div>
                           </div>
-                          <div class="rounded-[16px] bg-[#ffd60a] px-3 py-2 text-[13px] font-black text-[#18140f] shadow-sm">8.9 / 10</div>
+                          <div class="rounded-[16px] bg-[#ffdb5b] px-3 py-2 text-[13px] font-black text-[#231d16]">8.9 / 10</div>
                         </div>
                       </div>
 
-                      <div class="absolute right-4 top-5 rounded-[24px] bg-[#ffd60a] px-4 py-8 text-[22px] font-black leading-none text-[#18140f] shadow-[0_14px_30px_rgba(0,0,0,0.14)] [writing-mode:vertical-rl]">
+                      <div class="absolute right-4 top-5 rounded-[24px] bg-[#ffdb5b] px-4 py-8 text-[22px] font-black leading-none text-[#241e16] [writing-mode:vertical-rl]">
                         Top rated
                       </div>
                     </div>
@@ -265,39 +226,39 @@
                     <div class="relative h-full w-full overflow-hidden rounded-[26px]">
                       <img
                         src="assets/urbane-originals.png"
-                        alt="Urbane Originals outfit"
+                        alt="Outfit card 3"
                         class="h-full w-full object-cover"
                       />
-                      <div class="absolute right-3 top-3 rounded-[18px] bg-[#fff09a] px-3 py-5 text-[14px] font-black text-[#30281f] shadow-sm [writing-mode:vertical-rl]">
+                      <div class="absolute right-3 top-3 rounded-[18px] bg-[#fff6cc] px-3 py-5 text-[14px] font-black text-[#30281f] [writing-mode:vertical-rl]">
                         Clean fit
                       </div>
                     </div>
                   </div>
 
-                  <div class="absolute bottom-[4%] left-[10%] z-40 max-w-[280px] rounded-[28px] border border-[#18140f]/8 bg-white/78 p-5 shadow-soft backdrop-blur">
-                    <div class="live-insight-label text-[12px] font-black uppercase tracking-[0.2em] text-[#836f20]">Live insight</div>
+                  <div class="absolute bottom-[4%] left-[10%] z-40 max-w-[260px] rounded-[28px] border border-[#1f1b16]/8 bg-[#fff9e7]/85 p-5 shadow-soft backdrop-blur">
+                    <div class="live-insight-label text-[12px] font-black uppercase tracking-[0.2em] text-[#7e7158]">Live insight</div>
                     <div class="live-insight-title mt-3 text-[26px] font-black leading-[1.02] tracking-[-0.04em]">This outfit is performing above your profile average.</div>
-                    <div class="live-insight-desc mt-3 text-[15px] font-semibold leading-6 text-[#564a35]">Cleaner silhouette and better color balance are driving stronger scores.</div>
+                    <div class="live-insight-desc mt-3 text-[15px] leading-6 text-[#564d42]">Cleaner silhouette and better color balance are driving stronger scores.</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="pb-8 pt-4 md:pb-10">
-              <div class="marquee-wrap overflow-hidden rounded-[22px] border border-[#18140f]/8 bg-white/46 py-4 shadow-soft backdrop-blur">
+              <div class="overflow-hidden rounded-[22px] border border-[#1f1b16]/8 bg-[#fff7d8]/70 py-4 shadow-soft">
                 <div class="marquee-track flex min-w-max items-center gap-4 px-4">
-                  <div class="ticker-1 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Rate outfits</div>
-                  <div class="ticker-2 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Get real comments</div>
-                  <div class="ticker-3 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Discover your vibe</div>
-                  <div class="ticker-4 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Community score</div>
-                  <div class="ticker-5 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Premium feedback loop</div>
-                  <div class="ticker-6 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Safer social design</div>
-                  <div class="ticker-1 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Rate outfits</div>
-                  <div class="ticker-2 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Get real comments</div>
-                  <div class="ticker-3 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Discover your vibe</div>
-                  <div class="ticker-4 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Community score</div>
-                  <div class="ticker-5 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Premium feedback loop</div>
-                  <div class="ticker-6 rounded-full bg-white px-5 py-3 text-[14px] font-black text-[#322c24] shadow-sm">Safer social design</div>
+                  <div class="ticker-1 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Rate outfits</div>
+                  <div class="ticker-2 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Get real comments</div>
+                  <div class="ticker-3 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Discover your vibe</div>
+                  <div class="ticker-4 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Community score</div>
+                  <div class="ticker-5 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Premium feedback loop</div>
+                  <div class="ticker-6 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Safer social design</div>
+                  <div class="ticker-1 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Rate outfits</div>
+                  <div class="ticker-2 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Get real comments</div>
+                  <div class="ticker-3 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Discover your vibe</div>
+                  <div class="ticker-4 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Community score</div>
+                  <div class="ticker-5 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Premium feedback loop</div>
+                  <div class="ticker-6 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-[#322c24]">Safer social design</div>
                 </div>
               </div>
             </div>
@@ -306,49 +267,49 @@
       </section>
 
       <!-- PRODUCT SECTION -->
-      <section id="product" class="rounded-[42px] border border-[#18140f]/8 bg-[#fffdf5] px-7 py-10 shadow-soft md:px-10 md:py-14 lg:px-14">
+      <section id="product" class="rounded-[42px] bg-[#fbfaf5] px-7 py-10 shadow-soft md:px-10 md:py-14 lg:px-14">
         <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div>
-            <div class="positioning-badge inline-flex rounded-full border border-[#18140f]/8 bg-[#fff09a] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7b650f]">
+            <div class="positioning-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-white px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#8b7e6d]">
               Positioning
             </div>
 
-            <h2 class="positioning-title mt-6 max-w-[680px] text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#18140f] md:text-[74px]">
+            <h2 class="positioning-title mt-6 max-w-[680px] text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[74px]">
               A real product landing page, not a generic app promo.
             </h2>
 
-            <p class="positioning-desc mt-7 max-w-[620px] text-[22px] font-medium leading-8 text-[#4a3d2e]">
+            <p class="positioning-desc mt-7 max-w-[620px] text-[22px] leading-8 text-[#4a4339]">
               The strength of the app is its rating-first logic. So the landing page should clearly say:
               post the outfit, get the score, read feedback, improve, discover.
             </p>
 
             <div class="mt-9 grid gap-4 sm:grid-cols-2">
-              <div class="yellow-card rounded-[28px] p-6 shadow-[0_20px_50px_rgba(255,214,10,0.26)]">
-                <div class="why-works-label text-[14px] font-black uppercase tracking-[0.16em] text-[#735d05]">Why it works</div>
+              <div class="rounded-[26px] bg-[#ffdb5b] p-6">
+                <div class="why-works-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it works</div>
                 <div class="why-works-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Score instead of likes</div>
-                <p class="why-works-desc mt-3 text-[16px] font-semibold leading-7 text-[#473a29]">This is the main value proposition. The landing page should put it at the center.</p>
+                <p class="why-works-desc mt-3 text-[16px] leading-7 text-[#473f33]">This is the main value proposition. The landing page should put it at the center.</p>
               </div>
 
-              <div class="soft-yellow-card rounded-[28px] p-6 shadow-[0_20px_50px_rgba(255,214,10,0.14)]">
-                <div class="why-premium-label text-[14px] font-black uppercase tracking-[0.16em] text-[#735d05]">Why it feels premium</div>
+              <div class="rounded-[26px] bg-[#fff0a8] p-6">
+                <div class="why-premium-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it feels premium</div>
                 <div class="why-premium-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Cleaner card language</div>
-                <p class="why-premium-desc mt-3 text-[16px] font-semibold leading-7 text-[#473a29]">To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.</p>
+                <p class="why-premium-desc mt-3 text-[16px] leading-7 text-[#473f33]">To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.</p>
               </div>
             </div>
           </div>
 
           <div class="grid gap-4 md:grid-cols-2">
-            <div class="rounded-[32px] bg-white p-5 shadow-soft">
-              <div class="product-mesh rounded-[26px] border border-[#18140f]/8 p-5">
+            <div class="rounded-[30px] bg-white p-5 shadow-soft">
+              <div class="rounded-[24px] bg-[#f4efe4] p-5">
                 <div class="flex items-center justify-between">
                   <div>
-                    <div class="feed-card-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7425]">Feed card</div>
+                    <div class="feed-card-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Feed card</div>
                     <div class="feed-card-title mt-1 text-[24px] font-black tracking-[-0.04em]">Avg. score</div>
                   </div>
-                  <div class="rounded-[16px] bg-[#ffd60a] px-3 py-2 text-[14px] font-black shadow-sm">9.1</div>
+                  <div class="rounded-[16px] bg-[#ffdb5b] px-3 py-2 text-[14px] font-black">9.1</div>
                 </div>
 
-                <div class="mt-5 h-[220px] overflow-hidden rounded-[22px] shadow-sm">
+                <div class="mt-5 h-[220px] overflow-hidden rounded-[22px]">
                   <img
                     src="assets/streetwear-blue.png"
                     alt="Feed preview"
@@ -358,14 +319,14 @@
               </div>
             </div>
 
-            <div class="rounded-[32px] bg-white p-5 shadow-soft">
-              <div class="product-mesh rounded-[26px] border border-[#18140f]/8 p-5">
-                <div class="comment-quality-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7425]">Comment quality</div>
+            <div class="rounded-[30px] bg-white p-5 shadow-soft">
+              <div class="rounded-[24px] bg-[#f4efe4] p-5">
+                <div class="comment-quality-label text-[14px] font-black uppercase tracking-[0.18em] text-[#8a7e70]">Comment quality</div>
                 <div class="comment-quality-title mt-2 text-[24px] font-black tracking-[-0.04em]">Structured feedback</div>
                 <div class="mt-5 space-y-3">
-                  <div class="comment-1 rounded-[18px] bg-white px-4 py-3 text-[15px] font-bold text-[#3b342b] shadow-sm">“The color transition feels very clean.”</div>
-                  <div class="comment-2 rounded-[18px] bg-white px-4 py-3 text-[15px] font-bold text-[#3b342b] shadow-sm">“The shoe choice elevates the whole look.”</div>
-                  <div class="comment-3 rounded-[18px] bg-white px-4 py-3 text-[15px] font-bold text-[#3b342b] shadow-sm">“This hits stronger with streetwear audiences.”</div>
+                  <div class="comment-1 rounded-[18px] bg-white px-4 py-3 text-[15px] font-semibold text-[#3b342b]">“The color transition feels very clean.”</div>
+                  <div class="comment-2 rounded-[18px] bg-white px-4 py-3 text-[15px] font-semibold text-[#3b342b]">“The shoe choice elevates the whole look.”</div>
+                  <div class="comment-3 rounded-[18px] bg-white px-4 py-3 text-[15px] font-semibold text-[#3b342b]">“This hits stronger with streetwear audiences.”</div>
                 </div>
               </div>
             </div>
@@ -375,50 +336,50 @@
 
       <!-- HOW IT WORKS -->
       <section id="how-it-works" class="grid gap-6 lg:grid-cols-3">
-        <article class="rounded-[36px] bg-[#ffd60a] p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-float">
-          <div class="h-[260px] overflow-hidden rounded-[28px] shadow-sm">
+        <article class="rounded-[34px] bg-[#ffdb5b] p-6 shadow-soft">
+          <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
               src="assets/hero-minimal.png"
               alt="Upload fit"
               class="h-full w-full object-cover"
             />
           </div>
-          <div class="mt-5 inline-flex rounded-full bg-white/82 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#6e5b16]">Step 01</div>
+          <div class="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#706457]">Step 01</div>
           <h3 class="how1-title mt-4 text-[42px] font-black leading-[0.95] tracking-[-0.05em]">Post your outfit</h3>
-          <p class="how1-desc mt-4 text-[19px] font-semibold leading-8 text-[#413522]">Share your fit and start collecting real scores and comments.</p>
+          <p class="how1-desc mt-4 text-[19px] leading-8 text-[#41392f]">Share your fit and start collecting real scores and comments.</p>
         </article>
 
-        <article class="rounded-[36px] bg-[#ffe45e] p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-float">
-          <div class="h-[260px] overflow-hidden rounded-[28px] shadow-sm">
+        <article class="rounded-[34px] bg-[#ffe98a] p-6 shadow-soft">
+          <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
               src="assets/streetwear-blue.png"
               alt="Get rated"
               class="h-full w-full object-cover"
             />
           </div>
-          <div class="mt-5 inline-flex rounded-full bg-white/82 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#6e5b16]">Step 02</div>
+          <div class="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#706457]">Step 02</div>
           <h3 class="how2-title mt-4 text-[42px] font-black leading-[0.95] tracking-[-0.05em]">See your score</h3>
-          <p class="how2-desc mt-4 text-[19px] font-semibold leading-8 text-[#413522]">Quickly understand your average, comments, and overall performance.</p>
+          <p class="how2-desc mt-4 text-[19px] leading-8 text-[#41392f]">Quickly understand your average, comments, and overall performance.</p>
         </article>
 
-        <article class="rounded-[36px] bg-[#fff09a] p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-float">
-          <div class="h-[260px] overflow-hidden rounded-[28px] shadow-sm">
+        <article class="rounded-[34px] bg-[#fff1b8] p-6 shadow-soft">
+          <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
               src="assets/urbane-originals.png"
               alt="Improve faster"
               class="h-full w-full object-cover"
             />
           </div>
-          <div class="mt-5 inline-flex rounded-full bg-white/82 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#6e5b16]">Step 03</div>
+          <div class="mt-5 inline-flex rounded-full bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#706457]">Step 03</div>
           <h3 class="how3-title mt-4 text-[42px] font-black leading-[0.95] tracking-[-0.05em]">Improve your style</h3>
-          <p class="how3-desc mt-4 text-[19px] font-semibold leading-8 text-[#413522]">Learn which looks perform better and improve faster.</p>
+          <p class="how3-desc mt-4 text-[19px] leading-8 text-[#41392f]">Learn which looks perform better and improve faster.</p>
         </article>
       </section>
 
       <!-- COMMUNITY -->
-      <section id="community" class="rounded-[42px] border border-[#18140f]/8 bg-white p-6 shadow-soft md:p-8 lg:p-10">
+      <section id="community" class="rounded-[42px] border border-[#1f1b16]/6 bg-white p-6 shadow-soft md:p-8 lg:p-10">
         <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-          <div class="overflow-hidden rounded-[34px] bg-[#f3e8be] shadow-sm">
+          <div class="overflow-hidden rounded-[34px] bg-[#efe7db]">
             <img
               src="assets/urbane-originals.png"
               alt="Community image"
@@ -427,31 +388,31 @@
           </div>
 
           <div class="px-2 md:px-4 lg:px-6">
-            <div class="community-badge inline-flex rounded-full border border-[#18140f]/8 bg-[#fff09a] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7e6a1e]">
+            <div class="community-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-[#fff8da] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7e715b]">
               Community signal
             </div>
 
-            <h2 class="community-title mt-6 text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#18140f] md:text-[76px]">
+            <h2 class="community-title mt-6 text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[76px]">
               Feedback should feel readable, social, and addictive.
             </h2>
 
-            <p class="community-desc-1 mt-7 text-[22px] font-medium leading-8 text-[#463a2a]">
+            <p class="community-desc-1 mt-7 text-[22px] leading-8 text-[#463f36]">
               Instead of random social noise, users get readable ratings, cleaner comments, and much stronger product logic.
             </p>
 
-            <p class="community-desc-2 mt-5 text-[19px] font-medium leading-8 text-[#695b47]">
+            <p class="community-desc-2 mt-5 text-[19px] leading-8 text-[#6b6257]">
               That is exactly what the landing page should sell: why users come, stay, and post again.
             </p>
 
             <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-[26px] bg-[#fff7cc] p-5 shadow-sm">
+              <div class="rounded-[24px] bg-[#f8f4ea] p-5">
                 <div class="community-card1-title text-[28px] font-black tracking-[-0.04em]">Trend by rating</div>
-                <p class="community-card1-desc mt-2 text-[16px] font-semibold leading-7 text-[#554832]">Trending should highlight actually rated posts, not unrated filler content.</p>
+                <p class="community-card1-desc mt-2 text-[16px] leading-7 text-[#554d42]">Trending should highlight actually rated posts, not unrated filler content.</p>
               </div>
 
-              <div class="rounded-[26px] bg-[#fff7cc] p-5 shadow-sm">
+              <div class="rounded-[24px] bg-[#f8f4ea] p-5">
                 <div class="community-card2-title text-[28px] font-black tracking-[-0.04em]">Discovery by vibe</div>
-                <p class="community-card2-desc mt-2 text-[16px] font-semibold leading-7 text-[#554832]">Users can discover new profiles by visual taste and style direction.</p>
+                <p class="community-card2-desc mt-2 text-[16px] leading-7 text-[#554d42]">Users can discover new profiles by visual taste and style direction.</p>
               </div>
             </div>
           </div>
@@ -460,19 +421,19 @@
 
       <!-- TRUST -->
       <section id="trust" class="grid gap-8 lg:grid-cols-[0.94fr_1.06fr]">
-        <div class="rounded-[40px] border border-[#18140f]/8 bg-[#fffdf5] p-8 shadow-soft md:p-10">
-          <div class="text-[48px] font-black leading-none text-[#ffd60a]">“</div>
-          <h3 class="trust-quote-title mt-2 max-w-[640px] text-[52px] font-black leading-[0.95] tracking-[-0.06em] text-[#18140f] md:text-[76px]">
+        <div class="rounded-[40px] bg-[#faf7f0] p-8 shadow-soft md:p-10">
+          <div class="text-[48px] font-black leading-none text-[#1f1b16]">“</div>
+          <h3 class="trust-quote-title mt-2 max-w-[640px] text-[52px] font-black leading-[0.95] tracking-[-0.06em] text-[#1f1b16] md:text-[76px]">
             A stronger product feeling comes from trust, clarity, and consistency.
           </h3>
-          <p class="trust-quote-desc mt-7 max-w-[580px] text-[21px] font-medium leading-8 text-[#4c3f2f]">
+          <p class="trust-quote-desc mt-7 max-w-[580px] text-[21px] leading-8 text-[#4c443a]">
             Privacy, account deletion, moderation, and cleaner social boundaries should be visible parts of the product.
           </p>
         </div>
 
-        <div class="rounded-[40px] bg-[#ffd60a] p-6 shadow-glow md:p-8">
+        <div class="rounded-[40px] bg-[#fff8dd] p-6 shadow-soft md:p-8">
           <div class="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
-            <div class="overflow-hidden rounded-[30px] bg-[#e8dfd1] shadow-sm">
+            <div class="overflow-hidden rounded-[30px] bg-[#e8dfd1]">
               <img
                 src="assets/hero-minimal.png"
                 alt="Trust image"
@@ -481,15 +442,15 @@
             </div>
 
             <div class="pr-2">
-              <div class="trust-badge inline-flex rounded-full border border-[#18140f]/8 bg-white/74 px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#735d05]">
+              <div class="trust-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-white px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#857764]">
                 Ready to launch
               </div>
 
-              <h4 class="trust-title mt-5 text-[42px] font-black leading-[0.96] tracking-[-0.05em] text-[#18140f] md:text-[58px]">
+              <h4 class="trust-title mt-5 text-[42px] font-black leading-[0.96] tracking-[-0.05em] text-[#1f1b16] md:text-[58px]">
                 Make the domain part of the product.
               </h4>
 
-              <p class="trust-desc mt-5 text-[20px] font-semibold leading-8 text-[#433520]">
+              <p class="trust-desc mt-5 text-[20px] leading-8 text-[#4d453b]">
                 Privacy policy, terms, consent, and account deletion should all live in the same clean system.
               </p>
             </div>
@@ -498,18 +459,18 @@
       </section>
 
       <!-- DOWNLOAD CTA -->
-      <section class="rounded-[42px] bg-[#ffd60a] px-8 py-10 shadow-glow md:px-12 md:py-14">
+      <section class="rounded-[42px] bg-[#ffdb5b] px-8 py-10 shadow-float md:px-12 md:py-14">
         <div class="grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
-            <div class="app-access-badge inline-flex rounded-full border border-white/50 bg-white/35 px-4 py-2 text-[12px] font-black uppercase tracking-[0.24em] text-[#4b3d21] shadow-sm">
+            <div class="app-access-badge inline-flex rounded-full border border-white/40 bg-white/25 px-4 py-2 text-[12px] font-black uppercase tracking-[0.24em] text-[#4b412f]">
               App access
             </div>
 
-            <h2 class="get-app-title mt-5 text-[58px] font-black leading-[0.92] tracking-[-0.06em] text-[#18140f] md:text-[84px]">
+            <h2 class="get-app-title mt-5 text-[58px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[84px]">
               Get the app
             </h2>
 
-            <p class="get-app-desc mt-4 text-[23px] font-semibold leading-8 text-[#433520]">
+            <p class="get-app-desc mt-4 text-[23px] leading-8 text-[#43392f]">
               Join early and unlock the Outfit Checkers experience.
             </p>
 
@@ -525,27 +486,27 @@
             </div>
           </div>
 
-          <div class="relative h-[420px] overflow-hidden rounded-[38px] border border-[#18140f]/8 bg-[#fff4b0] p-6 shadow-soft">
-            <div class="absolute left-[10%] top-[14%] h-[280px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#18140f] bg-white shadow-float">
+          <div class="relative h-[420px] overflow-hidden rounded-[38px] bg-[#f6edd2] p-6">
+            <div class="absolute left-[10%] top-[14%] h-[280px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
               <img
                 src="assets/hero-minimal.png"
-                alt="Phone preview 1"
+                alt="Phone 1"
                 class="h-full w-full object-cover"
               />
             </div>
 
-            <div class="absolute left-[32%] top-[4%] z-20 h-[340px] w-[205px] overflow-hidden rounded-[40px] border-[10px] border-[#18140f] bg-white shadow-[0_34px_70px_rgba(0,0,0,0.18)]">
+            <div class="absolute left-[32%] top-[4%] z-20 h-[340px] w-[205px] overflow-hidden rounded-[40px] border-[10px] border-[#1f1b16] bg-white shadow-[0_30px_60px_rgba(0,0,0,0.16)]">
               <img
                 src="assets/streetwear-blue.png"
-                alt="Phone preview 2"
+                alt="Phone 2"
                 class="h-full w-full object-cover"
               />
             </div>
 
-            <div class="absolute right-[10%] top-[16%] h-[285px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#18140f] bg-white shadow-float">
+            <div class="absolute right-[10%] top-[16%] h-[285px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
               <img
                 src="assets/urbane-originals.png"
-                alt="Phone preview 3"
+                alt="Phone 3"
                 class="h-full w-full object-cover"
               />
             </div>
@@ -555,15 +516,15 @@
     </main>
 
     <!-- FOOTER -->
-    <footer id="support" class="mt-7 rounded-[38px] bg-[#fff8df] px-4 py-12 md:px-8 md:py-16">
+    <footer id="support" class="mt-7 rounded-[38px] bg-[#f5f2ea] px-4 py-12 md:px-8 md:py-16">
       <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <div>
-          <div class="brand-text text-[72px] font-black leading-none tracking-[-0.07em] text-[#18140f] md:text-[112px]">
+          <div class="brand-text text-[72px] font-black leading-none tracking-[-0.07em] text-[#1f1b16] md:text-[112px]">
             Outfit Checkers
           </div>
 
           <div class="mt-8 flex items-center gap-6">
-            <div class="rounded-[28px] bg-[#ffd60a] p-4 shadow-soft">
+            <div class="rounded-[28px] bg-[#ffdb5b] p-4 shadow-soft">
               <div class="flex h-[152px] w-[152px] items-center justify-center rounded-[20px] bg-white">
                 <div class="grid h-[114px] w-[114px] grid-cols-6 grid-rows-6 gap-1">
                   <div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div><div class="bg-black"></div><div class="border border-black/10 bg-white"></div>
@@ -584,36 +545,36 @@
 
         <div class="grid gap-10 md:grid-cols-3">
           <div>
-            <div class="footer-product text-[18px] font-bold text-[#7a6b4c]">Product</div>
-            <div class="mt-5 space-y-4 text-[20px] font-black text-[#211c16]">
-              <a href="#product" class="footer-overview block transition hover:text-[#b58d00]">Overview</a>
-              <a href="#how-it-works" class="footer-how block transition hover:text-[#b58d00]">How it works</a>
-              <a href="#community" class="footer-community block transition hover:text-[#b58d00]">Community</a>
+            <div class="footer-product text-[18px] font-semibold text-[#7a6f62]">Product</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="#product" class="footer-overview block">Overview</a>
+              <a href="#how-it-works" class="footer-how block">How it works</a>
+              <a href="#community" class="footer-community block">Community</a>
             </div>
           </div>
 
           <div>
-            <div class="footer-company text-[18px] font-bold text-[#7a6b4c]">Company</div>
-            <div class="mt-5 space-y-4 text-[20px] font-black text-[#211c16]">
-              <a href="#trust" class="footer-trust block transition hover:text-[#b58d00]">Trust</a>
-              <a href="contact.html" class="footer-contact block transition hover:text-[#b58d00]">Contact us</a>
-              <a href="support.html" class="footer-support block transition hover:text-[#b58d00]">Support</a>
+            <div class="footer-company text-[18px] font-semibold text-[#7a6f62]">Company</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="#trust" class="footer-trust block">Trust</a>
+              <a href="contact.html" class="footer-contact block">Contact us</a>
+              <a href="#support.html" class="footer-support block">Support</a>
             </div>
           </div>
 
           <div>
-            <div class="footer-legal text-[18px] font-bold text-[#7a6b4c]">Legal</div>
-            <div class="mt-5 space-y-4 text-[20px] font-black text-[#211c16]">
-              <a href="kvkk.html" class="footer-kvkk block transition hover:text-[#b58d00]">KVKK Notice</a>
-              <a href="acik-riza.html" class="footer-consent block transition hover:text-[#b58d00]">Explicit Consent</a>
-              <a href="gizlilik.html" class="footer-privacy block transition hover:text-[#b58d00]">Privacy policy</a>
-              <a href="t.html" class="footer-terms block transition hover:text-[#b58d00]">Terms and conditions</a>
+            <div class="footer-legal text-[18px] font-semibold text-[#7a6f62]">Legal</div>
+            <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
+              <a href="kvkk.html" class="footer-kvkk block">KVKK Notice</a>
+              <a href="acik-riza.html" class="footer-consent block">Explicit Consent</a>
+              <a href="gizlilik.html" class="footer-privacy block">Privacy policy</a>
+              <a href="t.html" class="footer-terms block">Terms and conditions</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#18140f]/10 pt-8 text-[16px] font-semibold text-[#665a45]">
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
         <div class="footer-copyright">© 2026 Outfit Checkers</div>
         <div class="flex items-center gap-4">
           <span>Instagram</span>
@@ -659,7 +620,7 @@
         heroCta1: 'Join early access',
         heroCta2: 'See how it works',
         stat1Label: 'Core',
-        stat1Title: '1–10 rating',
+        stat1Title: '1–5 rating',
         stat1Desc: 'Not likes. Real evaluation.',
         stat2Label: 'Social',
         stat2Title: 'Discovery',
@@ -728,6 +689,7 @@
         footerConsent: 'Explicit Consent',
         footerPrivacy: 'Privacy policy',
         footerTerms: 'Terms and conditions',
+        footerDelete: 'Delete account',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Language changed'
       },
@@ -748,7 +710,7 @@
         heroCta1: 'Erken erişime katıl',
         heroCta2: 'Nasıl çalıştığını gör',
         stat1Label: 'Çekirdek',
-        stat1Title: '1–10 puanlama',
+        stat1Title: '1–5 puanlama',
         stat1Desc: 'Like değil, gerçek değerlendirme.',
         stat2Label: 'Sosyal',
         stat2Title: 'Keşif',
@@ -817,6 +779,7 @@
         footerConsent: 'Açık Rıza',
         footerPrivacy: 'Gizlilik politikası',
         footerTerms: 'Şartlar ve koşullar',
+        footerDelete: 'Hesabı sil',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Dil değiştirildi'
       },
@@ -837,7 +800,7 @@
         heroCta1: 'Frühzugang sichern',
         heroCta2: 'So funktioniert es',
         stat1Label: 'Kern',
-        stat1Title: '1–10 Bewertung',
+        stat1Title: '1–5 Bewertung',
         stat1Desc: 'Keine Likes. Echte Bewertung.',
         stat2Label: 'Social',
         stat2Title: 'Discovery',
@@ -906,6 +869,7 @@
         footerConsent: 'Ausdrückliche Einwilligung',
         footerPrivacy: 'Datenschutzrichtlinie',
         footerTerms: 'AGB',
+        footerDelete: 'Konto löschen',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Sprache geändert'
       },
@@ -926,7 +890,7 @@
         heroCta1: 'انضم إلى الوصول المبكر',
         heroCta2: 'شاهد كيف يعمل',
         stat1Label: 'الأساس',
-        stat1Title: 'تقييم 1–10',
+        stat1Title: 'تقييم 1–5',
         stat1Desc: 'ليس إعجابات، بل تقييم حقيقي.',
         stat2Label: 'اجتماعي',
         stat2Title: 'الاكتشاف',
@@ -995,6 +959,7 @@
         footerConsent: 'موافقة صريحة',
         footerPrivacy: 'سياسة الخصوصية',
         footerTerms: 'الشروط والأحكام',
+        footerDelete: 'حذف الحساب',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'تم تغيير اللغة'
       }
@@ -1083,6 +1048,7 @@
       '.footer-consent': 'footerConsent',
       '.footer-privacy': 'footerPrivacy',
       '.footer-terms': 'footerTerms',
+      '.footer-delete': 'footerDelete',
       '.footer-copyright': 'footerCopyright'
     };
 
