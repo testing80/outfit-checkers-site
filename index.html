@@ -43,9 +43,10 @@
 
     .noise {
       background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 22%),
-        radial-gradient(circle at 80% 0%, rgba(255,255,255,0.12), transparent 18%),
-        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04), transparent 24%);
+        linear-gradient(rgba(255, 219, 91, 0.82), rgba(255, 219, 91, 0.82)),
+        url("assets/texture-blue.png");
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-card {
@@ -75,9 +76,10 @@
     }
   </style>
 </head>
+
 <body class="min-h-screen bg-[#f5f2ea] text-[#1f1b16]">
   <div class="mx-auto max-w-[1550px] px-4 pb-16 pt-4 md:px-8 lg:px-10">
-    <!-- HEADER -->
+
     <header
       id="siteHeader"
       class="floating-nav sticky top-4 z-50 mx-auto flex w-full items-center justify-between gap-4 rounded-[28px] border border-transparent px-4 py-3 transition-all duration-300 md:px-5"
@@ -125,7 +127,6 @@
     <main class="space-y-7 pt-3">
       <div class="sr-only" aria-live="polite" id="liveRegion"></div>
 
-      <!-- HERO -->
       <section class="noise relative overflow-hidden rounded-[44px] bg-[#ffdb5b] px-6 pb-8 pt-6 shadow-float md:px-10 md:pb-12 md:pt-8 lg:px-14">
         <div class="relative min-h-[860px] overflow-hidden rounded-[34px] bg-[#f9db63]/20">
           <div class="absolute inset-0 opacity-80">
@@ -167,11 +168,13 @@
                     <div class="stat1-title mt-3 text-[28px] font-black tracking-[-0.04em]">1–10 rating</div>
                     <div class="stat1-desc mt-2 text-[15px] leading-6 text-[#564d42]">Not likes. Real evaluation.</div>
                   </div>
+
                   <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
                     <div class="stat2-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Social</div>
                     <div class="stat2-title mt-3 text-[28px] font-black tracking-[-0.04em]">Discovery</div>
                     <div class="stat2-desc mt-2 text-[15px] leading-6 text-[#564d42]">Find people that match your vibe.</div>
                   </div>
+
                   <div class="rounded-[24px] border border-[#1f1b16]/8 bg-[#fff8de]/80 p-5 backdrop-blur">
                     <div class="stat3-label text-[12px] font-black uppercase tracking-[0.18em] text-[#7d7057]">Loop</div>
                     <div class="stat3-title mt-3 text-[28px] font-black tracking-[-0.04em]">Improve</div>
@@ -182,30 +185,31 @@
 
               <div class="relative flex min-h-[620px] items-center justify-center">
                 <div class="relative h-[620px] w-full max-w-[650px]">
+
                   <div class="hero-card absolute left-[8%] top-[7%] z-10 h-[440px] w-[250px] rotate-[-11deg] overflow-hidden rounded-[34px] bg-white p-2 shadow-float">
                     <div class="relative h-full w-full overflow-hidden rounded-[28px]">
                       <img
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrcs8phq3uj3wYExQiitUXmBuTBmlO7UMe2OtaROVdDKVhEHohogrsR10dBDBXU8HUDso0KJp3e_1YpXjMrS43RntWsaAghJgIe8nZSfkozIoNHfcXwkI8yvXk3nQOYv_Lycq90NNcrOEFVi37JF1WlP1o1Ld41FjkHK6DbHXIYo-1YnYiIFVsI6dFT2RgKVliAlqZC6DdAMGw75uNA7Ucj9EerpspHDAokPYEgOGZrRlgozUtU9nHBe9p6mTgYKpeMJellBej42Tn"
-                        alt="Outfit card 1"
+                        src="assets/hero-minimal.png"
+                        alt="Minimal high fashion outfit"
                         class="h-full w-full object-cover"
                       />
-                      <div class="absolute bottom-4 left-4 rounded-full bg-black/70 px-3 py-1.5 text-sm font-bold text-white backdrop-blur">Sude, 22</div>
+                      <div class="absolute bottom-4 left-4 rounded-full bg-black/70 px-3 py-1.5 text-sm font-bold text-white backdrop-blur">Minimal</div>
                     </div>
                   </div>
 
                   <div class="hero-card absolute left-[33%] top-[0%] z-30 h-[530px] w-[290px] overflow-hidden rounded-[40px] bg-white p-2 shadow-[0_30px_80px_rgba(17,14,9,0.20)]">
                     <div class="relative h-full w-full overflow-hidden rounded-[34px]">
                       <img
-                        src="https://lh3.googleusercontent.com/aida/ADBb0uicwYarVHdOzBRLd2tLUphIZ8Ns1Oqt4U9vWPjJWZuCKC4oJKtCNtvGi0HrE_SumSkOvBN-WLWkS59DdrlA3cy7gZYuJdr5LNWN78j3Rr1g4MVWCX-e2WO-7Yjy3d-zX2zI3tzW0VK33cv90IGBjAPRcB3t8kdpa28W94-eWWYju74N1uml1gaX4yp8IM1a9Ey3Wza53KdazprlT-zPCqNUVghpnNw-oCYdYmrX5oR6iiqb7eBSS719bfMk"
-                        alt="Outfit card 2"
+                        src="assets/streetwear-blue.png"
+                        alt="Streetwear outfit card"
                         class="h-full w-full object-cover"
                       />
 
                       <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-5">
                         <div class="flex items-end justify-between gap-4">
                           <div>
-                            <div class="text-[24px] font-black tracking-[-0.03em] text-white">Alya, 20</div>
-                            <div class="mt-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/75">Streetwear • Night fit</div>
+                            <div class="text-[24px] font-black tracking-[-0.03em] text-white">Street Fit</div>
+                            <div class="mt-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-white/75">Streetwear • Color pop</div>
                           </div>
                           <div class="rounded-[16px] bg-[#ffdb5b] px-3 py-2 text-[13px] font-black text-[#231d16]">8.9 / 10</div>
                         </div>
@@ -220,8 +224,8 @@
                   <div class="hero-card absolute right-[7%] top-[10%] z-20 h-[390px] w-[220px] rotate-[10deg] overflow-hidden rounded-[32px] bg-white p-2 shadow-float">
                     <div class="relative h-full w-full overflow-hidden rounded-[26px]">
                       <img
-                        src="https://lh3.googleusercontent.com/aida/ADBb0ugDwSpP3n6ca_BaQGk7oQxPtyRHcFmvJc0iWfIG04b_PjkOuxGRbzzOBpyp4-x1HG8av3OTg1DgPB6NH6oZ05yJjhkczDn5IAemfUFGNqxAENvrNtImrO0PdE_PIT-x3ogcgHB7FVC4YQwg1Lb2hiM9pDUeq4GzkjGj9JKZb9C1LHprbsLDtDcYYkEpQfLm2LxTDbDi8c3rflEzXLZyEMwGE6KSTn7VsWZ89-wGpbw6RPRj_Y58FHcwoLhJ"
-                        alt="Outfit card 3"
+                        src="assets/urbane-originals.png"
+                        alt="Urbane Originals outfit"
                         class="h-full w-full object-cover"
                       />
                       <div class="absolute right-3 top-3 rounded-[18px] bg-[#fff6cc] px-3 py-5 text-[14px] font-black text-[#30281f] [writing-mode:vertical-rl]">
@@ -268,9 +272,11 @@
             <div class="positioning-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-white px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#8b7e6d]">
               Positioning
             </div>
+
             <h2 class="positioning-title mt-6 max-w-[680px] text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[74px]">
               A real product landing page, not a generic app promo.
             </h2>
+
             <p class="positioning-desc mt-7 max-w-[620px] text-[22px] leading-8 text-[#4a4339]">
               The strength of the app is its rating-first logic. So the landing page should clearly say:
               post the outfit, get the score, read feedback, improve, discover.
@@ -282,6 +288,7 @@
                 <div class="why-works-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Score instead of likes</div>
                 <p class="why-works-desc mt-3 text-[16px] leading-7 text-[#473f33]">This is the main value proposition. The landing page should put it at the center.</p>
               </div>
+
               <div class="rounded-[26px] bg-[#fff0a8] p-6">
                 <div class="why-premium-label text-[14px] font-black uppercase tracking-[0.16em] text-[#69592d]">Why it feels premium</div>
                 <div class="why-premium-title mt-3 text-[30px] font-black leading-[1] tracking-[-0.04em]">Cleaner card language</div>
@@ -300,9 +307,10 @@
                   </div>
                   <div class="rounded-[16px] bg-[#ffdb5b] px-3 py-2 text-[14px] font-black">9.1</div>
                 </div>
+
                 <div class="mt-5 h-[220px] overflow-hidden rounded-[22px]">
                   <img
-                    src="https://lh3.googleusercontent.com/aida/ADBb0ui90lG57GTpdsvOqaqKMaFwl8mcmkfArsIsRsfW9RLRVohGSKyC9o4dVB1Fb9HcYTyBIm8ei7ZiF1qTvYjFu_ojm1gu-njOKv9JiTgqvuddRDtolVzvVCGjFgoCwTBTGUrX6v4mozveaJKbHky8ALsogfv8UYuJHU4GNrkYLW9OxWOMmvBM7Ok-h23i08P1qmiPz4IFunqxzSkRHJJscx3mVP7c-3MWR-cMBcGnvy370y1KbFpbxTG4cRBt"
+                    src="assets/streetwear-blue.png"
                     alt="Feed preview"
                     class="h-full w-full object-cover"
                   />
@@ -325,12 +333,15 @@
         </div>
       </section>
 
+
+
+
       <!-- HOW IT WORKS -->
       <section id="how-it-works" class="grid gap-6 lg:grid-cols-3">
         <article class="rounded-[34px] bg-[#ffdb5b] p-6 shadow-soft">
           <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrcs8phq3uj3wYExQiitUXmBuTBmlO7UMe2OtaROVdDKVhEHohogrsR10dBDBXU8HUDso0KJp3e_1YpXjMrS43RntWsaAghJgIe8nZSfkozIoNHfcXwkI8yvXk3nQOYv_Lycq90NNcrOEFVi37JF1WlP1o1Ld41FjkHK6DbHXIYo-1YnYiIFVsI6dFT2RgKVliAlqZC6DdAMGw75uNA7Ucj9EerpspHDAokPYEgOGZrRlgozUtU9nHBe9p6mTgYKpeMJellBej42Tn"
+              src="assets/hero-minimal.png"
               alt="Upload fit"
               class="h-full w-full object-cover"
             />
@@ -343,7 +354,7 @@
         <article class="rounded-[34px] bg-[#ffe98a] p-6 shadow-soft">
           <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
-              src="https://lh3.googleusercontent.com/aida/ADBb0uicwYarVHdOzBRLd2tLUphIZ8Ns1Oqt4U9vWPjJWZuCKC4oJKtCNtvGi0HrE_SumSkOvBN-WLWkS59DdrlA3cy7gZYuJdr5LNWN78j3Rr1g4MVWCX-e2WO-7Yjy3d-zX2zI3tzW0VK33cv90IGBjAPRcB3t8kdpa28W94-eWWYju74N1uml1gaX4yp8IM1a9Ey3Wza53KdazprlT-zPCqNUVghpnNw-oCYdYmrX5oR6iiqb7eBSS719bfMk"
+              src="assets/streetwear-blue.png"
               alt="Get rated"
               class="h-full w-full object-cover"
             />
@@ -356,7 +367,7 @@
         <article class="rounded-[34px] bg-[#fff1b8] p-6 shadow-soft">
           <div class="h-[260px] overflow-hidden rounded-[28px]">
             <img
-              src="https://lh3.googleusercontent.com/aida/ADBb0ugDwSpP3n6ca_BaQGk7oQxPtyRHcFmvJc0iWfIG04b_PjkOuxGRbzzOBpyp4-x1HG8av3OTg1DgPB6NH6oZ05yJjhkczDn5IAemfUFGNqxAENvrNtImrO0PdE_PIT-x3ogcgHB7FVC4YQwg1Lb2hiM9pDUeq4GzkjGj9JKZb9C1LHprbsLDtDcYYkEpQfLm2LxTDbDi8c3rflEzXLZyEMwGE6KSTn7VsWZ89-wGpbw6RPRj_Y58FHcwoLhJ"
+              src="assets/urbane-originals.png"
               alt="Improve faster"
               class="h-full w-full object-cover"
             />
@@ -372,7 +383,7 @@
         <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           <div class="overflow-hidden rounded-[34px] bg-[#efe7db]">
             <img
-              src="https://lh3.googleusercontent.com/aida/ADBb0uj-6dNJwUXKQLloJ8zVZxKvEL4mP8bAbqLOtug9QbZ4NYQ2SEULny9_VL6y1sjeFeNpdALdwp9ld-q6Lg3dvCidH18MHKfri50LNpSDw68cLluC3yvEyp1BhxtD4AECI-5h1sfqXl6REvf7zcdIrSs-nE_xVTym7Lp1pyGVGgbSRUnKg8r3Y9D55IkKj685VsdGTv1pr5bdRnfv35WFOx_5pVvnVD-u-VUnp_gPTLU3YpNcrqpljJI7hQ90"
+              src="assets/urbane-originals.png"
               alt="Community image"
               class="h-[520px] w-full object-cover"
             />
@@ -382,12 +393,15 @@
             <div class="community-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-[#fff8da] px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#7e715b]">
               Community signal
             </div>
+
             <h2 class="community-title mt-6 text-[50px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[76px]">
               Feedback should feel readable, social, and addictive.
             </h2>
+
             <p class="community-desc-1 mt-7 text-[22px] leading-8 text-[#463f36]">
               Instead of random social noise, users get readable ratings, cleaner comments, and much stronger product logic.
             </p>
+
             <p class="community-desc-2 mt-5 text-[19px] leading-8 text-[#6b6257]">
               That is exactly what the landing page should sell: why users come, stay, and post again.
             </p>
@@ -397,6 +411,7 @@
                 <div class="community-card1-title text-[28px] font-black tracking-[-0.04em]">Trend by rating</div>
                 <p class="community-card1-desc mt-2 text-[16px] leading-7 text-[#554d42]">Trending should highlight actually rated posts, not unrated filler content.</p>
               </div>
+
               <div class="rounded-[24px] bg-[#f8f4ea] p-5">
                 <div class="community-card2-title text-[28px] font-black tracking-[-0.04em]">Discovery by vibe</div>
                 <p class="community-card2-desc mt-2 text-[16px] leading-7 text-[#554d42]">Users can discover new profiles by visual taste and style direction.</p>
@@ -422,7 +437,7 @@
           <div class="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
             <div class="overflow-hidden rounded-[30px] bg-[#e8dfd1]">
               <img
-                src="https://lh3.googleusercontent.com/aida/ADBb0uicwYarVHdOzBRLd2tLUphIZ8Ns1Oqt4U9vWPjJWZuCKC4oJKtCNtvGi0HrE_SumSkOvBN-WLWkS59DdrlA3cy7gZYuJdr5LNWN78j3Rr1g4MVWCX-e2WO-7Yjy3d-zX2zI3tzW0VK33cv90IGBjAPRcB3t8kdpa28W94-eWWYju74N1uml1gaX4yp8IM1a9Ey3Wza53KdazprlT-zPCqNUVghpnNw-oCYdYmrX5oR6iiqb7eBSS719bfMk"
+                src="assets/hero-minimal.png"
                 alt="Trust image"
                 class="h-[360px] w-full object-cover"
               />
@@ -432,9 +447,11 @@
               <div class="trust-badge inline-flex rounded-full border border-[#1f1b16]/8 bg-white px-4 py-2 text-[12px] font-black uppercase tracking-[0.22em] text-[#857764]">
                 Ready to launch
               </div>
+
               <h4 class="trust-title mt-5 text-[42px] font-black leading-[0.96] tracking-[-0.05em] text-[#1f1b16] md:text-[58px]">
                 Make the domain part of the product.
               </h4>
+
               <p class="trust-desc mt-5 text-[20px] leading-8 text-[#4d453b]">
                 Privacy policy, terms, consent, and account deletion should all live in the same clean system.
               </p>
@@ -450,9 +467,11 @@
             <div class="app-access-badge inline-flex rounded-full border border-white/40 bg-white/25 px-4 py-2 text-[12px] font-black uppercase tracking-[0.24em] text-[#4b412f]">
               App access
             </div>
+
             <h2 class="get-app-title mt-5 text-[58px] font-black leading-[0.92] tracking-[-0.06em] text-[#1f1b16] md:text-[84px]">
               Get the app
             </h2>
+
             <p class="get-app-desc mt-4 text-[23px] leading-8 text-[#43392f]">
               Join early and unlock the Outfit Checkers experience.
             </p>
@@ -471,13 +490,27 @@
 
           <div class="relative h-[420px] overflow-hidden rounded-[38px] bg-[#f6edd2] p-6">
             <div class="absolute left-[10%] top-[14%] h-[280px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
-              <img src="https://lh3.googleusercontent.com/aida/ADBb0ui90lG57GTpdsvOqaqKMaFwl8mcmkfArsIsRsfW9RLRVohGSKyC9o4dVB1Fb9HcYTyBIm8ei7ZiF1qTvYjFu_ojm1gu-njOKv9JiTgqvuddRDtolVzvVCGjFgoCwTBTGUrX6v4mozveaJKbHky8ALsogfv8UYuJHU4GNrkYLW9OxWOMmvBM7Ok-h23i08P1qmiPz4IFunqxzSkRHJJscx3mVP7c-3MWR-cMBcGnvy370y1KbFpbxTG4cRBt" alt="Phone 1" class="h-full w-full object-cover" />
+              <img
+                src="assets/hero-minimal.png"
+                alt="Phone preview 1"
+                class="h-full w-full object-cover"
+              />
             </div>
+
             <div class="absolute left-[32%] top-[4%] z-20 h-[340px] w-[205px] overflow-hidden rounded-[40px] border-[10px] border-[#1f1b16] bg-white shadow-[0_30px_60px_rgba(0,0,0,0.16)]">
-              <img src="https://lh3.googleusercontent.com/aida/ADBb0uj-6dNJwUXKQLloJ8zVZxKvEL4mP8bAbqLOtug9QbZ4NYQ2SEULny9_VL6y1sjeFeNpdALdwp9ld-q6Lg3dvCidH18MHKfri50LNpSDw68cLluC3yvEyp1BhxtD4AECI-5h1sfqXl6REvf7zcdIrSs-nE_xVTym7Lp1pyGVGgbSRUnKg8r3Y9D55IkKj685VsdGTv1pr5bdRnfv35WFOx_5pVvnVD-u-VUnp_gPTLU3YpNcrqpljJI7hQ90" alt="Phone 2" class="h-full w-full object-cover" />
+              <img
+                src="assets/streetwear-blue.png"
+                alt="Phone preview 2"
+                class="h-full w-full object-cover"
+              />
             </div>
+
             <div class="absolute right-[10%] top-[16%] h-[285px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
-              <img src="https://lh3.googleusercontent.com/aida/ADBb0ugDwSpP3n6ca_BaQGk7oQxPtyRHcFmvJc0iWfIG04b_PjkOuxGRbzzOBpyp4-x1HG8av3OTg1DgPB6NH6oZ05yJjhkczDn5IAemfUFGNqxAENvrNtImrO0PdE_PIT-x3ogcgHB7FVC4YQwg1Lb2hiM9pDUeq4GzkjGj9JKZb9C1LHprbsLDtDcYYkEpQfLm2LxTDbDi8c3rflEzXLZyEMwGE6KSTn7VsWZ89-wGpbw6RPRj_Y58FHcwoLhJ" alt="Phone 3" class="h-full w-full object-cover" />
+              <img
+                src="assets/urbane-originals.png"
+                alt="Phone preview 3"
+                class="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -527,7 +560,7 @@
             <div class="mt-5 space-y-4 text-[20px] font-semibold text-[#211c16]">
               <a href="#trust" class="footer-trust block">Trust</a>
               <a href="contact.html" class="footer-contact block">Contact us</a>
-              <a href="#support.html" class="footer-support block">Support</a>
+              <a href="support.html" class="footer-support block">Support</a>
             </div>
           </div>
 
@@ -538,13 +571,10 @@
               <a href="acik-riza.html" class="footer-consent block">Explicit Consent</a>
               <a href="gizlilik.html" class="footer-privacy block">Privacy policy</a>
               <a href="t.html" class="footer-terms block">Terms and conditions</a>
-             
             </div>
           </div>
         </div>
-
       </div>
-      
 
       <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
         <div class="footer-copyright">© 2026 Outfit Checkers</div>
@@ -588,12 +618,11 @@
         openApp: 'Open app',
         badgeHero: 'Social rating platform',
         heroTitle: 'Post the fit.<br />Get the score.<br />Improve the vibe.',
-        heroDesc:
-          'Outfit Checkers is not another empty social feed. It is built around outfit ratings, cleaner feedback, style discovery, and a stronger product loop that actually helps users improve.',
+        heroDesc: 'Outfit Checkers is not another empty social feed. It is built around outfit ratings, cleaner feedback, style discovery, and a stronger product loop that actually helps users improve.',
         heroCta1: 'Join early access',
         heroCta2: 'See how it works',
         stat1Label: 'Core',
-        stat1Title: '1–5 rating',
+        stat1Title: '1–10 rating',
         stat1Desc: 'Not likes. Real evaluation.',
         stat2Label: 'Social',
         stat2Title: 'Discovery',
@@ -612,16 +641,13 @@
         ticker6: 'Safer social design',
         positioningBadge: 'Positioning',
         positioningTitle: 'A real product landing page, not a generic app promo.',
-        positioningDesc:
-          'The strength of the app is its rating-first logic. So the landing page should clearly say: post the outfit, get the score, read feedback, improve, discover.',
+        positioningDesc: 'The strength of the app is its rating-first logic. So the landing page should clearly say: post the outfit, get the score, read feedback, improve, discover.',
         whyWorksLabel: 'Why it works',
         whyWorksTitle: 'Score instead of likes',
-        whyWorksDesc:
-          'This is the main value proposition. The landing page should put it at the center.',
+        whyWorksDesc: 'This is the main value proposition. The landing page should put it at the center.',
         whyPremiumLabel: 'Why it feels premium',
         whyPremiumTitle: 'Cleaner card language',
-        whyPremiumDesc:
-          'To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.',
+        whyPremiumDesc: 'To get that Bumble-like feel, you need bigger typography, floating media cards, and more breathing room.',
         feedCardLabel: 'Feed card',
         feedCardTitle: 'Avg. score',
         commentQualityLabel: 'Comment quality',
@@ -637,23 +663,17 @@
         how3Desc: 'Learn which looks perform better and improve faster.',
         communityBadge: 'Community signal',
         communityTitle: 'Feedback should feel readable, social, and addictive.',
-        communityDesc1:
-          'Instead of random social noise, users get readable ratings, cleaner comments, and much stronger product logic.',
-        communityDesc2:
-          'That is exactly what the landing page should sell: why users come, stay, and post again.',
+        communityDesc1: 'Instead of random social noise, users get readable ratings, cleaner comments, and much stronger product logic.',
+        communityDesc2: 'That is exactly what the landing page should sell: why users come, stay, and post again.',
         communityCard1Title: 'Trend by rating',
-        communityCard1Desc:
-          'Trending should highlight actually rated posts, not unrated filler content.',
+        communityCard1Desc: 'Trending should highlight actually rated posts, not unrated filler content.',
         communityCard2Title: 'Discovery by vibe',
-        communityCard2Desc:
-          'Users can discover new profiles by visual taste and style direction.',
+        communityCard2Desc: 'Users can discover new profiles by visual taste and style direction.',
         trustQuoteTitle: 'A stronger product feeling comes from trust, clarity, and consistency.',
-        trustQuoteDesc:
-          'Privacy, account deletion, moderation, and cleaner social boundaries should be visible parts of the product.',
+        trustQuoteDesc: 'Privacy, account deletion, moderation, and cleaner social boundaries should be visible parts of the product.',
         trustBadge: 'Ready to launch',
         trustTitle: 'Make the domain part of the product.',
-        trustDesc:
-          'Privacy policy, terms, consent, and account deletion should all live in the same clean system.',
+        trustDesc: 'Privacy policy, terms, consent, and account deletion should all live in the same clean system.',
         appAccessBadge: 'App access',
         getAppTitle: 'Get the app',
         getAppDesc: 'Join early and unlock the Outfit Checkers experience.',
@@ -671,7 +691,6 @@
         footerConsent: 'Explicit Consent',
         footerPrivacy: 'Privacy policy',
         footerTerms: 'Terms and conditions',
-        footerDelete: 'Delete account',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Language changed'
       },
@@ -688,12 +707,11 @@
         openApp: 'Uygulamayı aç',
         badgeHero: 'Sosyal puanlama platformu',
         heroTitle: 'Kombini paylaş.<br />Puanını al.<br />Vibe’ını geliştir.',
-        heroDesc:
-          'Outfit Checkers boş bir sosyal akış değil. Outfit puanları, daha temiz geri bildirim, stil keşfi ve kullanıcıyı gerçekten geliştiren daha güçlü bir ürün döngüsü üzerine kurulu.',
+        heroDesc: 'Outfit Checkers boş bir sosyal akış değil. Outfit puanları, daha temiz geri bildirim, stil keşfi ve kullanıcıyı gerçekten geliştiren daha güçlü bir ürün döngüsü üzerine kurulu.',
         heroCta1: 'Erken erişime katıl',
         heroCta2: 'Nasıl çalıştığını gör',
         stat1Label: 'Çekirdek',
-        stat1Title: '1–5 puanlama',
+        stat1Title: '1–10 puanlama',
         stat1Desc: 'Like değil, gerçek değerlendirme.',
         stat2Label: 'Sosyal',
         stat2Title: 'Keşif',
@@ -712,15 +730,13 @@
         ticker6: 'Daha güvenli sosyal tasarım',
         positioningBadge: 'Konumlandırma',
         positioningTitle: 'Jenerik uygulama tanıtımı değil, gerçek ürün landing page’i.',
-        positioningDesc:
-          'Uygulamanın gücü rating-first mantığında. Bu yüzden landing page şunu net söylemeli: kombini paylaş, puanını al, yorumu oku, geliş, keşfet.',
+        positioningDesc: 'Uygulamanın gücü rating-first mantığında. Bu yüzden landing page şunu net söylemeli: kombini paylaş, puanını al, yorumu oku, geliş, keşfet.',
         whyWorksLabel: 'Neden çalışıyor',
         whyWorksTitle: 'Like yerine skor',
         whyWorksDesc: 'Asıl değer önerisi bu. Landing page bunu merkeze koymalı.',
         whyPremiumLabel: 'Neden premium hissettiriyor',
         whyPremiumTitle: 'Daha temiz kart dili',
-        whyPremiumDesc:
-          'Bumble benzeri his için daha büyük tipografi, yüzen medya kartları ve daha fazla nefes alanı lazım.',
+        whyPremiumDesc: 'Bumble benzeri his için daha büyük tipografi, yüzen medya kartları ve daha fazla nefes alanı lazım.',
         feedCardLabel: 'Feed kartı',
         feedCardTitle: 'Ort. puan',
         commentQualityLabel: 'Yorum kalitesi',
@@ -736,23 +752,17 @@
         how3Desc: 'Hangi lookların daha iyi performans verdiğini öğren ve daha hızlı geliş.',
         communityBadge: 'Topluluk sinyali',
         communityTitle: 'Geri bildirim okunabilir, sosyal ve bağımlılık yaratan hissettirmeli.',
-        communityDesc1:
-          'Rastgele sosyal gürültü yerine kullanıcılar okunabilir puanlar, daha temiz yorumlar ve çok daha güçlü ürün mantığı alır.',
-        communityDesc2:
-          'Landing page’in satması gereken şey de tam olarak bu: kullanıcı neden gelir, neden kalır ve neden tekrar post atar.',
+        communityDesc1: 'Rastgele sosyal gürültü yerine kullanıcılar okunabilir puanlar, daha temiz yorumlar ve çok daha güçlü ürün mantığı alır.',
+        communityDesc2: 'Landing page’in satması gereken şey de tam olarak bu: kullanıcı neden gelir, neden kalır ve neden tekrar post atar.',
         communityCard1Title: 'Puana göre trend',
-        communityCard1Desc:
-          'Trending kısmı unrated çöp içerik değil, gerçekten puan almış postları öne çıkarmalı.',
+        communityCard1Desc: 'Trending kısmı unrated çöp içerik değil, gerçekten puan almış postları öne çıkarmalı.',
         communityCard2Title: 'Vibe’a göre keşif',
-        communityCard2Desc:
-          'Kullanıcılar görsel zevk ve stil yönüne göre yeni profiller keşfedebilir.',
+        communityCard2Desc: 'Kullanıcılar görsel zevk ve stil yönüne göre yeni profiller keşfedebilir.',
         trustQuoteTitle: 'Daha güçlü ürün hissi güven, netlik ve tutarlılıktan gelir.',
-        trustQuoteDesc:
-          'Gizlilik, hesap silme, moderasyon ve daha temiz sosyal sınırlar ürünün görünür parçaları olmalı.',
+        trustQuoteDesc: 'Gizlilik, hesap silme, moderasyon ve daha temiz sosyal sınırlar ürünün görünür parçaları olmalı.',
         trustBadge: 'Yayına hazır',
         trustTitle: 'Domain’i ürünün bir parçası yap.',
-        trustDesc:
-          'Gizlilik politikası, şartlar, açık rıza ve hesap silme aynı temiz sistemin içinde yaşamalı.',
+        trustDesc: 'Gizlilik politikası, şartlar, açık rıza ve hesap silme aynı temiz sistemin içinde yaşamalı.',
         appAccessBadge: 'Uygulama erişimi',
         getAppTitle: 'Uygulamayı edin',
         getAppDesc: 'Erken katıl ve Outfit Checkers deneyimini aç.',
@@ -770,7 +780,6 @@
         footerConsent: 'Açık Rıza',
         footerPrivacy: 'Gizlilik politikası',
         footerTerms: 'Şartlar ve koşullar',
-        footerDelete: 'Hesabı sil',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Dil değiştirildi'
       },
@@ -787,12 +796,11 @@
         openApp: 'App öffnen',
         badgeHero: 'Social-Rating-Plattform',
         heroTitle: 'Outfit posten.<br />Score bekommen.<br />Den Vibe verbessern.',
-        heroDesc:
-          'Outfit Checkers ist kein leerer Social Feed. Die App basiert auf Outfit-Bewertungen, sauberem Feedback, Stil-Discovery und einer stärkeren Produktlogik, die Nutzer wirklich verbessert.',
+        heroDesc: 'Outfit Checkers ist kein leerer Social Feed. Die App basiert auf Outfit-Bewertungen, sauberem Feedback, Stil-Discovery und einer stärkeren Produktlogik, die Nutzer wirklich verbessert.',
         heroCta1: 'Frühzugang sichern',
         heroCta2: 'So funktioniert es',
         stat1Label: 'Kern',
-        stat1Title: '1–5 Bewertung',
+        stat1Title: '1–10 Bewertung',
         stat1Desc: 'Keine Likes. Echte Bewertung.',
         stat2Label: 'Social',
         stat2Title: 'Discovery',
@@ -811,16 +819,13 @@
         ticker6: 'Sichereres Social Design',
         positioningBadge: 'Positionierung',
         positioningTitle: 'Eine echte Produkt-Landingpage, keine generische App-Werbung.',
-        positioningDesc:
-          'Die Stärke der App ist der Rating-First-Ansatz. Deshalb sollte die Landingpage klar sagen: Outfit posten, Score bekommen, Feedback lesen, verbessern, entdecken.',
+        positioningDesc: 'Die Stärke der App ist der Rating-First-Ansatz. Deshalb sollte die Landingpage klar sagen: Outfit posten, Score bekommen, Feedback lesen, verbessern, entdecken.',
         whyWorksLabel: 'Warum es funktioniert',
         whyWorksTitle: 'Score statt Likes',
-        whyWorksDesc:
-          'Das ist das zentrale Wertversprechen. Die Landingpage sollte es in den Mittelpunkt stellen.',
+        whyWorksDesc: 'Das ist das zentrale Wertversprechen. Die Landingpage sollte es in den Mittelpunkt stellen.',
         whyPremiumLabel: 'Warum es premium wirkt',
         whyPremiumTitle: 'Saubere Kartensprache',
-        whyPremiumDesc:
-          'Für das Bumble-Gefühl brauchst du größere Typografie, schwebende Medienkarten und mehr Luft.',
+        whyPremiumDesc: 'Für das Bumble-Gefühl brauchst du größere Typografie, schwebende Medienkarten und mehr Luft.',
         feedCardLabel: 'Feed-Karte',
         feedCardTitle: 'Ø Score',
         commentQualityLabel: 'Kommentarqualität',
@@ -836,23 +841,17 @@
         how3Desc: 'Lerne, welche Looks besser performen, und verbessere dich schneller.',
         communityBadge: 'Community-Signal',
         communityTitle: 'Feedback sollte lesbar, sozial und suchterzeugend wirken.',
-        communityDesc1:
-          'Statt zufälligem Social Noise bekommen Nutzer lesbare Ratings, sauberere Kommentare und eine deutlich stärkere Produktlogik.',
-        communityDesc2:
-          'Genau das sollte die Landingpage verkaufen: warum Nutzer kommen, bleiben und erneut posten.',
+        communityDesc1: 'Statt zufälligem Social Noise bekommen Nutzer lesbare Ratings, sauberere Kommentare und eine deutlich stärkere Produktlogik.',
+        communityDesc2: 'Genau das sollte die Landingpage verkaufen: warum Nutzer kommen, bleiben und erneut posten.',
         communityCard1Title: 'Trend nach Bewertung',
-        communityCard1Desc:
-          'Trending sollte wirklich bewertete Posts zeigen, nicht ungeprüften Füllinhalt.',
+        communityCard1Desc: 'Trending sollte wirklich bewertete Posts zeigen, nicht ungeprüften Füllinhalt.',
         communityCard2Title: 'Discovery nach Vibe',
-        communityCard2Desc:
-          'Nutzer können neue Profile nach visuellem Geschmack und Stilrichtung entdecken.',
+        communityCard2Desc: 'Nutzer können neue Profile nach visuellem Geschmack und Stilrichtung entdecken.',
         trustQuoteTitle: 'Ein stärkeres Produktgefühl entsteht durch Vertrauen, Klarheit und Konsistenz.',
-        trustQuoteDesc:
-          'Datenschutz, Kontolöschung, Moderation und klarere soziale Grenzen sollten sichtbare Teile des Produkts sein.',
+        trustQuoteDesc: 'Datenschutz, Kontolöschung, Moderation und klarere soziale Grenzen sollten sichtbare Teile des Produkts sein.',
         trustBadge: 'Bereit für den Launch',
         trustTitle: 'Mach die Domain zu einem Teil des Produkts.',
-        trustDesc:
-          'Privacy Policy, Terms, Einwilligung und Kontolöschung sollten im selben sauberen System leben.',
+        trustDesc: 'Privacy Policy, Terms, Einwilligung und Kontolöschung sollten im selben sauberen System leben.',
         appAccessBadge: 'App-Zugang',
         getAppTitle: 'Hol dir die App',
         getAppDesc: 'Steig früh ein und entsperre das Outfit Checkers Erlebnis.',
@@ -870,7 +869,6 @@
         footerConsent: 'Ausdrückliche Einwilligung',
         footerPrivacy: 'Datenschutzrichtlinie',
         footerTerms: 'AGB',
-        footerDelete: 'Konto löschen',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'Sprache geändert'
       },
@@ -887,12 +885,11 @@
         openApp: 'افتح التطبيق',
         badgeHero: 'منصة تقييم اجتماعية',
         heroTitle: 'انشر الإطلالة.<br />احصل على التقييم.<br />طوّر ذوقك.',
-        heroDesc:
-          'Outfit Checkers ليس مجرد موجز اجتماعي فارغ. التطبيق مبني على تقييم الإطلالات، وتعليقات أوضح، واكتشاف الأسلوب، ومنطق منتج أقوى يساعد المستخدمين فعلاً على التطور.',
+        heroDesc: 'Outfit Checkers ليس مجرد موجز اجتماعي فارغ. التطبيق مبني على تقييم الإطلالات، وتعليقات أوضح، واكتشاف الأسلوب، ومنطق منتج أقوى يساعد المستخدمين فعلاً على التطور.',
         heroCta1: 'انضم إلى الوصول المبكر',
         heroCta2: 'شاهد كيف يعمل',
         stat1Label: 'الأساس',
-        stat1Title: 'تقييم 1–5',
+        stat1Title: 'تقييم 1–10',
         stat1Desc: 'ليس إعجابات، بل تقييم حقيقي.',
         stat2Label: 'اجتماعي',
         stat2Title: 'الاكتشاف',
@@ -911,16 +908,13 @@
         ticker6: 'تصميم اجتماعي أكثر أمانًا',
         positioningBadge: 'التموضع',
         positioningTitle: 'صفحة منتج حقيقية، وليست مجرد صفحة ترويج عامة.',
-        positioningDesc:
-          'قوة التطبيق أنه يعتمد على التقييم أولاً. لذلك يجب أن تقول صفحة الهبوط هذا بوضوح: انشر الإطلالة، احصل على التقييم، اقرأ التعليقات، تطوّر، واكتشف.',
+        positioningDesc: 'قوة التطبيق أنه يعتمد على التقييم أولاً. لذلك يجب أن تقول صفحة الهبوط هذا بوضوح: انشر الإطلالة، احصل على التقييم، اقرأ التعليقات، تطوّر، واكتشف.',
         whyWorksLabel: 'لماذا ينجح',
         whyWorksTitle: 'التقييم بدل الإعجابات',
-        whyWorksDesc:
-          'هذه هي القيمة الأساسية. يجب أن تكون في قلب الصفحة.',
+        whyWorksDesc: 'هذه هي القيمة الأساسية. يجب أن تكون في قلب الصفحة.',
         whyPremiumLabel: 'لماذا يبدو بريميوم',
         whyPremiumTitle: 'لغة بطاقات أنظف',
-        whyPremiumDesc:
-          'للحصول على إحساس Bumble تحتاج إلى خطوط أكبر، وبطاقات وسائط عائمة، ومساحات تنفس أكثر.',
+        whyPremiumDesc: 'للحصول على إحساس Bumble تحتاج إلى خطوط أكبر، وبطاقات وسائط عائمة، ومساحات تنفس أكثر.',
         feedCardLabel: 'بطاقة الخلاصة',
         feedCardTitle: 'متوسط التقييم',
         commentQualityLabel: 'جودة التعليقات',
@@ -936,23 +930,17 @@
         how3Desc: 'اعرف أي الإطلالات تؤدي بشكل أفضل وتطوّر أسرع.',
         communityBadge: 'إشارة المجتمع',
         communityTitle: 'يجب أن يكون الشعور بالتعليقات واضحًا واجتماعيًا وممتعًا.',
-        communityDesc1:
-          'بدل الضوضاء الاجتماعية العشوائية، يحصل المستخدمون على تقييمات مقروءة، وتعليقات أنظف، ومنطق منتج أقوى بكثير.',
-        communityDesc2:
-          'وهذا بالضبط ما يجب أن تبيعه صفحة الهبوط: لماذا يأتي المستخدم، ولماذا يبقى، ولماذا ينشر مرة أخرى.',
+        communityDesc1: 'بدل الضوضاء الاجتماعية العشوائية، يحصل المستخدمون على تقييمات مقروءة، وتعليقات أنظف، ومنطق منتج أقوى بكثير.',
+        communityDesc2: 'وهذا بالضبط ما يجب أن تبيعه صفحة الهبوط: لماذا يأتي المستخدم، ولماذا يبقى، ولماذا ينشر مرة أخرى.',
         communityCard1Title: 'الترند حسب التقييم',
-        communityCard1Desc:
-          'قسم الترند يجب أن يبرز المنشورات التي حصلت فعلًا على تقييم، لا المحتوى الفارغ غير المقيّم.',
+        communityCard1Desc: 'قسم الترند يجب أن يبرز المنشورات التي حصلت فعلًا على تقييم، لا المحتوى الفارغ غير المقيّم.',
         communityCard2Title: 'الاكتشاف حسب الذوق',
-        communityCard2Desc:
-          'يمكن للمستخدمين اكتشاف ملفات جديدة حسب الذوق البصري واتجاه الأسلوب.',
+        communityCard2Desc: 'يمكن للمستخدمين اكتشاف ملفات جديدة حسب الذوق البصري واتجاه الأسلوب.',
         trustQuoteTitle: 'الإحساس الأقوى بالمنتج يأتي من الثقة والوضوح والاتساق.',
-        trustQuoteDesc:
-          'الخصوصية، حذف الحساب، الإشراف، والحدود الاجتماعية الأوضح يجب أن تكون أجزاء ظاهرة من المنتج.',
+        trustQuoteDesc: 'الخصوصية، حذف الحساب، الإشراف، والحدود الاجتماعية الأوضح يجب أن تكون أجزاء ظاهرة من المنتج.',
         trustBadge: 'جاهز للإطلاق',
         trustTitle: 'اجعل الدومين جزءًا من المنتج.',
-        trustDesc:
-          'سياسة الخصوصية، الشروط، الموافقة الصريحة، وحذف الحساب يجب أن تعيش كلها داخل نفس النظام الأنيق.',
+        trustDesc: 'سياسة الخصوصية، الشروط، الموافقة الصريحة، وحذف الحساب يجب أن تعيش كلها داخل نفس النظام الأنيق.',
         appAccessBadge: 'الوصول إلى التطبيق',
         getAppTitle: 'احصل على التطبيق',
         getAppDesc: 'انضم مبكرًا وافتح تجربة Outfit Checkers.',
@@ -970,7 +958,6 @@
         footerConsent: 'موافقة صريحة',
         footerPrivacy: 'سياسة الخصوصية',
         footerTerms: 'الشروط والأحكام',
-        footerDelete: 'حذف الحساب',
         footerCopyright: '© 2026 Outfit Checkers',
         languageChanged: 'تم تغيير اللغة'
       }
@@ -1059,7 +1046,6 @@
       '.footer-consent': 'footerConsent',
       '.footer-privacy': 'footerPrivacy',
       '.footer-terms': 'footerTerms',
-      '.footer-delete': 'footerDelete',
       '.footer-copyright': 'footerCopyright'
     };
 
