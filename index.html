@@ -103,10 +103,270 @@
       to { transform: translateX(-50%); }
     }
 
+
+
+    /* PREMIUM MOTION LAYER — renk skalasına dokunmadan sadece hareket hissi */
+    :root {
+      --oc-ease-out: cubic-bezier(.16, 1, .3, 1);
+      --oc-ease-soft: cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .brand-text,
+    .floating-nav a,
+    .open-app-btn,
+    #langToggle,
+    .lang-option,
+    footer a {
+      transition:
+        transform 260ms var(--oc-ease-out),
+        opacity 260ms var(--oc-ease-out),
+        box-shadow 260ms var(--oc-ease-out),
+        background-color 260ms var(--oc-ease-out),
+        border-color 260ms var(--oc-ease-out),
+        filter 260ms var(--oc-ease-out);
+    }
+
+    .brand-text:hover,
+    footer a:hover {
+      transform: translateY(-1px);
+      opacity: .82;
+    }
+
+    .floating-nav {
+      transform: translateZ(0);
+      will-change: transform, backdrop-filter, background, box-shadow;
+    }
+
+    .floating-nav.scrolled {
+      transform: translateY(2px) scale(.992);
+    }
+
+    .floating-nav nav a {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .floating-nav nav a::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 8px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: .28;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 320ms var(--oc-ease-out), opacity 320ms var(--oc-ease-out);
+    }
+
+    .floating-nav nav a:hover::after {
+      transform: scaleX(1);
+      opacity: .42;
+    }
+
+    .open-app-btn,
+    .hero-cta-1,
+    .hero-cta-2,
+    #langToggle {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .open-app-btn::before,
+    .hero-cta-1::before,
+    .hero-cta-2::before,
+    #langToggle::before {
+      content: "";
+      position: absolute;
+      inset: -40% auto -40% -70%;
+      width: 55%;
+      transform: rotate(18deg) translateX(-120%);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+      transition: transform 700ms var(--oc-ease-out);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .open-app-btn:hover::before,
+    .hero-cta-1:hover::before,
+    .hero-cta-2:hover::before,
+    #langToggle:hover::before {
+      transform: rotate(18deg) translateX(420%);
+    }
+
+    .open-app-btn:hover,
+    #langToggle:hover {
+      transform: translateY(-2px);
+      filter: saturate(1.03);
+    }
+
+    #langMenu {
+      transform-origin: top right;
+    }
+
+    #langMenu:not(.hidden) {
+      animation: menuReveal 260ms var(--oc-ease-out) both;
+    }
+
+    .lang-option:hover {
+      transform: translateX(2px);
+    }
+
+    .motion-card,
+    .hero-card {
+      backface-visibility: hidden;
+    }
+
+    .motion-card::after,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.34), transparent 38%);
+      transition: opacity 360ms var(--oc-ease-out);
+    }
+
+    .motion-card:hover::after,
+    .hero-card:hover::after {
+      opacity: .68;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px) scale(.985);
+      filter: blur(8px);
+      transition:
+        opacity 760ms var(--oc-ease-out),
+        transform 760ms var(--oc-ease-out),
+        filter 760ms var(--oc-ease-out);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform, filter;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    .hero-badge,
+    .positioning-badge,
+    .community-badge,
+    .trust-badge,
+    .app-access-badge {
+      animation: badgeFloat 5.8s ease-in-out infinite;
+    }
+
+    .hero-title,
+    .positioning-title,
+    .community-title,
+    .trust-quote-title,
+    .get-app-title {
+      text-wrap: balance;
+    }
+
+    .hero-title {
+      animation: titleIn 900ms var(--oc-ease-out) both 80ms;
+    }
+
+    .hero-desc {
+      animation: fadeUp 850ms var(--oc-ease-out) both 220ms;
+    }
+
+    .hero-badge {
+      animation: fadeUp 780ms var(--oc-ease-out) both 20ms, badgeFloat 5.8s ease-in-out infinite 900ms;
+    }
+
+    .live-insight-label,
+    .live-insight-title,
+    .live-insight-desc {
+      transition: transform 360ms var(--oc-ease-out), opacity 360ms var(--oc-ease-out);
+    }
+
+    .hero-card:hover ~ .absolute .live-insight-title,
+    .motion-card:hover .live-insight-title {
+      transform: translateY(-2px);
+    }
+
+    .marquee-track {
+      will-change: transform;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-track > div {
+      transition: transform 260ms var(--oc-ease-out), box-shadow 260ms var(--oc-ease-out);
+    }
+
+    .marquee-track > div:hover {
+      transform: translateY(-2px) scale(1.025);
+      box-shadow: 0 12px 24px rgba(24, 20, 15, 0.08);
+    }
+
+    .magnetic-ready {
+      will-change: transform;
+    }
+
+    .phone-stage {
+      transform-style: preserve-3d;
+    }
+
+    .phone-stage > div {
+      transition: transform 520ms var(--oc-ease-out), box-shadow 520ms var(--oc-ease-out);
+      will-change: transform;
+    }
+
+    .phone-stage:hover > div:nth-child(1) {
+      transform: translate3d(-8px, -6px, 0) rotate(-2deg);
+    }
+
+    .phone-stage:hover > div:nth-child(2) {
+      transform: translate3d(0, -12px, 0) scale(1.018);
+    }
+
+    .phone-stage:hover > div:nth-child(3) {
+      transform: translate3d(8px, -6px, 0) rotate(2deg);
+    }
+
+    @keyframes menuReveal {
+      from { opacity: 0; transform: translateY(-8px) scale(.96); filter: blur(8px); }
+      to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); filter: blur(6px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    @keyframes titleIn {
+      from { opacity: 0; transform: translateY(22px) scale(.985); filter: blur(10px); }
+      to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    @keyframes badgeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .motion-card,
       .hero-card,
-      .motion-card img {
+      .motion-card img,
+      .reveal-on-scroll,
+      .marquee-track,
+      .hero-badge,
+      .positioning-badge,
+      .community-badge,
+      .trust-badge,
+      .app-access-badge {
         transition: none !important;
         animation: none !important;
       }
@@ -524,7 +784,7 @@
             </div>
           </div>
 
-          <div class="relative h-[420px] overflow-hidden rounded-[38px] bg-[#f6edd2] p-6">
+          <div class="phone-stage relative h-[420px] overflow-hidden rounded-[38px] bg-[#f6edd2] p-6">
             <div class="absolute left-[10%] top-[14%] h-[280px] w-[170px] overflow-hidden rounded-[34px] border-[10px] border-[#1f1b16] bg-white shadow-float">
               <img
                 src="assets/hero-minimal.png"
@@ -1133,6 +1393,7 @@
     card.dataset.baseTransform = baseTransform === 'none' ? '' : baseTransform;
 
     card.addEventListener('mousemove', (e) => {
+      updatePointerGlow(card, e);
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -1164,6 +1425,7 @@
         const lift = parseFloat(card.dataset.lift || '8');
 
         card.addEventListener('mousemove', (e) => {
+          updatePointerGlow(card, e);
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
@@ -1183,6 +1445,70 @@
             'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)';
         });
       });
+    }
+
+
+
+    function updatePointerGlow(card, e) {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', `${x}%`);
+      card.style.setProperty('--my', `${y}%`);
+    }
+
+    function initScrollReveals() {
+      const targets = document.querySelectorAll(
+        'section, .motion-card, .hero-card, .positioning-title, .positioning-desc, .community-title, .community-desc-1, .community-desc-2, .trust-quote-title, .trust-quote-desc, footer .grid > div'
+      );
+
+      targets.forEach((el, index) => {
+        if (el.closest('.hero-card')) return;
+        el.classList.add('reveal-on-scroll');
+        el.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 55}ms`);
+      });
+
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      targets.forEach((el) => observer.observe(el));
+    }
+
+    function initMagneticButtons() {
+      const items = document.querySelectorAll('.open-app-btn, .hero-cta-1, .hero-cta-2, #langToggle, footer a');
+
+      items.forEach((item) => {
+        item.classList.add('magnetic-ready');
+
+        item.addEventListener('mousemove', (e) => {
+          const rect = item.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          item.style.transform = `translate(${x * 0.08}px, ${y * 0.10}px) translateY(-1px)`;
+        });
+
+        item.addEventListener('mouseleave', () => {
+          item.style.transform = '';
+        });
+      });
+    }
+
+    function initPremiumMotion() {
+      initScrollReveals();
+      initMagneticButtons();
     }
 
     if (langToggle && langMenu) {
@@ -1211,6 +1537,7 @@
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+initPremiumMotion();
 initMotionCards();
 initHeroCards();
   </script>
