@@ -399,6 +399,32 @@
 
 
     /* MOBILE PREMIUM RESPONSIVE LAYER — desktop tasarıma dokunmadan sadece küçük ekranı düzenler */
+
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 27, 22, 0.10);
+      background: rgba(255, 255, 255, 0.72);
+      padding: 10px 14px;
+      color: #2a241d;
+      box-shadow: 0 10px 24px rgba(24, 20, 15, 0.05);
+    }
+
+    .social-link:hover {
+      background: #ffffff;
+      box-shadow: 0 14px 28px rgba(24, 20, 15, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
     @media (max-width: 767px) {
       html,
       body {
@@ -1390,31 +1416,57 @@
 
       <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-[#1f1b16]/8 pt-8 text-[16px] font-medium text-[#665d52]">
         <div class="footer-copyright">© 2026 Outfit Checkers</div>
-        <div class="flex flex-wrap items-center gap-4">
+        <div class="flex flex-wrap items-center gap-3">
           <a
             href="https://www.instagram.com/outfitcheckers101/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Outfit Checkers Instagram"
-          >Instagram</a>
+            class="social-link"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+            <span>Instagram</span>
+          </a>
           <a
             href="https://x.com/outfitcheckers"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Outfit Checkers X"
-          >X</a>
+            class="social-link"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2H21l-6.02 6.879L22 22h-5.483l-4.29-7.913L5.3 22H2.542l6.438-7.357L2 2h5.62l3.878 7.274L18.244 2Zm-.963 18.2h1.527L6.79 3.705H5.153L17.28 20.2Z"></path>
+            </svg>
+            <span>X</span>
+          </a>
           <a
             href="https://www.tiktok.com/@outfit_checkers?lang=tr-TR"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Outfit Checkers TikTok"
-          >TikTok</a>
+            class="social-link"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14.5 3c.42 1.8 1.88 3.35 3.64 4.01.92.35 1.77.46 2.36.48v3.18c-1.2-.03-2.64-.36-3.95-1.08v6.12c0 3.12-2.55 5.66-5.71 5.66s-5.72-2.54-5.72-5.66 2.56-5.66 5.72-5.66c.31 0 .74.04 1.11.11v3.21a2.66 2.66 0 0 0-1.11-.24c-1.38 0-2.51 1.12-2.51 2.58s1.13 2.57 2.51 2.57c1.53 0 2.6-1.2 2.6-2.97V3h3.06Z"></path>
+            </svg>
+            <span>TikTok</span>
+          </a>
           <a
             href="https://www.linkedin.com/feed/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Outfit Checkers LinkedIn"
-          >LinkedIn</a>
+            class="social-link"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.94 8.5a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM5.5 10h2.9v8.5H5.5V10Zm4.71 0H13v1.16h.04c.39-.74 1.36-1.52 2.79-1.52 2.98 0 3.53 1.96 3.53 4.51v4.35h-2.9v-3.85c0-.92-.02-2.1-1.28-2.1-1.28 0-1.48 1-1.48 2.03v3.92h-2.9V10Z"></path>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
     </footer>
