@@ -356,6 +356,40 @@
       50% { transform: translateY(-3px); }
     }
 
+
+    /* TÜM KUTULAR İÇİN MOUSE HAREKETİ — mevcut tasarımı/renkleri değiştirmez */
+    .premium-tilt-panel {
+      position: relative;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      transition:
+        transform 520ms var(--oc-ease-out),
+        box-shadow 520ms var(--oc-ease-out),
+        filter 520ms var(--oc-ease-out);
+      will-change: transform;
+    }
+
+    .premium-tilt-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.26), transparent 42%);
+      transition: opacity 360ms var(--oc-ease-out);
+      z-index: 1;
+    }
+
+    .premium-tilt-panel:hover::after {
+      opacity: .5;
+    }
+
+    .premium-tilt-panel > * {
+      position: relative;
+      z-index: 2;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .motion-card,
       .hero-card,
@@ -1506,6 +1540,77 @@
       });
     }
 
+
+    function initAllBoxMouseMotion() {
+      const selectors = [
+        'main > section',
+        'footer',
+        '.floating-nav',
+        '.motion-card',
+        '.hero-card',
+        '.phone-stage',
+        '.marquee-track > div',
+        '.comment-1',
+        '.comment-2',
+        '.comment-3',
+        '#langMenu',
+        '#langToggle',
+        '.open-app-btn'
+      ].join(',');
+
+      const boxes = Array.from(document.querySelectorAll(selectors));
+
+      boxes.forEach((box) => {
+        if (box.dataset.mouseMotionReady === 'true') return;
+        box.dataset.mouseMotionReady = 'true';
+
+        const tag = box.tagName.toLowerCase();
+        const isHeroCard = box.classList.contains('hero-card');
+        const isMotionCard = box.classList.contains('motion-card');
+        const isSmallButton =
+          box.matches('button') ||
+          box.matches('a') ||
+          box.id === 'langToggle' ||
+          box.classList.contains('open-app-btn');
+
+        if (!isHeroCard && !isMotionCard && !isSmallButton) {
+          box.classList.add('premium-tilt-panel');
+        }
+
+        const maxRotate = parseFloat(box.dataset.rotate || (isSmallButton ? '2.2' : isHeroCard ? '6' : isMotionCard ? '5' : '2.8'));
+        const lift = parseFloat(box.dataset.lift || (isSmallButton ? '3' : isHeroCard ? '10' : isMotionCard ? '8' : '5'));
+
+        const computedTransform = window.getComputedStyle(box).transform;
+        const baseTransform = computedTransform === 'none' ? '' : computedTransform;
+
+        box.addEventListener('mousemove', (e) => {
+          updatePointerGlow(box, e);
+
+          const rect = box.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateY = ((x - centerX) / centerX) * maxRotate;
+          const rotateX = -((y - centerY) / centerY) * maxRotate;
+
+          const moveX = isSmallButton ? (x - centerX) * 0.05 : 0;
+          const moveY = isSmallButton ? (y - centerY) * 0.06 : 0;
+
+          box.style.transform =
+            `${baseTransform} perspective(1200px) translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-${lift}px)`;
+        });
+
+        box.addEventListener('mouseleave', () => {
+          box.style.transform = baseTransform;
+          box.style.removeProperty('--mx');
+          box.style.removeProperty('--my');
+        });
+      });
+    }
+
     function initPremiumMotion() {
       initScrollReveals();
       initMagneticButtons();
@@ -1538,8 +1643,7 @@
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 initPremiumMotion();
-initMotionCards();
-initHeroCards();
+initAllBoxMouseMotion();
   </script>
 </body>
 </html>
